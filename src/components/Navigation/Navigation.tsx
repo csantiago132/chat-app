@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.scss';
-const slackChatLogoPng = require( '../../assets/branding/slack-chat-logo.png');
+import slackChatLogoPng from  '../../assets/branding/slack-chat-logo.png';
 
 interface INavigationContent {
   name: string;

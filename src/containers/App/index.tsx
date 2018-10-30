@@ -3,14 +3,13 @@ import { Helmet } from 'react-helmet';
 import * as Immutable from 'immutable';
 import { auth } from 'firebase';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import ChatRooms from '../ChatRooms';
-import NotFoundPage from '../NotFoundPage';
-import LoginPage from '../LoginPage';
+import ChatRooms from '../ChatRooms/ChatRooms';
+import NotFoundPage from '../NotFoundPage/NotFound';
+import LoginPage from '../LoginPage/LoginPage';
 import ProtectedRoute from '../ProtectedRoute';
-import LandingPage from '../LandingPage';
+import LandingPage from '../LandingPage/LandingPage';
 import firebase from '../../secretApiInfo/firebase';
-
-const placeholderAvatarJpg = require('../../assets/placeholderImages/placeholderAvatar.jpg');
+import placeholderAvatarJpg from '../../assets/placeholderImages/placeholderAvatar.jpg';
 
 interface IAppState {
   data: Immutable.Map<string, any>;

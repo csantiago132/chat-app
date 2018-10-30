@@ -1,36 +1,30 @@
 import * as React from 'react';
 import * as Immutable from 'immutable';
-import RoomsList from '../../components/RoomsList';
-import MessageList from '../../components/MessageList';
-import CreateChatRoom from '../../components/CreateChatRoom';
-import CreateMessage from '../../components/CreateMessage';
-import ProfileCard from '../../components/ProfileCard';
+import RoomsList from '../../components/RoomsList/RoomsList';
+import MessageList from '../../components/MessageList/MessageList';
+import CreateChatRoom from '../../components/CreateChatRoom/CreateChatRoom';
+import CreateMessage from '../../components/CreateMessage/CreateMessage';
+import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import './ChatRooms.scss';
 
 interface IAppState {
   data: Immutable.Map<string, any>;
-  firebaseRooms: any;
-  firebaseMessages: any;
+  firebaseRooms?: any;
+  firebaseMessages?: any;
 }
 
 interface IAppProps {
-  avatar: string;
-  displayImage: string;
-  displayName: string;
-  name: string;
-  logout: any;
-  userUniqueID: string;
+  avatar?: string;
+  displayImage?: string;
+  displayName?: string;
+  firebase?: any,
+  name?: string;
+  logout?: any;
+  userUniqueID?: string;
 }
 
-interface IntrinsicAttributes {
-  firebase: any;
-}
-
-class Rooms extends React.Component<
-  IAppProps & IntrinsicAttributes,
-  IAppState
-> {
-  constructor(props: any) {
+class Rooms extends React.Component<IAppProps,IAppState> {
+  constructor(props: IAppProps) {
     super(props);
     this.state = {
       data: Immutable.Map({
@@ -196,16 +190,11 @@ class Rooms extends React.Component<
     };
 
     if (isEnabled) {
-      setTimeout(
-        (): void => {
-          // resets input field to be empty again
-          this.setState({
-            data: data.set('newMessage', String(''))
-          });
-          firebaseMessages.push(sendNewMessage);
-        }
-      );
-    }
+      // resets input field to be empty again
+      this.setState({
+        data: data.set('newMessage', String(''))
+      }, (): void => firebaseMessages.push(sendNewMessage)); 
+    };
   }
 
   handleMessageContent(event: any) {
@@ -227,12 +216,10 @@ class Rooms extends React.Component<
       userId: userUniqueID
     };
 
-    setTimeout(() => {
-      this.setState({
-        data: data.set('createNewRoomTitle', String(''))
-      });
-      firebaseRooms.push(chatRoomDetails);
-    });
+    this.setState({
+      /* clears state and sends chat room data to Firebase */
+      data: data.set('createNewRoomTitle', String(''))
+    }, (): void => firebaseRooms.push(chatRoomDetails));
   }
 
   renderChatRooms() {
@@ -262,15 +249,16 @@ class Rooms extends React.Component<
   }
 
   renderCreateChatRooms() {
+    /* input field to create a chat room */
     const { data } = this.state;
     // if text field is empty, disable the button
-    const isEnabled = data.get('createNewRoomTitle').length > 0;
+    const isEnabled = data.get('createNewRoomTitle').size > 0;
     return (
       <CreateChatRoom
-        value={data.get('createNewRoomTitle')}
-        handleChange={(event: any) => this.setChatRoomName(event)}
-        handleSubmit={(event: any) => this.sendChatRoomDataToFirebase(event)}
         disabled={!isEnabled}
+        handleChange={(event: React.FormEvent<HTMLSelectElement>) => this.setChatRoomName(event)}
+        handleSubmit={(event: React.FormEvent<HTMLSelectElement>) => this.sendChatRoomDataToFirebase(event)}
+        value={`${data.get('createNewRoomTitle')}`}
       />
     );
   }
@@ -281,6 +269,7 @@ class Rooms extends React.Component<
     const currentRoomId = data.getIn(['activeRoom', 'key']);
 
     return (
+      // if we have a current room, render it with the messages
       <React.Fragment>
         {!currentRoomId ? (
           // TODO: create a component

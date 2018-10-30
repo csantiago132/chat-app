@@ -2,9 +2,9 @@ import * as React from 'react';
 import './ProfileCard.scss';
 
 interface IProfileCard {
-  displayImage: string;
-  displayName: string;
-  logout: (...arg: any[]) => any;
+  displayImage?: string;
+  displayName?: string;
+  logout?: (...arg: any[]) => any;
 }
 
 const ProfileCard: React.SFC<IProfileCard> = (props) => {

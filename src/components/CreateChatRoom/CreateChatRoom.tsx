@@ -1,13 +1,14 @@
 import * as React from 'react';
 
 interface ICreateChatRoomProps {
-  handleChange?: (...args: any[]) => any;
-  handleSubmit?: (...args: any[]) => any;
-  disabled?: boolean;
-  value?: string;
+  disabled: any;
+  handleChange: (...args: any[]) => void;
+  handleSubmit: (...args: any[]) => void;
+  value?: any;
 }
 
-const CreateChatRoom: React.SFC<ICreateChatRoomProps> = (props) => {
+/* Input filed that pushes the name of a newly create chat room to firebase */
+const CreateChatRoom: React.SFC<ICreateChatRoomProps> = (props: ICreateChatRoomProps) => {
   const { value, handleChange, handleSubmit, disabled } = props;
   return (
     <form className="create-chat-room" onSubmit={handleSubmit}>

@@ -1,25 +1,24 @@
 import * as React from 'react';
 import { withRouter } from 'react-router';
-import LoginComponent from '../../components/LoginComponent';
+import LoginComponent from '../../components/LoginComponent/LoginComponent';
 import './LoginPage.scss';
 
 interface ILoginPage {
   isAuthenticated?: string;
   history: any;
-  push: (...args: any[]) => any;
   location: any;
   match: any;
 }
 
 const LoginPage: React.SFC<ILoginPage> = (props) => {
-  const { isAuthenticated, history } = props;
+  const { isAuthenticated, history, ...rest } = props;
   if (isAuthenticated) {
     history.push(`/application`);
   }
 
   return (
     <main className="login-page-container">
-      <LoginComponent {...props} />
+      <LoginComponent {...rest} />
     </main>
   );
 };

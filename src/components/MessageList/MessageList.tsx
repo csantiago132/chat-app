@@ -1,15 +1,14 @@
 import * as React from 'react';
 import './MessageList.scss';
-import { object } from 'prop-types';
 
 interface IMessageList {
   avatar: string;
   content: string;
-  currentUser: string;
+  currentUser?: string;
   deleteMessage: (...arg: any[]) => any;
   key: string;
   sentAt: number;
-  userId: string | object;
+  userId?: any;
   username: string;
 }
 

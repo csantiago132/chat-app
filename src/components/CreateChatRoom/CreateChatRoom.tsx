@@ -1,13 +1,13 @@
-import * as React from "react";
+import * as React from 'react';
 
 interface ICreateChatRoomProps {
-  value?: string,
-  handleChange?: (...args: any[]) => any,
-  handleSubmit?: (...args: any[]) => any,
-  disabled?: boolean
-};
+  handleChange?: (...args: any[]) => any;
+  handleSubmit?: (...args: any[]) => any;
+  disabled?: boolean;
+  value?: string;
+}
 
-const CreateChatRoom: React.SFC<ICreateChatRoomProps> = props => {
+const CreateChatRoom: React.SFC<ICreateChatRoomProps> = (props) => {
   const { value, handleChange, handleSubmit, disabled } = props;
   return (
     <form className="create-chat-room" onSubmit={handleSubmit}>

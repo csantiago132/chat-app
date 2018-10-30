@@ -1,6 +1,6 @@
-import reactLoadable from 'react-loadable';
+import Loadable from 'react-loadable'
 
-export default reactLoadable({
+export default Loadable({
   loader: (): any => import('./CreateMessage'),
-  loading: (): any => null,
+  loading: (): any => null
 });

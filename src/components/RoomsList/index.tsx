@@ -1,7 +1,7 @@
-import reactLoadable from 'react-loadable';
+import Loadable from 'react-loadable'
 import PreviewLoader from '../PreviewLoader/PreviewLoader';
 
-export default reactLoadable({
+export default Loadable({
   loader: () => import('./RoomsList'),
-  loading: PreviewLoader,
+  loading: PreviewLoader
 });

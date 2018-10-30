@@ -1,1 +1,1 @@
-declare module 'react-content-loader'
+declare module 'react-content-loader';

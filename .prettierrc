@@ -1,0 +1,32 @@
+{   
+    "tabWidth": 2,
+    "printWidth": 80,
+    "parser": "babylon",
+    "semi": true,
+    "trailingComma": "none",
+    "singleQuote": true,
+    "jsxBracketSameLine": false,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "overrides": [
+        {
+            "files": "app/**/*.js",
+            "options": {
+                "semi": true
+            }
+        },
+        {
+            "files": "app/**/*.test.js",
+            "options": {
+                "semi": true
+            }
+        },
+        {
+            "files": "app/**/*.scss",
+            "options": {
+                "parser": "scss",
+                "semi": true
+            }
+        }
+    ]
+}

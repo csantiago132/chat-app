@@ -1,0 +1,38 @@
+@import '../../setup/scss/variables.scss';
+
+.main-header {
+  background-color: rgba(color(offwhite), 0.95);
+  border-bottom: 1px solid color(darkgray);
+  display: flex;
+  flex-direction: row;
+  padding: space(xs);
+  position: fixed;
+  width: 100%;
+  z-index: $headroom-component;
+
+  &__navigation {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 10px;
+    position: relative;
+    width: 100%;
+
+    &__links {
+      align-self: center;
+      float: right;
+      font-weight: $font-weight--regular;
+      margin-right: space(m);
+
+      @include font-size($default-size);
+    }
+  }
+
+  &__brand-logo {
+    float: left;
+    height: 36px;
+    margin-right: space(xl);
+    width: auto;
+  }
+}

@@ -1,0 +1,168 @@
+@import './variables';
+
+// import TypeKit fonts
+@import url('https://use.typekit.net/uyq7wle.css');
+
+html {
+  color: color(black);
+  font-size: 1.125em; /* 18px */
+
+  @include grid-media($neat-grid-tablet) {
+    font-size: 1.25em; /* 20px */
+  }
+
+  @include grid-media($neat-grid-desktop) {
+    font-size: 1.375em; /* 22px */
+  }
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-color: color(background-color);
+  color: color(black);
+  font-family: $font-family, $font-family--header;
+  -webkit-font-smoothing: antialiased;
+  margin: 0 auto;
+  position: relative;
+}
+
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 space(xs);
+  position: relative;
+
+  width: 100%;
+  z-index: 1;
+}
+
+h1 {
+
+  @include font-size($h1);
+}
+
+h2 {
+
+  @include font-size($h2);
+}
+
+h3 {
+
+  @include font-size($h3);
+}
+
+h4 {
+
+  @include font-size($default-size);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: color(black);
+  letter-spacing: -1px;
+  line-height: 1.5;
+  margin-top: 0;
+  text-rendering: optimizeLegibility;
+}
+
+p,
+ul,
+ol,
+blockquote,
+table,
+figcaption,
+li {
+  color: color(black);
+  font-family: $font-family;
+  line-height: 1.5;
+  margin-bottom: space(s);
+  margin-top: 0;
+
+  @include font-size($default-size);
+}
+
+section {
+  padding: space(xl) 0;
+  position: relative;
+
+  width: 100%;
+
+  @include grid-container;
+
+  @include grid-media($neat-grid-desktop) {
+    padding: space(xxl) 0;
+  }
+}
+
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+article {
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  @include grid-media($neat-grid-desktop) {
+    padding: 0;
+  }
+
+  &:last-child {
+
+    &:after {
+      content: none;
+    }
+  }
+}
+
+footer {
+  position: relative;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 0;
+  }
+}
+
+img {
+  margin: 0;
+  max-width: 100%;
+}
+
+a {
+  color: color(interactive);
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+
+  @include font-size($default-size);
+
+  &:hover {
+    color: color(hover);
+  }
+
+  &:focus {
+    color: color(focus);
+    outline: none;
+  }
+}

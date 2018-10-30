@@ -1,0 +1,40 @@
+@import '../../setup/scss/variables.scss';
+
+.create-message {
+
+  &__container {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    padding: space(base) space(s);
+    width: 100%;
+  }
+
+  &__input-field {
+    align-self: center;
+    -webkit-appearance: none;
+    background-color: color(offwhite);
+    border: 1px solid color(interactive);
+    border-radius: space(s);
+    height: space(l);
+    padding: space(root) space(reg);
+    width: 100%;
+
+    @include font-size($chat-message-size);
+
+    &:focus {
+      box-shadow: $box-shadow;
+      color: color(black);
+      outline: none;
+    }
+
+    &::placeholder {
+      color: color(interactive);
+    }
+  }
+}

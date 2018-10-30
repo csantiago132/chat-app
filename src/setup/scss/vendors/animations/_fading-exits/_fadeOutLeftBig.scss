@@ -1,0 +1,40 @@
+@include keyframes(fadeOutLeftBig) {
+
+  0% {
+
+    @include transform(translateX(0));
+
+    opacity: 1;
+  }
+
+  100% {
+
+    @include transform(translateX(-2000px));
+
+    opacity: 0;
+  }
+}
+
+@mixin fadeOutLeftBig(
+  $count: $countDefault,
+  $duration: $durationDefault,
+  $delay: $delayDefault,
+  $function: $functionDefault,
+  $fill: $fillDefault,
+  $visibility: $visibilityDefault
+) {
+
+  @include animation-name(fadeOutLeftBig);
+
+  @include count($count);
+
+  @include duration($duration);
+
+  @include delay($delay);
+
+  @include function($function);
+
+  @include fill-mode($fill);
+
+  @include visibility($visibility);
+}

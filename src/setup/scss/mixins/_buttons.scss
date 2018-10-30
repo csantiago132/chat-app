@@ -1,0 +1,39 @@
+@mixin hover {
+
+  .no-touch & {
+
+    &:hover,
+    &:active,
+    &:visited {
+
+      @content;
+    }
+  }
+}
+
+@mixin btn($background, $color) {
+  background: $background;
+  border: 1px solid $color;
+  color: $color;
+  font-size: 16px;
+  font-weight: 100;
+  transition: border-color 0.2s ease-in-out, background 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+
+  &__hollow {
+    background: none;
+    border: 3px solid $background;
+    color: $background;
+
+    @include hover {
+      background: $background;
+      color: $color;
+    }
+  }
+
+  &:hover {
+    background: $color;
+    border-color: $background;
+    color: $background;
+  }
+}

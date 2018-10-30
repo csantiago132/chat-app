@@ -1,0 +1,11 @@
+@function space($key: base) {
+  @if map-has-key($spacing, $key) {
+
+    @return map-get($spacing, $key);
+  } @else {
+
+    @return map-get($spacing, reg);
+
+    @warn 'Unknown `#{$key}` in $spacing-map.';
+  }
+}

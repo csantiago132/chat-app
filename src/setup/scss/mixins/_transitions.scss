@@ -1,0 +1,72 @@
+// rem fallback - credits: http://zerosixthree.se/
+
+/*
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+*/
+
+@mixin transition($properties...) {
+  @if length($properties) > 1 {
+    $spec: ();
+
+    @for $i from 1 through length($properties) {
+      $spec: append($spec, nth($properties, $i), comma);
+    }
+  } @else {
+    $spec: $properties;
+  }
+}
+
+@mixin transform($transforms) {
+  transform: $transforms;
+}
+
+@mixin transition-property($property...) {
+  transition-property: $property;
+}
+
+@mixin transition-duration($duration...) {
+  transition-property: $duration;
+}
+
+@mixin transition-timing-function($timing...) {
+  transition-timing-function: $timing;
+}
+
+@mixin transition-delay($delay...) {
+  transition-delay: $delay;
+}
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+// center vertically and/or horizontally an absolute positioned element
+
+@mixin center($xy: xy) {
+  @if $xy == xy {
+    bottom: auto;
+    left: 50%;
+    right: auto;
+    top: 50%;
+
+    @include transform(translateX(-50%) translateY(-50%));
+  } @else if $xy == x {
+    left: 50%;
+    right: auto;
+
+    @include transform(translateX(-50%));
+  } @else if $xy == y {
+    bottom: auto;
+    top: 50%;
+
+    @include transform(translateY(-50%));
+  }
+}

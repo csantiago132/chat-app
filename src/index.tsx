@@ -9,12 +9,14 @@ import App from './containers/App';
 import './setup/scss/base.scss';
 
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
+ 
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  ,MOUNT_NODE
+);
 
-const render = ({ application }: any) => {
-  ReactDOM.render(<BrowserRouter>{application}</BrowserRouter>, MOUNT_NODE);
-};
-
-render(App);
 
 serviceWorker.unregister();
 // declare var module: any;

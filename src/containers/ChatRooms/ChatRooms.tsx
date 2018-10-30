@@ -55,16 +55,15 @@ class Rooms extends React.Component<IAppProps,IAppState> {
 
   componentDidMount() {
     const { firebaseRooms, firebaseMessages } = this.state;
-    setTimeout(() => {
-      firebaseRooms.on('child_added', this.getChatRoomsFromFirebase);
-      firebaseRooms.on('child_removed', this.disconnectChatRoomsFromFirebase);
-      firebaseMessages.on('child_added', this.getMessagesFromFirebase);
-      firebaseMessages.on('child_removed', this.disconnectMessagesFromFirebase);
-    });
+    
+    firebaseRooms.on('child_added', this.getChatRoomsFromFirebase);
+    firebaseRooms.on('child_removed', this.disconnectChatRoomsFromFirebase);
+    firebaseMessages.on('child_added', this.getMessagesFromFirebase);
+    firebaseMessages.on('child_removed', this.disconnectMessagesFromFirebase);
   }
 
   componentDidUpdate() {
-    this.handleMessageContainer();
+    this.handleMessageContainer(this.messagesEnd);
   }
 
   componentWillUnmount() {
@@ -165,12 +164,12 @@ class Rooms extends React.Component<IAppProps,IAppState> {
 
   messagesEnd(span: any) {
     this.messagesEnd = span;
-    this.handleMessageContainer();
+    this.handleMessageContainer(this.messagesEnd);
   }
 
-  handleMessageContainer() {
+  handleMessageContainer(element: any) {
     setTimeout(() => {
-      this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth' });
     }, 10);
   }
 
@@ -206,11 +205,13 @@ class Rooms extends React.Component<IAppProps,IAppState> {
   }
 
   sendChatRoomDataToFirebase(event: any) {
+    // sends chat room information to firebase
     const { data, firebaseRooms } = this.state;
     const { displayName, userUniqueID } = this.props;
     event.preventDefault();
 
     const chatRoomDetails = {
+      // TODO: add more useful information to improve UX
       createdBy: displayName,
       name: data.get('createNewRoomTitle'),
       userId: userUniqueID
@@ -237,7 +238,7 @@ class Rooms extends React.Component<IAppProps,IAppState> {
             currentUserId={userUniqueID}
             setActiveRoom={() => {
               this.setActiveRoom(room);
-              this.handleMessageContainer();
+              //this.handleMessageContainer();
             }}
             deleteRoom={(event: any) => {
               this.removeRoom(event, room.key);
@@ -275,6 +276,7 @@ class Rooms extends React.Component<IAppProps,IAppState> {
           // TODO: create a component
           <h2>Please select a room!</h2>
         ) : (
+          // renders all messages associated with the roomID
           data.get('messages').map((message: any) => [
             currentRoomId === message.roomId && (
               <MessageList

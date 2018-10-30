@@ -4,6 +4,7 @@ import LoginComponent from '../../components/LoginComponent/LoginComponent';
 import './LoginPage.scss';
 
 interface ILoginPage {
+  authenticateWithGoogle: any;
   isAuthenticated?: string;
   history: any;
   location: any;

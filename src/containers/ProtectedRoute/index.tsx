@@ -22,13 +22,11 @@ const ProtectedRoute: React.SFC<IProtectedRoute> = ({
   <Route
     {...rest}
     render={(props) =>
-      isAuthenticated ? (
-        React.createElement(component, props)
-      ) : (
-        <Redirect
-          to={{ pathname: '/login', state: { from: props.location } }}
-        />
-      )
+      isAuthenticated
+          // if authenticated, render component passed as prop
+        ? React.createElement(component, props)
+          // otherwise, redirect to login
+        : <Redirect to={{ pathname: '/login', state: { from: props.location } }}/>
     }
   />
 );

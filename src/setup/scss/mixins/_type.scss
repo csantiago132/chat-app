@@ -1,0 +1,27 @@
+@mixin type($size: reg, $style: null) {
+  font-size: nth($list, 1);
+  line-height: nth($list, 2);
+
+  $list: map-get($type, reg);
+
+  @if map-has-key($type, $size) {
+    $list: map-get($type, $size);
+  } @else {
+
+    @warn 'Unknown `#{$size}` in $type';
+  }
+
+  @if $style != null {
+    @if map-has-key($fonts, $style) {
+      font-family: map-get($fonts, $style);
+    } @else {
+
+      @warn 'Unknown `#{$style}` in $fonts';
+    }
+  }
+
+  @if $style == header {
+
+    @include weight(light);
+  }
+}

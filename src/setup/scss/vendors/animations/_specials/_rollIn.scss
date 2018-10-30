@@ -1,0 +1,40 @@
+@include keyframes(rollIn) {
+
+  0% {
+
+    @include transform(translateX(-100%) rotate(-120deg));
+
+    opacity: 0;
+  }
+
+  100% {
+
+    @include;
+
+    opacity: 1;
+  }
+}
+
+@mixin rollIn(
+  $count: $countDefault,
+  $duration: $durationDefault,
+  $delay: $delayDefault,
+  $function: $functionDefault,
+  $fill: $fillDefault,
+  $visibility: $visibilityDefault
+) {
+
+  @include animation-name(rollIn);
+
+  @include count($count);
+
+  @include duration($duration);
+
+  @include delay($delay);
+
+  @include function($function);
+
+  @include fill-mode($fill);
+
+  @include visibility($visibility);
+}

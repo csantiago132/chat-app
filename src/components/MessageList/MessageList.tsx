@@ -6,7 +6,7 @@ interface IMessageList {
   content: string;
   currentUser?: string;
   deleteMessage: (...arg: any[]) => any;
-  key: string;
+  id: string;
   sentAt: number;
   userId?: any;
   username: string;
@@ -18,7 +18,7 @@ const MessageList: React.SFC<IMessageList> = (props) => {
     content,
     currentUser,
     deleteMessage,
-    key,
+    id,
     sentAt,
     userId,
     username
@@ -31,7 +31,7 @@ const MessageList: React.SFC<IMessageList> = (props) => {
   });
   const convertTimestampToLocalDate = date.toLocaleDateString();
   return (
-    <article className="chat-message" key={key}>
+    <article className="chat-message" key={id}>
       <img
         className="chat-message__profile-picture"
         src={avatar}

@@ -8,9 +8,11 @@ import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import './ChatRooms.scss';
 
 interface IAppState {
+  createNewRoomTitle: string;
   data: Immutable.Map<string, any>;
   firebaseRooms?: any;
   firebaseMessages?: any;
+  newMessage: string;
 }
 
 interface IAppProps {
@@ -28,17 +30,17 @@ class Rooms extends React.Component<IAppProps,IAppState> {
     super(props);
     this.state = {
       data: Immutable.Map({
-        activeRoom: Immutable.Map({
-          key: String(''),
-          name: String('')
-        }),
-        createNewRoomTitle: String(''),
+        rooms: Immutable.List(),
         messages: Immutable.List(),
-        newMessage: String(''),
-        rooms: Immutable.List()
+        activeRoom: Immutable.Map({
+          name: String(''),
+          key: String(''),
+        }),
       }),
+      newMessage: String(''),
+      createNewRoomTitle: String(''),
+      firebaseRooms: this.props.firebase.database().ref('rooms'),
       firebaseMessages: this.props.firebase.database().ref('messages'),
-      firebaseRooms: this.props.firebase.database().ref('rooms')
     };
 
     this.getMessagesFromFirebase = this.getMessagesFromFirebase.bind(this);
@@ -55,7 +57,6 @@ class Rooms extends React.Component<IAppProps,IAppState> {
 
   componentDidMount() {
     const { firebaseRooms, firebaseMessages } = this.state;
-    
     firebaseRooms.on('child_added', this.getChatRoomsFromFirebase);
     firebaseRooms.on('child_removed', this.disconnectChatRoomsFromFirebase);
     firebaseMessages.on('child_added', this.getMessagesFromFirebase);
@@ -70,7 +71,9 @@ class Rooms extends React.Component<IAppProps,IAppState> {
     const { firebaseRooms, firebaseMessages } = this.state;
     // to avoid error: Can only update a mounted or mounting component...
     firebaseRooms.off('child_added', this.getChatRoomsFromFirebase);
+    firebaseRooms.off('child_removed', this.disconnectChatRoomsFromFirebase);
     firebaseMessages.off('child_added', this.getMessagesFromFirebase);
+    firebaseMessages.off('child_removed', this.disconnectMessagesFromFirebase);
   }
 
   setActiveRoom(chatRoomDetails: any) {
@@ -79,16 +82,13 @@ class Rooms extends React.Component<IAppProps,IAppState> {
     this.setState({
       data: data
         .setIn(['activeRoom', 'name'], chatRoomDetails.name)
-        .setIn(['activeRoom', 'key'], chatRoomDetails.key)
+        .setIn(['activeRoom', 'key'], chatRoomDetails.key),
     });
   }
 
   setChatRoomName(event: any) {
-    const { data } = this.state;
-
-    this.setState({
-      data: data.set('createNewRoomTitle', String(event.target.value))
-    });
+    //const { data } = this.state;
+    this.setState({ createNewRoomTitle: String(`${event.target.value}`) });
   }
 
   getChatRoomsFromFirebase(snapshot: any) {
@@ -97,17 +97,8 @@ class Rooms extends React.Component<IAppProps,IAppState> {
     room.key = snapshot.key;
 
     this.setState({
-      data: data.update('rooms', (list: any) => list.push(room))
+      data: data.update('rooms', (list) => list.push(room)),
     });
-
-    if (data.get('rooms').takeLast() !== room) {
-      // to get the latest chat room added
-      setTimeout(() => {
-        this.setState({
-          data: data.update('rooms', (list: any) => list.push(room))
-        });
-      });
-    }
   }
 
   getMessagesFromFirebase(snapshot: any) {
@@ -116,26 +107,17 @@ class Rooms extends React.Component<IAppProps,IAppState> {
     chatMessage.key = snapshot.key;
 
     this.setState({
-      data: data.update('messages', (list: any) => list.push(chatMessage))
+      data: data.update('messages', (list) => list.push(chatMessage)),
     });
-
-    if (data.get('messages').takeLast() !== chatMessage) {
-      // to get the latest chat room added
-      setTimeout(() => {
-        this.setState({
-          data: data.update('messages', (list: any) => list.push(chatMessage))
-        });
-      });
-    }
   }
 
   disconnectMessagesFromFirebase(snapshot: any) {
     const { data } = this.state;
 
     this.setState({
-      data: data.update('messages', (list: any) =>
+      data: data.update('messages', (list) =>
         list.filter((message: any) => message.key !== snapshot.key)
-      )
+      ),
     });
   }
 
@@ -144,9 +126,9 @@ class Rooms extends React.Component<IAppProps,IAppState> {
     // resets the local available chat rooms
     // after we delete it
     this.setState({
-      data: data.update('rooms', (list: any) =>
+      data: data.update('rooms', (list) =>
         list.filter((room: any) => room.key !== snapshot.key)
-      )
+      ),
     });
   }
 
@@ -174,14 +156,16 @@ class Rooms extends React.Component<IAppProps,IAppState> {
   }
 
   handleSendMessage(event: any) {
-    const { data, firebaseMessages } = this.state;
+    const { data, firebaseMessages, newMessage } = this.state;
     const { displayImage, displayName, userUniqueID, firebase } = this.props;
+    
     event.preventDefault();
-    const isEnabled = data.get('newMessage').length > 0;
+    
+    const isEnabled = newMessage.length > 0;
 
     const sendNewMessage = {
       avatar: displayImage,
-      content: data.get('newMessage'),
+      content: newMessage,
       roomId: data.getIn(['activeRoom', 'key']),
       sentAt: firebase.database.ServerValue.TIMESTAMP,
       userId: userUniqueID,
@@ -191,35 +175,31 @@ class Rooms extends React.Component<IAppProps,IAppState> {
     if (isEnabled) {
       // resets input field to be empty again
       this.setState({
-        data: data.set('newMessage', String(''))
+        newMessage: String('')
       }, (): void => firebaseMessages.push(sendNewMessage)); 
     };
   }
 
   handleMessageContent(event: any) {
-    const { data } = this.state;
-
-    this.setState({
-      data: data.set('newMessage', String(event.target.value))
-    });
+    this.setState({ newMessage: String(`${event.target.value}`) });
   }
 
   sendChatRoomDataToFirebase(event: any) {
     // sends chat room information to firebase
-    const { data, firebaseRooms } = this.state;
+    const { data, firebaseRooms, createNewRoomTitle } = this.state;
     const { displayName, userUniqueID } = this.props;
     event.preventDefault();
 
     const chatRoomDetails = {
       // TODO: add more useful information to improve UX
       createdBy: displayName,
-      name: data.get('createNewRoomTitle'),
+      name: createNewRoomTitle,
       userId: userUniqueID
     };
 
     this.setState({
       /* clears state and sends chat room data to Firebase */
-      data: data.set('createNewRoomTitle', String(''))
+      createNewRoomTitle: String('')
     }, (): void => firebaseRooms.push(chatRoomDetails));
   }
 
@@ -251,15 +231,15 @@ class Rooms extends React.Component<IAppProps,IAppState> {
 
   renderCreateChatRooms() {
     /* input field to create a chat room */
-    const { data } = this.state;
+    const { createNewRoomTitle } = this.state;
     // if text field is empty, disable the button
-    const isEnabled = data.get('createNewRoomTitle').size > 0;
+    const isEnabled = createNewRoomTitle.length > 0;
     return (
       <CreateChatRoom
         disabled={!isEnabled}
         handleChange={(event: React.FormEvent<HTMLSelectElement>) => this.setChatRoomName(event)}
         handleSubmit={(event: React.FormEvent<HTMLSelectElement>) => this.sendChatRoomDataToFirebase(event)}
-        value={`${data.get('createNewRoomTitle')}`}
+        value={createNewRoomTitle}
       />
     );
   }
@@ -281,6 +261,7 @@ class Rooms extends React.Component<IAppProps,IAppState> {
             currentRoomId === message.roomId && (
               <MessageList
                 key={message.roomId + 1}
+                id={message.roomId + 1}
                 userId={message.userId}
                 currentUser={userUniqueID}
                 username={message.username}
@@ -299,7 +280,7 @@ class Rooms extends React.Component<IAppProps,IAppState> {
   }
 
   render() {
-    const { data } = this.state;
+    const { data, newMessage } = this.state;
 
     return (
       <main className="chatrooms-container" role="main">
@@ -322,7 +303,7 @@ class Rooms extends React.Component<IAppProps,IAppState> {
           </section>
           {data.getIn(['activeRoom', 'key']).length > 0 && (
             <CreateMessage
-              value={data.get('newMessage')}
+              value={newMessage}
               placeholder={`Send a message to '${data.getIn([
                 'activeRoom',
                 'name'

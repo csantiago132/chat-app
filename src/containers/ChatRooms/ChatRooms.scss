@@ -1,0 +1,61 @@
+@import '../../setup/scss/variables.scss';
+
+.chatrooms-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+
+  &__chatroom-header {
+    align-items: center;
+    align-self: flex-start;
+    background-color: rgba(color(white), 0.95);
+    border-bottom: 1px solid color(lightgray);
+    display: flex;
+    height: space(xl);
+    justify-content: flex-start;
+    padding: 0 space(m);
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: $headroom-component;
+
+    h2 {
+      margin: 0;
+
+      @include font-size($default-size);
+    }
+  }
+
+  &__side-container {
+    background-color: color(offwhite);
+    border-right: 1px solid color(gray);
+    min-height: 100%;
+    padding: space(reg) space(s) space(m) 0;
+
+    @include grid-column(3);
+  }
+
+  &__main-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column-reverse;
+    overflow: hidden;
+    padding: 0;
+    padding-bottom: space(l) + space(base);
+    padding-top: space(xl);
+    position: relative;
+
+    @include grid-column(9);
+  }
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 0 space(m);
+}

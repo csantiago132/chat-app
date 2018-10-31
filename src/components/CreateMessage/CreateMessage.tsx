@@ -1,7 +1,7 @@
-/**   
+/**
  * CreateMessage
  * 
-`* input field in charge of pushing messages to firebase 
+ * input field in charge of pushing messages to firebase 
  * 
  */
 

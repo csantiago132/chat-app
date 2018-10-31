@@ -46,7 +46,7 @@ class App extends React.Component<{}, IAppState> {
     const googleAuth = firebase.auth();
 
     googleAuth
-      //sends user to a new tab to authenticate with Google
+      // sends user to a new tab to authenticate with Google
       .signInWithPopup(googleProvider)
       // when done, sets state based on user information credentials
       .then((result: any) => {

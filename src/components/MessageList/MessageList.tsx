@@ -58,7 +58,7 @@ const MessageList: React.SFC<IMessageList> = (props) => {
         * if current user is the same as the userID from the message
         * user can delete its own message 
         * 
-        * */}
+        */}
       {currentUser === userId && (
         <aside className="chat-message__controls">
           <button className="chat-message__controls__action-button ion-ios-compose-outline" />

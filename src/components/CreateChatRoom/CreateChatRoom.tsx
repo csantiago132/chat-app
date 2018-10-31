@@ -1,5 +1,4 @@
 /**
- *
  * CreateChatRoom component
  * 
  * component that creates chat room names

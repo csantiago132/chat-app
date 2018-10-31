@@ -29,7 +29,7 @@ const RoomsList: React.SFC<IRoomsList> = (props) => {
         * if current user is the same as the userID 
         * that created the chatroom, the user can delete it
         * 
-        * */}
+        */}
       {userId === currentUserId && (
         <button
           className="chatroom-control__controls ion-trash-a"

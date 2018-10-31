@@ -1,3 +1,10 @@
+/**
+ * MessageList
+ * 
+ * Individual chat message component from any user
+ * 
+ */
+
 import * as React from 'react';
 import './MessageList.scss';
 
@@ -24,11 +31,14 @@ const MessageList: React.SFC<IMessageList> = (props) => {
     username
   } = props;
 
+  // sendAt based on firebase timestamp
   const date = new Date(sentAt);
+  // renders sendAt formatted for time
   const convertTimestampToLocalTime = date.toLocaleTimeString([], {
     hour: '2-digit',
     minute: '2-digit'
   });
+  // renders renders sendAt formatted for date
   const convertTimestampToLocalDate = date.toLocaleDateString();
   return (
     <article className="chat-message" key={id}>
@@ -44,6 +54,11 @@ const MessageList: React.SFC<IMessageList> = (props) => {
         </time>
         <p className="chat-message__message">{content}</p>
       </header>
+      {/**
+        * if current user is the same as the userID from the message
+        * user can delete its own message 
+        * 
+        */}
       {currentUser === userId && (
         <aside className="chat-message__controls">
           <button className="chat-message__controls__action-button ion-ios-compose-outline" />

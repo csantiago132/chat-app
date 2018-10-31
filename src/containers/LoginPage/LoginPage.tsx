@@ -1,3 +1,10 @@
+/**
+ * Homepage
+ * 
+ * Landing page of the app
+ * 
+ */
+
 import * as React from 'react';
 import { withRouter } from 'react-router';
 import LoginComponent from '../../components/LoginComponent/LoginComponent';

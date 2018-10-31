@@ -1,3 +1,12 @@
+/**
+ * ProtectedRoute
+ * 
+ * controls if you can see the main application,
+ * reads state to see if isAuthenticated is true, if so, 
+ * user can navigate to ChatRooms page, if not, redirects user to 
+ * LoginPage and start the auth process through firebase 
+ * 
+ */
 import * as React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 

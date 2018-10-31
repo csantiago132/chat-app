@@ -1,10 +1,17 @@
+/**
+ * CreateChatRoom component
+ * 
+ * component that creates chat room names
+ *
+ */
+
 import * as React from 'react';
 
 interface ICreateChatRoomProps {
-  disabled: any;
+  disabled: boolean;
   handleChange: (...args: any[]) => void;
   handleSubmit: (...args: any[]) => void;
-  value?: any;
+  value?: string;
 }
 
 /* Input filed that pushes the name of a newly create chat room to firebase */

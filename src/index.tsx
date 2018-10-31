@@ -1,10 +1,16 @@
+/**
+ * Main entry point of the app
+ * 
+ * Gets necessary components and renders app
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import 'sanitize.css/sanitize.css';
 
-// Import root app
+
 import App from './containers/App';
 import './setup/scss/base.scss';
 
@@ -17,6 +23,5 @@ ReactDOM.render(
   ,MOUNT_NODE
 );
 
-
 serviceWorker.unregister();
-// declare var module: any;
+

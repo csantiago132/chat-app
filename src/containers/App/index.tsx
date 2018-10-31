@@ -1,3 +1,11 @@
+/**
+ * App container
+ * 
+ * Main container of the app, handles global state,
+ * authentication provider (Google) and routing
+ *  
+ */
+
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import * as Immutable from 'immutable';
@@ -13,7 +21,7 @@ import placeholderAvatarJpg from '../../assets/placeholderImages/placeholderAvat
 
 interface IAppState {
   data: Immutable.Map<string, any>;
-  firebaseConfig: any;
+  firebaseConfig: object;
 }
 
 class App extends React.Component<{}, IAppState> {
@@ -29,6 +37,8 @@ class App extends React.Component<{}, IAppState> {
       firebaseConfig: firebase
     };
   }
+
+  // google provider method
   googleAuthentication(event: any) {
     const { data } = this.state;
     event.preventDefault();
@@ -36,7 +46,9 @@ class App extends React.Component<{}, IAppState> {
     const googleAuth = firebase.auth();
 
     googleAuth
+      // sends user to a new tab to authenticate with Google
       .signInWithPopup(googleProvider)
+      // when done, sets state based on user information credentials
       .then((result: any) => {
         this.setState({
           data: data
@@ -46,8 +58,12 @@ class App extends React.Component<{}, IAppState> {
             .set('userUniqueID', result.additionalUserInfo.profile.id)
         });
       })
+      // catch any errors on the auth method
+      // TODO: maybe redirect to a login error page?
       .catch((error: any) => console.error(error.message));
   }
+
+  // logs out user from the app
   handleLogout(event: any) {
     const { data } = this.state;
     event.preventDefault();
@@ -55,6 +71,7 @@ class App extends React.Component<{}, IAppState> {
 
     googleAuth
       .signOut()
+      // when done, clears user information and sets state to default
       .then(() => {
         this.setState({
           data: data
@@ -64,6 +81,7 @@ class App extends React.Component<{}, IAppState> {
             .set('userUniqueID', String(''))
         });
       })
+      // catch any errors on the auth method
       .catch((error: any) => console.error(error.message));
   }
   render() {
@@ -82,8 +100,8 @@ class App extends React.Component<{}, IAppState> {
             isAuthenticated={data.get('isAuthenticaded')}
             path="/application"
             // TODO: refactor to not use Lambda
-            // https://github.com/csantiago132/slack-chat/issues/44
             component={() => (
+              // passing down state to chatrooms as props
               <ChatRooms
                 firebase={firebaseConfig}
                 displayName={data.get('authUser')}
@@ -97,6 +115,7 @@ class App extends React.Component<{}, IAppState> {
             path="/login"
             component={() => (
               <LoginPage
+                // if user is not logged in, redirect route to login page 
                 isAuthenticated={data.get('isAuthenticaded')}
                 authenticateWithGoogle={(event: any) =>
                   this.googleAuthentication(event)
@@ -104,6 +123,7 @@ class App extends React.Component<{}, IAppState> {
               />
             )}
           />
+          {/* if route doesn't exists, redirect to 404  */}
           <Route path="/404" component={NotFoundPage} />
           <Redirect from="*" to="/404" />
         </Switch>

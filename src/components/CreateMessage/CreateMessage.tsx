@@ -1,3 +1,10 @@
+/**
+ * CreateMessage
+ * 
+ * input field in charge of pushing messages to firebase 
+ * 
+ */
+
 import * as React from 'react';
 import './CreateMessage.scss';
 
@@ -20,7 +27,6 @@ const CreateMessage: React.SFC<ICreateMessage> = (props) => {
           value={value}
           placeholder={placeholder}
           onChange={handleChange}
-          //ref={(input) => input && input.focus()}
         />
       </form>
     </span>

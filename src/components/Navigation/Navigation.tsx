@@ -1,3 +1,10 @@
+/**
+ * Navigation
+ * 
+ * Takes an array to render the links
+ * 
+ */
+
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.scss';

@@ -1,7 +1,28 @@
 {
-  "name": "slack-chat",
-  "version": "0.1.0",
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "A CRUD (Create, Read, Update, Delete) chat application built with Typescript, React, Firebase and Immutable.JS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csantiago132/chat-app.git"
+  },
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prettier:tsx": "prettier --config ./.prettierrc --write src/**/*.tsx"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "dependencies": {
     "bourbon": "^5.1.0",
     "bourbon-neat": "2.1.0",
@@ -21,16 +42,6 @@
     "sanitize.css": "^8.0.0",
     "warning": "^4.0.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prettier:tsx": "prettier --config ./.prettierrc --write src/**/*.tsx"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "devDependencies": {
     "@firebase/app-types": "^0.3.2",
     "@types/enzyme": "^3.1.14",
@@ -47,11 +58,5 @@
     "enzyme-adapter-react-16": "^1.6.0",
     "prettier": "^1.14.3",
     "typescript": "^3.1.4"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }

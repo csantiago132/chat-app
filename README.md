@@ -1,5 +1,6 @@
 # Chat App
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8ff9dd0e69734c5da3ed4830a63d6f08)](https://app.codacy.com/app/csantiago132/slack-chat?utm_source=github.com&utm_medium=referral&utm_content=csantiago132/slack-chat&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c08e6a879d464024b28be47c60b17a3a)](https://www.codacy.com/app/csantiago132/chat-app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=csantiago132/chat-app&amp;utm_campaign=Badge_Grade)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 <p align="center"><img src="preview.png" alt="slack-chat preview"/></p>
 
@@ -41,7 +42,7 @@ export default firebase;
 
 
 ## Features
-
+- [x] Typescript
 - [x] Google authentication
 - [x] Public rooms
 - [x] Realtime sending and receiving of messages
@@ -62,7 +63,6 @@ export default firebase;
 ## TODO List 
 In the near future, I want to add: 
 - [ ] Redux
-- [X] Typescript
 - [ ] Reselect
 - [ ] React Native or Electron version
 - [ ] Eject from create-react-app v2.1 and customize webpack configuration

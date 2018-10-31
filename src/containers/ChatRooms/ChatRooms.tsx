@@ -101,7 +101,7 @@ class Rooms extends React.Component<IAppProps,IAppState> {
   }
 
   // reads messages information from firebase and sets state 
-  getMessagesFromFirebase = (snapshot: any) => {
+  private getMessagesFromFirebase = (snapshot: any) => {
     const { data } = this.state;
     const chatMessage = snapshot.val();
     chatMessage.key = snapshot.key;
@@ -149,7 +149,7 @@ class Rooms extends React.Component<IAppProps,IAppState> {
   }
 
   // scrolls to the end of the container when a chatroom is selected
-  scrollToEndOfMessages = (span: any) => {
+  private scrollToEndOfMessages = (span: any) => {
     this.scrollToEndOfMessages = span;
     this.handleMessageContainer(this.scrollToEndOfMessages);
   }

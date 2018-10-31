@@ -1,3 +1,11 @@
+/**
+ * RoomsList
+ * 
+ * renders room information coming from firebase
+ * and provides a link to them
+ * 
+ */
+
 import * as React from 'react';
 import './RoomsList.scss';
 
@@ -17,6 +25,11 @@ const RoomsList: React.SFC<IRoomsList> = (props) => {
       <button className="chatroom-control__button" onClick={setActiveRoom}>
         {name}
       </button>
+      {/**
+        * if current user is the same as the userID 
+        * that created the chatroom, the user can delete it
+        * 
+        * */}
       {userId === currentUserId && (
         <button
           className="chatroom-control__controls ion-trash-a"

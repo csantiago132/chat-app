@@ -35,8 +35,7 @@ ngrok
 
 # temp ignore these files
 src/.htaccess
-src/secretApiInfo/firebase.js
-src/secretApiInfo/firebase.js
+src/secretApiInfo/firebase.tsx
 
 
 ### Node ###

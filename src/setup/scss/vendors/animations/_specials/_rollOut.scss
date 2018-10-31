@@ -1,0 +1,42 @@
+// originally authored by Nick Pettit - https://github.com/nickpettit/glide
+
+@include keyframes(rollOut) {
+
+  0% {
+
+    @include;
+
+    opacity: 1;
+  }
+
+  100% {
+
+    @include transform(translateX(100%) rotate(120deg));
+
+    opacity: 0;
+  }
+}
+
+@mixin rollOut(
+  $count: $countDefault,
+  $duration: $durationDefault,
+  $delay: $delayDefault,
+  $function: $functionDefault,
+  $fill: $fillDefault,
+  $visibility: $visibilityDefault
+) {
+
+  @include animation-name(rollOut);
+
+  @include count($count);
+
+  @include duration($duration);
+
+  @include delay($delay);
+
+  @include function($function);
+
+  @include fill-mode($fill);
+
+  @include visibility($visibility);
+}

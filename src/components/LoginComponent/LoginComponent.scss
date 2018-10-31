@@ -1,0 +1,50 @@
+@import '../../setup/scss/variables.scss';
+
+.login-component {
+  align-items: center;
+  background-color: color(white);
+  border-radius: space(s);
+  box-shadow: $box-shadow--login-component;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0;
+  padding: space(m);
+  width: 90%;
+
+  @include grid-media($neat-grid-tablet) {
+    max-width: 504px;
+    width: 60%;
+  }
+
+  @include grid-media($neat-grid-desktop) {
+    margin-top: space(xl);
+    width: 40%;
+  }
+
+  &__sign-in-button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    outline: inherit;
+    padding: 0;
+
+    img {
+      height: 100%;
+      max-height: 60px;
+      width: auto;
+    }
+  }
+
+  p {
+    border-top: 1px solid color(lightgray);
+    color: color(darkgray);
+    margin-top: space(s);
+    padding-top: space(xs);
+    text-align: center;
+
+    @include font-size($small-size);
+  }
+}

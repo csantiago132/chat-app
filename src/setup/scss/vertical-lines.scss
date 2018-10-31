@@ -1,0 +1,44 @@
+@import './variables';
+@import './vendors/animations/animate';
+
+.vertical-lines {
+
+  @include fadeIn($duration: 2.4s);
+
+  @include grid-container;
+
+  @include grid-collapse;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  left: 50%;
+  margin-left: -10px;
+  max-width: 1200px;
+  padding: 0 18px 0 19px;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: $animatedLines-z-index;
+
+  @include grid-media($neat-grid-tablet--landscape) {
+    margin-left: -9px;
+    padding: 0 19px 0 17px;
+  }
+
+  span {
+
+    @include grid-column(4, $neat-grid-mobile);
+
+    @include grid-media($neat-grid-tablet) {
+
+      @include grid-column(4);
+    }
+    border-left: 1px solid rgba(color(darkblue), 0.08);
+    border-right: 1px solid rgba(color(darkblue), 0.02);
+    content: '';
+    height: 100%;
+    position: relative;
+  }
+}

@@ -1,0 +1,44 @@
+@include keyframes(rotateIn) {
+
+  0% {
+
+    @include transform(rotate(-200deg));
+
+    @include transform-origin(center center);
+
+    opacity: 0;
+  }
+
+  100% {
+
+    @include transform(rotate(0));
+
+    @include transform-origin(center center);
+
+    opacity: 1;
+  }
+}
+
+@mixin rotateIn(
+  $count: $countDefault,
+  $duration: $durationDefault,
+  $delay: $delayDefault,
+  $function: $functionDefault,
+  $fill: $fillDefault,
+  $visibility: $visibilityDefault
+) {
+
+  @include animation-name(rotateIn);
+
+  @include count($count);
+
+  @include duration($duration);
+
+  @include delay($delay);
+
+  @include function($function);
+
+  @include fill-mode($fill);
+
+  @include visibility($visibility);
+}

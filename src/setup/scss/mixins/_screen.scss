@@ -1,0 +1,12 @@
+@mixin screen($size) {
+  @if map-has-key($breakpoints, $size) {
+
+    @media (min-width: map-get($breakpoints, $size)) {
+
+      @content;
+    }
+  } @else {
+
+    @warn 'Unknown `#{$size}` in $breakpoints';
+  }
+}

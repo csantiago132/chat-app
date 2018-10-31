@@ -1,0 +1,24 @@
+// Visually hide elements while keeping them accessible to assistive technology and search engines.
+// src: https://gist.github.com/Stegosource/2da4392c12acce7c6e6248374403b3e3
+
+@mixin screenreader {
+  /* Reset any property that may change the elements size */
+  border: 0;
+  /* Clipping defines what part of an element should be displayed. */
+  /* Deprecated clip property for older browsers */
+  clip: rect(0 0 0 0);
+  /* clip-path for newer browsers. inset(50%) defines an inset rectangle that makes the content disappear.  */
+  clip-path: inset(50%);
+  height: 1px;
+  /* It seems like at the moment nobody is quite sure why margin: -1px is there. On top of that it seems to cause issues (see: https://github.com/h5bp/html5-boilerplate/issues/1985). */
+  margin: -1px;
+  /* Hide overflowing content after resizing */
+  overflow: hidden;
+  padding: 0;
+  /* Remove the item from normal flow */
+  position: absolute;
+  /* Workaround for falsely pronounced, smushed text */
+  white-space: nowrap;
+  /* Set it to the smallest possible size (some screen readers ignore elements with zero height and width) */
+  width: 1px;
+}

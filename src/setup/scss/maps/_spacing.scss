@@ -1,0 +1,13 @@
+$spacing--base: 4px;
+
+$spacing: (
+  base: $spacing--base,
+  xs: $spacing--base * 2,
+  s: $spacing--base * 4,
+  root: $spacing--base * 6,
+  reg: $spacing--base * 8,
+  m: $spacing--base * 9,
+  l: $spacing--base * 10,
+  xl: $spacing--base * 20,
+  xxl: $spacing--base * 40
+);

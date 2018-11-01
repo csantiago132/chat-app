@@ -1,9 +1,9 @@
 /**
  * App container
- * 
+ *
  * Main container of the app, handles global state,
  * authentication provider (Google) and routing
- *  
+ *
  */
 
 import * as React from 'react';
@@ -12,7 +12,7 @@ import * as Immutable from 'immutable';
 import { auth } from 'firebase';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import ChatRooms from '../ChatRooms/ChatRooms';
-import NotFoundPage from '../NotFoundPage/NotFound';
+import NotFound from '../NotFoundPage/NotFound';
 import LoginPage from '../LoginPage/LoginPage';
 import ProtectedRoute from '../ProtectedRoute';
 import LandingPage from '../LandingPage/LandingPage';
@@ -84,6 +84,7 @@ class App extends React.Component<{}, IAppState> {
       // catch any errors on the auth method
       .catch((error: any) => console.error(error.message));
   }
+
   render() {
     const { data, firebaseConfig } = this.state;
     return (
@@ -115,7 +116,7 @@ class App extends React.Component<{}, IAppState> {
             path="/login"
             component={() => (
               <LoginPage
-                // if user is not logged in, redirect route to login page 
+                // if user is not logged in, redirect route to login page
                 isAuthenticated={data.get('isAuthenticaded')}
                 authenticateWithGoogle={(event: any) =>
                   this.googleAuthentication(event)
@@ -124,7 +125,7 @@ class App extends React.Component<{}, IAppState> {
             )}
           />
           {/* if route doesn't exists, redirect to 404  */}
-          <Route path="/404" component={NotFoundPage} />
+          <Route path="/404" component={NotFound} />
           <Redirect from="*" to="/404" />
         </Switch>
       </React.Fragment>

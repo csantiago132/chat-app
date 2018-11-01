@@ -12,17 +12,25 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier:tsx": "prettier --config ./.prettierrc --write src/**/*.tsx"
+    "prettier:tsx": "prettier --config ./.prettierrc --write *.tsx",
+    "prettier:json": "prettier --config  ./.prettierrc  --write *.json",
+    "prettier:md": "prettier --config .prettierrc --use-tabs --print-width 80 --write *.md",
+    "tslint": "./node_modules/.bin/tslint -c ./tslint.js --project ./tsconfig.json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.tsx": ["yarn run prettier:tsx", "yarn run tslint", "git add"],
+    "*.json": ["yarn run prettier:json", "git add"],
+    "*.md": ["yarn run prettier:md", "git add"]
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
   "dependencies": {
     "bourbon": "^5.1.0",
     "bourbon-neat": "2.1.0",
@@ -56,7 +64,14 @@
     "@types/react-router-dom": "^4.3.1",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
+    "husky": "^1.1.2",
+    "lint-staged": "^8.0.4",
     "prettier": "^1.14.3",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-react": "^3.6.0",
+    "tslint-react-a11y": "^1.0.0",
     "typescript": "^3.1.4"
   }
 }

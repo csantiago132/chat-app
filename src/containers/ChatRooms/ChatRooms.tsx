@@ -1,6 +1,6 @@
 /**
  * ChatRooms container
- * 
+ *
  * Handles most of the app, controls all messages and chatrooms coming from
  * firebase
  */
@@ -26,28 +26,28 @@ interface IAppProps {
   avatar?: string;
   displayImage?: string;
   displayName?: string;
-  firebase?: any,
+  firebase?: any;
   name?: string;
   logout?: any;
   userUniqueID?: string;
 }
 
-class Rooms extends React.Component<IAppProps,IAppState> {
+class Rooms extends React.Component<IAppProps, IAppState> {
   constructor(props: IAppProps) {
     super(props);
     this.state = {
       createNewRoomTitle: String(''),
       data: Immutable.Map({
-        rooms: Immutable.List(),
-        messages: Immutable.List(),
         activeRoom: Immutable.Map({
-          name: String(''),
           key: String(''),
+          name: String('')
         }),
+        messages: Immutable.List(),
+        rooms: Immutable.List()
       }),
       firebaseMessages: this.props.firebase.database().ref('messages'),
       firebaseRooms: this.props.firebase.database().ref('rooms'),
-      newMessage: String(''),
+      newMessage: String('')
     };
   }
 
@@ -80,94 +80,94 @@ class Rooms extends React.Component<IAppProps,IAppState> {
     this.setState({
       data: data
         .setIn(['activeRoom', 'name'], chatRoomDetails.name)
-        .setIn(['activeRoom', 'key'], chatRoomDetails.key),
+        .setIn(['activeRoom', 'key'], chatRoomDetails.key)
     });
   }
 
-  // sets name of chat room to be created 
-  private handleChatRoomName = (event: any) => {
+  // sets name of chat room to be created
+  handleChatRoomName = (event: any) => {
     this.setState({ createNewRoomTitle: String(`${event.target.value}`) });
-  }
+  };
 
-  // reads chatroom information from firebase and sets state 
-  private getChatRoomsFromFirebase = (snapshot: any) => {
+  // reads chatroom information from firebase and sets state
+  getChatRoomsFromFirebase = (snapshot: any) => {
     const { data } = this.state;
     const room = snapshot.val();
     room.key = snapshot.key;
 
     this.setState({
-      data: data.update('rooms', (list) => list.push(room)),
+      data: data.update('rooms', (list) => list.push(room))
     });
-  }
+  };
 
-  // reads messages information from firebase and sets state 
-  private getMessagesFromFirebase = (snapshot: any) => {
+  // reads messages information from firebase and sets state
+  getMessagesFromFirebase = (snapshot: any) => {
     const { data } = this.state;
     const chatMessage = snapshot.val();
     chatMessage.key = snapshot.key;
 
     this.setState({
-      data: data.update('messages', (list) => list.push(chatMessage)),
+      data: data.update('messages', (list) => list.push(chatMessage))
     });
-  }
+  };
 
   // stops reading messages from firebase when componentWillUnmount
-  private disconnectMessagesFromFirebase = (snapshot: any) => {
+  disconnectMessagesFromFirebase = (snapshot: any) => {
     const { data } = this.state;
 
     this.setState({
       data: data.update('messages', (list) =>
         list.filter((message: any) => message.key !== snapshot.key)
-      ),
+      )
     });
-  }
+  };
 
   // stops reading chatrooms from firebase when componentWillUnmount
-  private disconnectChatRoomsFromFirebase = (snapshot: any) => {
+  disconnectChatRoomsFromFirebase = (snapshot: any) => {
     const { data } = this.state;
     // resets the local available chat rooms
     // after we delete it
     this.setState({
       data: data.update('rooms', (list) =>
         list.filter((room: any) => room.key !== snapshot.key)
-      ),
+      )
     });
-  }
+  };
 
   // deletes chatroom data based on id from firebase
-  private handleRemoveRoomFromFirebase = (event: any, chatRoom: any) => {
+  handleRemoveRoomFromFirebase = (event: any, chatRoom: any) => {
     const { firebaseRooms } = this.state;
     event.preventDefault();
     firebaseRooms.child(`${chatRoom}`).remove();
-  }
+  };
 
   // deletes message data based on id  from firebase
-  private handleRemoveMessageFromFirebase = (event: any, messageName: any) => {
+  handleRemoveMessageFromFirebase = (event: any, messageName: any) => {
     const { firebaseMessages } = this.state;
     event.preventDefault();
     firebaseMessages.child(`${messageName}`).remove();
-  }
+  };
 
   // scrolls to the end of the container when a chatroom is selected
-  private scrollToEndOfMessages = (span: any) => {
+  scrollToEndOfMessages = (span: any) => {
     this.scrollToEndOfMessages = span;
     this.handleMessageContainer(this.scrollToEndOfMessages);
-  }
+  };
 
   // sets the element to where the app should scroll to
   // scrolls to a span that is set after the messages
-  private handleMessageContainer = (element: any) => {
+  handleMessageContainer = (element: any) => {
     setTimeout(() => {
       element.scrollIntoView({ behavior: 'smooth' });
     }, 10);
-  }
+  };
 
-  private handleSendMessageToFirebase = (event: any) => {
+  handleSendMessageToFirebase = (event: any) => {
     const { data, firebaseMessages, newMessage } = this.state;
     const { displayImage, displayName, firebase, userUniqueID } = this.props;
-    
+
     event.preventDefault();
-    
+
     // avoid sending empty message to firebase
     const isEnabled = newMessage.length > 0;
 
@@ -183,19 +183,22 @@ class Rooms extends React.Component<IAppProps,IAppState> {
 
     if (isEnabled) {
       // resets input field to be empty again
-      this.setState({
-        newMessage: String('')
-        // call back used to push the message to firebase after state changes 
-      }, (): void => firebaseMessages.push(sendNewMessage)); 
-    };
-  }
+      this.setState(
+        {
+          newMessage: String('')
+          // call back used to push the message to firebase after state changes
+        },
+        (): void => firebaseMessages.push(sendNewMessage)
+      );
+    }
+  };
 
   // sets state to the new message that is about to be sent to firebase
-  private handleMessageContent = (event: any) => {
+  handleMessageContent = (event: any) => {
     this.setState({ newMessage: String(`${event.target.value}`) });
-  }
+  };
 
-  private sendChatRoomDataToFirebase = (event: any) => {
+  sendChatRoomDataToFirebase = (event: any) => {
     // sends chat room information to firebase
     const { firebaseRooms, createNewRoomTitle } = this.state;
     const { displayName, userUniqueID } = this.props;
@@ -209,17 +212,20 @@ class Rooms extends React.Component<IAppProps,IAppState> {
       userId: userUniqueID
     };
 
-    this.setState({
-      /* clears state and sends chat room data to Firebase */
-      createNewRoomTitle: String('')
-      // call back used to push the chatroom to firebase after state changes 
-    }, (): void => firebaseRooms.push(chatRoomDetails));
-  }
+    this.setState(
+      {
+        /* clears state and sends chat room data to Firebase */
+        createNewRoomTitle: String('')
+        // call back used to push the chatroom to firebase after state changes
+      },
+      (): void => firebaseRooms.push(chatRoomDetails)
+    );
+  };
 
   /**
    * Renders below are to break down the UI/app to make it easier to
    * refactor and update. Each functionality is abstracted to it's own function
-   * 
+   *
    */
 
   // only renders the chatrooms based on logic coming from state
@@ -261,8 +267,12 @@ class Rooms extends React.Component<IAppProps,IAppState> {
         disabled={!isEnabled}
         // TODO: rethink on how to incorporate without Lambda
         // Lambdas are forbidden in JSX attributes due to their rendering performance impact
-        handleChange={(event: React.FormEvent<HTMLSelectElement>) => this.handleChatRoomName(event)}
-        handleSubmit={(event: React.FormEvent<HTMLSelectElement>) => this.sendChatRoomDataToFirebase(event)}
+        handleChange={(event: React.FormEvent<HTMLSelectElement>) =>
+          this.handleChatRoomName(event)
+        }
+        handleSubmit={(event: React.FormEvent<HTMLSelectElement>) =>
+          this.sendChatRoomDataToFirebase(event)
+        }
         value={createNewRoomTitle}
       />
     );
@@ -305,7 +315,7 @@ class Rooms extends React.Component<IAppProps,IAppState> {
       </React.Fragment>
     );
   }
-  
+
   // main render function of the app
   render() {
     const { data, newMessage } = this.state;
@@ -332,10 +342,12 @@ class Rooms extends React.Component<IAppProps,IAppState> {
           {data.getIn(['activeRoom', 'key']).length > 0 && (
             <CreateMessage
               // TODO: rethink on how to incorporate without Lambda
-              // Lambdas are forbidden in JSX attributes due to their 
+              // Lambdas are forbidden in JSX attributes due to their
               // rendering performance impact
               handleChange={(event: any) => this.handleMessageContent(event)}
-              handleSubmit={(event: any) => this.handleSendMessageToFirebase(event)}
+              handleSubmit={(event: any) =>
+                this.handleSendMessageToFirebase(event)
+              }
               placeholder={`Send a message to '${data.getIn([
                 'activeRoom',
                 'name'

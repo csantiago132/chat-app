@@ -10,22 +10,28 @@
     "arrowParens": "always",
     "overrides": [
         {
-            "files": "app/**/*.js",
+            "files": "src/**/*.tsx",
             "options": {
                 "semi": true
             }
         },
         {
-            "files": "app/**/*.test.js",
+            "files": "src/**/*.test.tsx",
             "options": {
                 "semi": true
             }
         },
         {
-            "files": "app/**/*.scss",
+            "files": "src/**/*.scss",
             "options": {
                 "parser": "scss",
                 "semi": true
+            }
+        },
+        {
+            "files": "*.json",
+            "options": {
+                "parser": "json"
             }
         }
     ]

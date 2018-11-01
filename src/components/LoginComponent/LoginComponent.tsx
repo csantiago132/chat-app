@@ -5,9 +5,9 @@
  *
  */
 
-import * as React from 'react';
-import btn_google_signin_light_normal_web2xPng from '../../assets/google_signin_buttons/web/2x/btn_google_signin_light_normal_web2x.png';
-import './LoginComponent.scss';
+import * as React from "react";
+import btn_google_signin_light_normal_web2xPng from "../../assets/google_signin_buttons/web/2x/btn_google_signin_light_normal_web2x.png";
+import "./LoginComponent.scss";
 
 interface ILoginComponent {
   authenticateWithGoogle: (...args: any[]) => any;

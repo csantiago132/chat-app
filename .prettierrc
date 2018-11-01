@@ -12,7 +12,8 @@
         {
             "files": "src/**/*.tsx",
             "options": {
-                "semi": true
+                "semi": true,
+                "singleQuote": false,
             }
         },
         {

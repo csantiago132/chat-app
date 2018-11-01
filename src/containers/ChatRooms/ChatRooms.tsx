@@ -5,14 +5,14 @@
  * firebase
  */
 
-import * as React from 'react';
-import * as Immutable from 'immutable';
-import RoomsList from '../../components/RoomsList/RoomsList';
-import MessageList from '../../components/MessageList/MessageList';
-import CreateChatRoom from '../../components/CreateChatRoom/CreateChatRoom';
-import CreateMessage from '../../components/CreateMessage/CreateMessage';
-import ProfileCard from '../../components/ProfileCard/ProfileCard';
-import './ChatRooms.scss';
+import * as React from "react";
+import * as Immutable from "immutable";
+import RoomsList from "../../components/RoomsList/RoomsList";
+import MessageList from "../../components/MessageList/MessageList";
+import CreateChatRoom from "../../components/CreateChatRoom/CreateChatRoom";
+import CreateMessage from "../../components/CreateMessage/CreateMessage";
+import ProfileCard from "../../components/ProfileCard/ProfileCard";
+import "./ChatRooms.scss";
 
 interface IAppState {
   createNewRoomTitle: string;
@@ -36,28 +36,28 @@ class Rooms extends React.Component<IAppProps, IAppState> {
   constructor(props: IAppProps) {
     super(props);
     this.state = {
-      createNewRoomTitle: String(''),
+      createNewRoomTitle: String(""),
       data: Immutable.Map({
         activeRoom: Immutable.Map({
-          key: String(''),
-          name: String('')
+          key: String(""),
+          name: String("")
         }),
         messages: Immutable.List(),
         rooms: Immutable.List()
       }),
-      firebaseMessages: this.props.firebase.database().ref('messages'),
-      firebaseRooms: this.props.firebase.database().ref('rooms'),
-      newMessage: String('')
+      firebaseMessages: this.props.firebase.database().ref("messages"),
+      firebaseRooms: this.props.firebase.database().ref("rooms"),
+      newMessage: String("")
     };
   }
 
   componentDidMount() {
     // connects to firebase as event listeners
     const { firebaseRooms, firebaseMessages } = this.state;
-    firebaseRooms.on('child_added', this.getChatRoomsFromFirebase);
-    firebaseRooms.on('child_removed', this.disconnectChatRoomsFromFirebase);
-    firebaseMessages.on('child_added', this.getMessagesFromFirebase);
-    firebaseMessages.on('child_removed', this.disconnectMessagesFromFirebase);
+    firebaseRooms.on("child_added", this.getChatRoomsFromFirebase);
+    firebaseRooms.on("child_removed", this.disconnectChatRoomsFromFirebase);
+    firebaseMessages.on("child_added", this.getMessagesFromFirebase);
+    firebaseMessages.on("child_removed", this.disconnectMessagesFromFirebase);
   }
 
   componentDidUpdate() {
@@ -67,10 +67,10 @@ class Rooms extends React.Component<IAppProps, IAppState> {
   componentWillUnmount() {
     const { firebaseRooms, firebaseMessages } = this.state;
     // disconnect firebase from the app, funky stuff happens (state gets all funky) if removed
-    firebaseRooms.off('child_added', this.getChatRoomsFromFirebase);
-    firebaseRooms.off('child_removed', this.disconnectChatRoomsFromFirebase);
-    firebaseMessages.off('child_added', this.getMessagesFromFirebase);
-    firebaseMessages.off('child_removed', this.disconnectMessagesFromFirebase);
+    firebaseRooms.off("child_added", this.getChatRoomsFromFirebase);
+    firebaseRooms.off("child_removed", this.disconnectChatRoomsFromFirebase);
+    firebaseMessages.off("child_added", this.getMessagesFromFirebase);
+    firebaseMessages.off("child_removed", this.disconnectMessagesFromFirebase);
   }
 
   // sets a room to active from the list of rooms given by firebase
@@ -79,8 +79,8 @@ class Rooms extends React.Component<IAppProps, IAppState> {
 
     this.setState({
       data: data
-        .setIn(['activeRoom', 'name'], chatRoomDetails.name)
-        .setIn(['activeRoom', 'key'], chatRoomDetails.key)
+        .setIn(["activeRoom", "name"], chatRoomDetails.name)
+        .setIn(["activeRoom", "key"], chatRoomDetails.key)
     });
   }
 
@@ -96,7 +96,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
     room.key = snapshot.key;
 
     this.setState({
-      data: data.update('rooms', (list) => list.push(room))
+      data: data.update("rooms", (list) => list.push(room))
     });
   };
 
@@ -107,7 +107,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
     chatMessage.key = snapshot.key;
 
     this.setState({
-      data: data.update('messages', (list) => list.push(chatMessage))
+      data: data.update("messages", (list) => list.push(chatMessage))
     });
   };
 
@@ -116,7 +116,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
     const { data } = this.state;
 
     this.setState({
-      data: data.update('messages', (list) =>
+      data: data.update("messages", (list) =>
         list.filter((message: any) => message.key !== snapshot.key)
       )
     });
@@ -128,7 +128,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
     // resets the local available chat rooms
     // after we delete it
     this.setState({
-      data: data.update('rooms', (list) =>
+      data: data.update("rooms", (list) =>
         list.filter((room: any) => room.key !== snapshot.key)
       )
     });
@@ -158,7 +158,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
   // scrolls to a span that is set after the messages
   handleMessageContainer = (element: any) => {
     setTimeout(() => {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }, 10);
   };
 
@@ -175,7 +175,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
     const sendNewMessage = {
       avatar: displayImage,
       content: newMessage,
-      roomId: data.getIn(['activeRoom', 'key']),
+      roomId: data.getIn(["activeRoom", "key"]),
       sentAt: firebase.database.ServerValue.TIMESTAMP,
       userId: userUniqueID,
       username: displayName
@@ -185,7 +185,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
       // resets input field to be empty again
       this.setState(
         {
-          newMessage: String('')
+          newMessage: String("")
           // call back used to push the message to firebase after state changes
         },
         (): void => firebaseMessages.push(sendNewMessage)
@@ -215,7 +215,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
     this.setState(
       {
         /* clears state and sends chat room data to Firebase */
-        createNewRoomTitle: String('')
+        createNewRoomTitle: String("")
         // call back used to push the chatroom to firebase after state changes
       },
       (): void => firebaseRooms.push(chatRoomDetails)
@@ -235,7 +235,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
 
     return (
       <React.Fragment>
-        {data.get('rooms').map((room: any) => (
+        {data.get("rooms").map((room: any) => (
           <RoomsList
             key={room.key}
             // props
@@ -283,7 +283,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
   renderActiveRoomsAndMessages() {
     const { data } = this.state;
     const { userUniqueID } = this.props;
-    const currentRoomId = data.getIn(['activeRoom', 'key']);
+    const currentRoomId = data.getIn(["activeRoom", "key"]);
 
     return (
       // if we have a current room, render it with the messages
@@ -293,7 +293,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
           <h2>Please select a room!</h2>
         ) : (
           // renders all messages associated with the roomID
-          data.get('messages').map((message: any) => [
+          data.get("messages").map((message: any) => [
             currentRoomId === message.roomId && (
               <MessageList
                 key={message.roomId + 1}
@@ -329,7 +329,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
         </aside>
         <section className="chatrooms-container__main-container">
           <header className="chatrooms-container__chatroom-header">
-            <h2>{data.getIn(['activeRoom', 'name'])}</h2>
+            <h2>{data.getIn(["activeRoom", "name"])}</h2>
           </header>
           <section className="message-container">
             {this.renderActiveRoomsAndMessages()}
@@ -339,7 +339,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
               }}
             />
           </section>
-          {data.getIn(['activeRoom', 'key']).length > 0 && (
+          {data.getIn(["activeRoom", "key"]).length > 0 && (
             <CreateMessage
               // TODO: rethink on how to incorporate without Lambda
               // Lambdas are forbidden in JSX attributes due to their
@@ -349,8 +349,8 @@ class Rooms extends React.Component<IAppProps, IAppState> {
                 this.handleSendMessageToFirebase(event)
               }
               placeholder={`Send a message to '${data.getIn([
-                'activeRoom',
-                'name'
+                "activeRoom",
+                "name"
               ])}'`}
               value={newMessage}
             />

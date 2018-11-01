@@ -1,14 +1,14 @@
 /**
  * Homepage
- * 
+ *
  * Landing page of the app
- * 
+ *
  */
 
-import * as React from 'react';
-import { withRouter } from 'react-router';
-import LoginComponent from '../../components/LoginComponent/LoginComponent';
-import './LoginPage.scss';
+import * as React from "react";
+import { withRouter } from "react-router";
+import LoginComponent from "../../components/LoginComponent/LoginComponent";
+import "./LoginPage.scss";
 
 interface ILoginPage {
   authenticateWithGoogle: any;

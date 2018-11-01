@@ -1,12 +1,12 @@
 /**
  * ProfileCard
- * 
+ *
  * Holds the current user signed-in and handles logout
- * 
+ *
  */
 
-import * as React from 'react';
-import './ProfileCard.scss';
+import * as React from "react";
+import "./ProfileCard.scss";
 
 interface IProfileCard {
   displayImage?: string;

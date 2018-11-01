@@ -1,12 +1,12 @@
 /**
  * CreateMessage
- * 
- * input field in charge of pushing messages to firebase 
- * 
+ *
+ * input field in charge of pushing messages to firebase
+ *
  */
 
-import * as React from 'react';
-import './CreateMessage.scss';
+import * as React from "react";
+import "./CreateMessage.scss";
 
 interface ICreateMessage {
   handleChange?: (...args: any[]) => any;

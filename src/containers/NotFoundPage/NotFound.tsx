@@ -1,11 +1,11 @@
 /**
  * NotFound page
- * 
+ *
  * Pretty much the 404 page
- * 
+ *
  */
 
-import * as React from 'react';
+import * as React from "react";
 
 const NotFound = () => (
   <article>

@@ -1,11 +1,11 @@
 /**
  * CreateChatRoom component
- * 
+ *
  * component that creates chat room names
  *
  */
 
-import * as React from 'react';
+import * as React from "react";
 
 interface ICreateChatRoomProps {
   disabled: boolean;
@@ -15,7 +15,9 @@ interface ICreateChatRoomProps {
 }
 
 /* Input filed that pushes the name of a newly create chat room to firebase */
-const CreateChatRoom: React.SFC<ICreateChatRoomProps> = (props: ICreateChatRoomProps) => {
+const CreateChatRoom: React.SFC<ICreateChatRoomProps> = (
+  props: ICreateChatRoomProps
+) => {
   const { value, handleChange, handleSubmit, disabled } = props;
   return (
     <form className="create-chat-room" onSubmit={handleSubmit}>

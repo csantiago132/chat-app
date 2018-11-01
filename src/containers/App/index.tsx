@@ -1,23 +1,23 @@
 /**
  * App container
- * 
+ *
  * Main container of the app, handles global state,
  * authentication provider (Google) and routing
- *  
+ *
  */
 
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
-import * as Immutable from 'immutable';
-import { auth } from 'firebase';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import ChatRooms from '../ChatRooms/ChatRooms';
-import NotFoundPage from '../NotFoundPage/NotFound';
-import LoginPage from '../LoginPage/LoginPage';
-import ProtectedRoute from '../ProtectedRoute';
-import LandingPage from '../LandingPage/LandingPage';
-import firebase from '../../secretApiInfo/firebase';
-import placeholderAvatarJpg from '../../assets/placeholderImages/placeholderAvatar.jpg';
+import * as React from "react";
+import { Helmet } from "react-helmet";
+import * as Immutable from "immutable";
+import { auth } from "firebase";
+import { Switch, Route, Redirect } from "react-router-dom";
+import ChatRooms from "../ChatRooms/ChatRooms";
+import NotFound from "../NotFoundPage/NotFound";
+import LoginPage from "../LoginPage/LoginPage";
+import ProtectedRoute from "../ProtectedRoute";
+import LandingPage from "../LandingPage/LandingPage";
+import firebase from "../../secretApiInfo/firebase";
+import placeholderAvatarJpg from "../../assets/placeholderImages/placeholderAvatar.jpg";
 
 interface IAppState {
   data: Immutable.Map<string, any>;
@@ -29,10 +29,10 @@ class App extends React.Component<{}, IAppState> {
     super(props);
     this.state = {
       data: Immutable.Map({
-        authUser: 'Guest User',
+        authUser: "Guest User",
         isAuthenticaded: true,
         profilePicture: placeholderAvatarJpg,
-        userUniqueID: String('')
+        userUniqueID: String("")
       }),
       firebaseConfig: firebase
     };
@@ -52,10 +52,10 @@ class App extends React.Component<{}, IAppState> {
       .then((result: any) => {
         this.setState({
           data: data
-            .set('isAuthenticaded', true)
-            .set('authUser', result.additionalUserInfo.profile.name)
-            .set('profilePicture', result.additionalUserInfo.profile.picture)
-            .set('userUniqueID', result.additionalUserInfo.profile.id)
+            .set("isAuthenticaded", true)
+            .set("authUser", result.additionalUserInfo.profile.name)
+            .set("profilePicture", result.additionalUserInfo.profile.picture)
+            .set("userUniqueID", result.additionalUserInfo.profile.id)
         });
       })
       // catch any errors on the auth method
@@ -75,15 +75,16 @@ class App extends React.Component<{}, IAppState> {
       .then(() => {
         this.setState({
           data: data
-            .set('isAuthenticaded', false)
-            .set('authUser', 'Guest User')
-            .set('profilePicture', placeholderAvatarJpg)
-            .set('userUniqueID', String(''))
+            .set("isAuthenticaded", false)
+            .set("authUser", "Guest User")
+            .set("profilePicture", placeholderAvatarJpg)
+            .set("userUniqueID", String(""))
         });
       })
       // catch any errors on the auth method
       .catch((error: any) => console.error(error.message));
   }
+
   render() {
     const { data, firebaseConfig } = this.state;
     return (
@@ -97,16 +98,16 @@ class App extends React.Component<{}, IAppState> {
         <Switch>
           <Route exact={true} path="/" component={LandingPage} />
           <ProtectedRoute
-            isAuthenticated={data.get('isAuthenticaded')}
+            isAuthenticated={data.get("isAuthenticaded")}
             path="/application"
             // TODO: refactor to not use Lambda
             component={() => (
               // passing down state to chatrooms as props
               <ChatRooms
                 firebase={firebaseConfig}
-                displayName={data.get('authUser')}
-                displayImage={data.get('profilePicture')}
-                userUniqueID={data.get('userUniqueID')}
+                displayName={data.get("authUser")}
+                displayImage={data.get("profilePicture")}
+                userUniqueID={data.get("userUniqueID")}
                 logout={(event: any) => this.handleLogout(event)}
               />
             )}
@@ -115,8 +116,8 @@ class App extends React.Component<{}, IAppState> {
             path="/login"
             component={() => (
               <LoginPage
-                // if user is not logged in, redirect route to login page 
-                isAuthenticated={data.get('isAuthenticaded')}
+                // if user is not logged in, redirect route to login page
+                isAuthenticated={data.get("isAuthenticaded")}
                 authenticateWithGoogle={(event: any) =>
                   this.googleAuthentication(event)
                 }
@@ -124,7 +125,7 @@ class App extends React.Component<{}, IAppState> {
             )}
           />
           {/* if route doesn't exists, redirect to 404  */}
-          <Route path="/404" component={NotFoundPage} />
+          <Route path="/404" component={NotFound} />
           <Redirect from="*" to="/404" />
         </Switch>
       </React.Fragment>

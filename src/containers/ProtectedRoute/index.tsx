@@ -1,14 +1,14 @@
 /**
  * ProtectedRoute
- * 
+ *
  * controls if you can see the main application,
- * reads state to see if isAuthenticated is true, if so, 
- * user can navigate to ChatRooms page, if not, redirects user to 
- * LoginPage and start the auth process through firebase 
- * 
+ * reads state to see if isAuthenticated is true, if so,
+ * user can navigate to ChatRooms page, if not, redirects user to
+ * LoginPage and start the auth process through firebase
+ *
  */
-import * as React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import * as React from "react";
+import { Route, Redirect } from "react-router-dom";
 
 interface IProtectedRoute {
   component: (...arg: any[]) => any;
@@ -31,11 +31,15 @@ const ProtectedRoute: React.SFC<IProtectedRoute> = ({
   <Route
     {...rest}
     render={(props) =>
-      isAuthenticated
-          // if authenticated, render component passed as prop
-        ? React.createElement(component, props)
-          // otherwise, redirect to login
-        : <Redirect to={{ pathname: '/login', state: { from: props.location } }}/>
+      isAuthenticated ? (
+        // if authenticated, render component passed as prop
+        React.createElement(component, props)
+      ) : (
+        // otherwise, redirect to login
+        <Redirect
+          to={{ pathname: "/login", state: { from: props.location } }}
+        />
+      )
     }
   />
 );

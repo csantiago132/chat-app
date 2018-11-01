@@ -1,12 +1,12 @@
 export const NavigationLinks = [
   {
-    name: 'Home',
+    name: "Home",
     // TODO: add icons for each main link
     // icon: 'icon-home',
-    url: ''
+    url: ""
   },
   {
-    name: 'Chat Room',
-    url: 'application'
+    name: "Chat Room",
+    url: "application"
   }
 ];

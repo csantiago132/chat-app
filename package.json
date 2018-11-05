@@ -14,8 +14,8 @@
     "eject": "react-scripts eject",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
-    "prettier:tsx": "prettier --config ./.prettierrc --write *.{tsx, ts}",
-    "prettier:json": "prettier --config  ./.prettierrc  --write *.json",
+    "prettier:tsx": "prettier --config .prettierrc --write *.{tsx, ts}",
+    "prettier:json": "prettier --config  .prettierrc  --write *.json",
     "prettier:md": "prettier --config .prettierrc --print-width 80 --write **/*.md",
     "tslint": "./node_modules/.bin/tslint -c ./tslint.js --project ./tsconfig.json"
   },

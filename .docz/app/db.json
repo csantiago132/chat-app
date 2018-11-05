@@ -1,0 +1,37 @@
+{
+  "config": {
+    "title": "Chat App",
+    "description": "A CRUD (Create, Read, Update, Delete) chat application built with Typescript, React, Firebase and Immutable.JS",
+    "themeConfig": {},
+    "menu": [],
+    "ordering": "descending",
+    "version": "1.0.0",
+    "repository": "https://github.com/csantiago132/chat-app",
+    "native": false,
+    "codeSandbox": true
+  },
+  "entries": {
+    "src/components/CreateChatRoom/index.mdx": {
+      "name": "Alert",
+      "menu": "Components",
+      "id": "cf512f8f4635825b6cdb415e2def9f23",
+      "filepath": "src/components/CreateChatRoom/index.mdx",
+      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/CreateChatRoom/index.mdx",
+      "slug": "src-components-create-chat-room-index",
+      "route": "/src-components-create-chat-room-index",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "alert",
+          "value": "Alert"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    }
+  }
+}

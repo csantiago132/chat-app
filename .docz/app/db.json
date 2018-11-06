@@ -1,18 +1,37 @@
 {
   "config": {
-    "title": "Chat App",
+    "title": "Docz Typescript",
     "description": "A CRUD (Create, Read, Update, Delete) chat application built with Typescript, React, Firebase and Immutable.JS",
-    "themeConfig": {},
+    "themeConfig": {
+      "mode": "dark",
+      "radii": "4px",
+      "styles": {
+        "container": {
+          "width": ["100%", "100%", 1200],
+          "padding": ["20px", "0 40px 40px"]
+        },
+        "table": {
+          "overflowY": "hidden",
+          "overflowX": ["initial", "initial", "initial", "hidden"],
+          "display": ["block", "block", "block", "table"],
+          "width": "100%",
+          "marginBottom": [20, 40],
+          "fontFamily": "\"Source Code Pro\", monospace",
+          "fontSize": 14
+        }
+      }
+    },
     "menu": [],
     "ordering": "descending",
     "version": "1.0.0",
     "repository": "https://github.com/csantiago132/chat-app",
     "native": false,
-    "codeSandbox": true
+    "codeSandbox": true,
+    "typescript": true
   },
   "entries": {
     "src/components/CreateChatRoom/index.mdx": {
-      "name": "Alert",
+      "name": "CreateChatRoom",
       "menu": "Components",
       "id": "cf512f8f4635825b6cdb415e2def9f23",
       "filepath": "src/components/CreateChatRoom/index.mdx",
@@ -23,8 +42,8 @@
       "headings": [
         {
           "depth": 1,
-          "slug": "alert",
-          "value": "Alert"
+          "slug": "createchatroom",
+          "value": "CreateChatRoom"
         },
         {
           "depth": 2,

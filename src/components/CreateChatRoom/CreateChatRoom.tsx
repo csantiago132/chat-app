@@ -8,10 +8,14 @@
 import * as React from "react";
 
 interface ICreateChatRoomProps {
+  /** Enables or disables the input field */
   disabled: boolean;
+  /** Sets state for the name of the chatroom name  */
   handleChange: (...args: any[]) => void;
+  /** Event handler that sends information to firebase  */
   handleSubmit: (...args: any[]) => void;
-  value?: string;
+  /** The name of the chatroom provided by the state  */
+  value: string;
 }
 
 /* Input filed that pushes the name of a newly create chat room to firebase */

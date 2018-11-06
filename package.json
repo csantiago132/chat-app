@@ -16,7 +16,7 @@
     "docz:build": "docz build",
     "prettier:tsx": "prettier --config .prettierrc --write *.{tsx, ts}",
     "prettier:json": "prettier --config  .prettierrc  --write *.json",
-    "prettier:md": "prettier --config .prettierrc --print-width 80 --write **/*.md",
+    "prettier:md": "prettier --config .prettierrc --print-width 80 --write **/*.{md, mdx}",
     "tslint": "./node_modules/.bin/tslint -c ./tslint.js --project ./tsconfig.json"
   },
   "husky": {
@@ -67,6 +67,7 @@
     "@types/react-helmet": "^5.0.7",
     "@types/react-loadable": "^5.4.1",
     "@types/react-router-dom": "^4.3.1",
+    "@types/styled-components": "^4.0.3",
     "docz": "^0.12.9",
     "docz-core": "^0.12.9",
     "enzyme": "^3.7.0",

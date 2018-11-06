@@ -27,7 +27,7 @@
   "lint-staged": {
     "*.{tsx, ts}": ["yarn run prettier:tsx", "yarn run tslint", "git add"],
     "*.json": ["yarn run prettier:json", "git add"],
-    "*.md": ["yarn run prettier:md", "git add"]
+    "*.{md, mdx}": ["yarn run prettier:md", "git add"]
   },
   "eslintConfig": {
     "extends": "react-app"

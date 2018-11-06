@@ -264,7 +264,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
     const isEnabled = createNewRoomTitle.length > 0;
     return (
       <CreateChatRoom
-        disabled={!isEnabled}
+        isDisabled={!isEnabled}
         // TODO: rethink on how to incorporate without Lambda
         // Lambdas are forbidden in JSX attributes due to their rendering performance impact
         handleChange={(event: React.FormEvent<HTMLSelectElement>) =>

@@ -1,18 +1,38 @@
-import { grid } from './src/grid';
-import { type } from './src/typography';
-import { spacing } from './src/spacing';
-import { color } from './src/color';
-import { breakpoint } from './src/breakpoint';
-import { box_shadow } from './src/box_shadow';
+/**
+ * Define a theme interface
+ * 
+ * By default every styled component will have the theme prop set to any. 
+ * When building complex apps it would be better to have autocomplete 
+ * and error checks everywhere.
+ * 
+ */
 
-const theme = {
-  maxWidth: '100%',
-  boxshadow: box_shadow,
-  spacing: spacing,
-  grid,
-  color,
-  breakpoint,
-  typography: type,
-};
+import * as styledComponents from "styled-components";
+import baseStyled, { ThemedStyledInterface } from 'styled-components';
 
-export default theme;
+/**
+ * To have autocomplete and checks around the theme prop,
+ * define the theme interface for the app:
+ */
+import ThemeInterface from "./ThemeInterface";
+
+import { theme } from './appTheme'
+
+/**
+ * instead of importing the styled functions from the 
+ * styled-components module, we import it from our above, custom module.
+ */
+const {
+  css,
+  createGlobalStyle,
+  keyframes,
+  ThemeProvider
+} = styledComponents as styledComponents.ThemedStyledComponentsModule<ThemeInterface>;
+
+export type Theme = typeof theme;
+export { css, createGlobalStyle, ThemeProvider, theme, keyframes };
+
+/**
+ * re-export the styled function with our custom theme interface:
+ */
+export const styled = baseStyled as ThemedStyledInterface<Theme>;

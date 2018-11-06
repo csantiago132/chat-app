@@ -8,7 +8,7 @@ import * as React from "react";
 import * as reactDom from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import theme from "./setup/theme";
+import { theme } from "./setup/theme";
 import * as serviceWorker from "./serviceWorker";
 import "sanitize.css/sanitize.css";
 

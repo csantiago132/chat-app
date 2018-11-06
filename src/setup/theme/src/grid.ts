@@ -4,7 +4,23 @@
  * Settings for the react-styled-flexboxgrid package
  * 
  */
-
+export default interface IGrid {
+  gridSize: number;
+  gutterWidth: number;
+  outerMargin: number;
+  mediaQuery: string;
+  container: {
+    sm: number
+    md: number
+    lg: number
+  },
+  breakpoints: {
+    xs: number
+    sm: number
+    md: number
+    lg: number
+  },
+}
 export const grid = {
   gridSize: 12, // columns
   gutterWidth: 1, // rem

@@ -5,51 +5,63 @@
 
 import { rem } from 'polished';
 
+export default interface ISpacing {
+  base: MethodDecorator
+  xs: MethodDecorator
+  s: MethodDecorator
+  root: MethodDecorator
+  reg: MethodDecorator
+  m: MethodDecorator
+  l: MethodDecorator
+  xl: MethodDecorator
+  xxl: MethodDecorator
+}
+
 const spacingDefault = 4;
 
 export const spacing = {
   base: (): string => {
-    const value = spacingDefault;
+    const value: number = spacingDefault;
     return rem(`${value}px`)
   },
   
   xs: (): string => {
-    const value = spacingDefault * 2;
+    const value: number = spacingDefault * 2;
     return rem(`${value}px`)
   },
 
   s: (): string => {
-    const value = spacingDefault * 4;
+    const value: number = spacingDefault * 4;
     return rem(`${value}px`)
   },
 
   root: (): string => {
-    const value = spacingDefault * 6;
+    const value: number = spacingDefault * 6;
     return rem(`${value}px`)
   },
 
   reg: (): string => {
-    const value = spacingDefault * 8;
+    const value: number = spacingDefault * 8;
     return rem(`${value}px`)
   },
 
   m: (): string => {
-    const value = spacingDefault * 9;
+    const value: number = spacingDefault * 9;
     return rem(`${value}px`)
   },
 
   l: (): string => {
-    const value = spacingDefault * 10;
+    const value: number = spacingDefault * 10;
     return rem(`${value}px`)
   },
 
   xl: (): string => {
-    const value = spacingDefault * 20;
+    const value: number = spacingDefault * 20;
     return rem(`${value}px`)
   },
 
   xxl: (): string => {
-    const value = spacingDefault * 40;
+    const value: number = spacingDefault * 40;
     return rem(`${value}px`)
   },
 };

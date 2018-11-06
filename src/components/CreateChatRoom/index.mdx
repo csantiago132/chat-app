@@ -1,22 +1,22 @@
 ---
 name: CreateChatRoom
-menu: Components
+  menu: Components
 ---
 
 import { PropsTable, Playground } from 'docz';
 import CreateChatRoom from './CreateChatRoom.tsx'
 
-# CreateChatRoom
+  # CreateChatRoom
 
 <Playground showEditor={true}>
   <CreateChatRoom
-       disabled={false}
+    disabled={false}
     handleChange={(event) => event.target.value}
     handleSubmit={(event) => event.target.value}
     value={'Chat Room Name'}
   />
 </Playground>
 
-## Properties
+  ## Properties
 
 <PropsTable of={CreateChatRoom} />

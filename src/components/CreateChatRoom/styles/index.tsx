@@ -1,17 +1,20 @@
 /**
  * CreateChatroom styled
  *
- * Styles for
+ * Main file for all styles used on this component
  *
  */
 
 import { styled } from "../../../setup/theme";
 import InputField from "./blocks/InputField";
+import Button from "./blocks/Button";
 import Label from "./elements/Label";
 
 // main component holder
 const Form = styled.form`
-  background: ${(props) => props.theme.color.color_gray};
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.theme.color.color_offwhite};
   border-radius: 2px;
   margin: 5px 5px 10px;
   padding: 5px;
@@ -21,6 +24,7 @@ const Form = styled.form`
 
 // combine styled-component to a single default export
 export const Styled = {
+  Button,
   Form,
   InputField,
   Label

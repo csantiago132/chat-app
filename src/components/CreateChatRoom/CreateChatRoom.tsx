@@ -14,7 +14,7 @@ interface ICreateChatRoomProps {
    */
   isDisabled: boolean;
   /**
-   * Sets state for the name of the chatroom name
+   * Sets state for the name of the chatroom name*
    */
   handleChange: (...args: any[]) => void;
   /**
@@ -32,7 +32,9 @@ const CreateChatRoom: React.SFC<ICreateChatRoomProps> = (props) => {
   const { value, handleChange, handleSubmit, isDisabled } = props;
   return (
     <Styled.Form className="create-chat-room" onSubmit={handleSubmit}>
-      <Styled.Label htmlFor="chatRoom">Create Chat Room</Styled.Label>
+      <Styled.Label htmlFor="chatRoom">
+        Enter the name for the new chat room
+      </Styled.Label>
       <Styled.InputField
         type="text"
         name="chatRoom"
@@ -40,15 +42,15 @@ const CreateChatRoom: React.SFC<ICreateChatRoomProps> = (props) => {
         placeholder="Create a new chat"
         onChange={handleChange}
       />
-      <button
-        className="create-chat-room__submit-button"
-        type="submit"
-        disabled={isDisabled}
-      >
+      <Styled.Button type="submit" disabled={isDisabled}>
         Create
-      </button>
+      </Styled.Button>
     </Styled.Form>
   );
+};
+
+CreateChatRoom.defaultProps = {
+  isDisabled: true
 };
 
 export default CreateChatRoom;

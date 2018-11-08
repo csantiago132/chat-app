@@ -5,7 +5,7 @@
  * 
  */
 
- export default interface IColor {
+ export interface IColor {
   color_white: string;
   color_offwhite: string;
   color_offsetgray: string;
@@ -26,7 +26,7 @@
   color_shadowColor: string;
  }
 
-export const color = {
+const color = {
   color_white: '#ffffff',
   color_offwhite: '#f9f9f9',
   color_offsetgray: '#efefef',
@@ -46,3 +46,5 @@ export const color = {
   color_error: '#ef1617',
   color_shadowColor: '#c5c0c0'
 };
+
+export default color;

@@ -2,6 +2,7 @@
  * CreateChatroom styled
  *
  * Main file for all styles used on this component
+ * Also holds main-outer container styles
  *
  */
 

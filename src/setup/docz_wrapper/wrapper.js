@@ -7,11 +7,12 @@
  */
 
 import React from "react";
-import { ThemeProvider } from 'styled-components'
-import {theme} from '../theme/appTheme.ts'
+import { ThemeProvider } from 'styled-components';
+import theme  from '../theme/theme.ts';
+import base_styles  from '../theme/styles/base_styles.ts';
 
 const Wrapper = ({ children }) => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={{...theme, ...base_styles}}>
     {children}
   </ThemeProvider>
 )

@@ -20,6 +20,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .docz/cache/*.json
+/.docz
+.docz/
 # Application specific files
 venv
 node_modules/

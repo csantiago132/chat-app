@@ -6,12 +6,12 @@
  * 
  */
 
-import IBox_Shadow from './src/box_shadow';
-import IBreakpoint from './src/breakpoint';
-import IColor from './src/color';
-import IGrid from './src/grid';
-import ISpacing from './src/spacing';
-import ITheme from './appTheme';
+import { IBox_Shadow } from './src/box_shadow';
+import { IBreakpoint } from './src/breakpoint';
+import { IColor } from './src/color';
+import { IGrid } from './src/grid';
+import { ISpacing } from './src/spacing';
+import { ITheme } from './theme';
 
 export default interface ThemeInterface extends 
 IBox_Shadow,

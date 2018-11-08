@@ -4,7 +4,7 @@
  * Settings for the react-styled-flexboxgrid package
  * 
  */
-export default interface IGrid {
+export interface IGrid {
   gridSize: number;
   gutterWidth: number;
   outerMargin: number;
@@ -21,7 +21,8 @@ export default interface IGrid {
     lg: number
   },
 }
-export const grid = {
+
+const grid = {
   gridSize: 12, // columns
   gutterWidth: 1, // rem
   outerMargin: 0.6, // rem
@@ -33,8 +34,10 @@ export const grid = {
   },
   breakpoints: {
     xs: 0, // em
-    sm: 48, // em
-    md: 64, // em
-    lg: 75, // em
+    sm: 48, // em - 768px
+    md: 64, // em - 1024px
+    lg: 75, // em - 1200px
   },
 };
+
+export default grid;

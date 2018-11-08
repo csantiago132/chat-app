@@ -5,7 +5,7 @@ import Theme from 'docz-theme-default'
 import { imports } from './imports'
 import db from './db.json'
 
-import Wrapper from '../../src/setup/docz_wrapper/wrapper';
+import Wrapper from '../../src/setup/docz_wrapper/wrapper'
 
 const Root = () => (
   <Theme

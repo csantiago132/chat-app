@@ -4,7 +4,7 @@
  * Settings for the breakpoints of the app
  * 
  */
-export default interface IBreakpoint {
+export interface IBreakpoint {
   breakpoint_xxxs: string;
   breakpoint_xxs: string;
   breakpoint_xs: string;
@@ -17,7 +17,7 @@ export default interface IBreakpoint {
   breakpoint_monitors: string;
 }
 
-export const breakpoint = {
+const breakpoint = {
   breakpoint_xxxs: '320px',
   breakpoint_xxs: '375px',
   breakpoint_xs: '480px',
@@ -29,3 +29,5 @@ export const breakpoint = {
   breakpoint_xxl: '1440px',
   breakpoint_monitors: '1600px',
 };
+
+export default breakpoint;

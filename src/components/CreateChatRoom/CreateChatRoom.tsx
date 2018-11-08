@@ -16,11 +16,11 @@ interface ICreateChatRoomProps {
   /**
    * Sets state for the name of the chatroom name*
    */
-  handleChange: (...args: any[]) => void;
+  handleChange: (args: React.FormEvent<HTMLInputElement>) => void;
   /**
    * Event handler that sends information to firebase
    */
-  handleSubmit: (...args: any[]) => void;
+  handleSubmit: (args: React.FormEvent<HTMLElement>) => void;
   /**
    * The name of the chatroom provided by the state
    */
@@ -42,7 +42,7 @@ const CreateChatRoom: React.SFC<ICreateChatRoomProps> = (props) => {
         placeholder="Create a new chat"
         onChange={handleChange}
       />
-      <Styled.Button type="submit" disabled={isDisabled}>
+      <Styled.Button type="submit" state={isDisabled}>
         Create
       </Styled.Button>
     </Styled.Form>

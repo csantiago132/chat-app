@@ -6,16 +6,16 @@
  * 
  */
 
-export default interface IBox_Shadow{
+export interface IBox_Shadow{
   base: MethodDecorator
   interactive: MethodDecorator 
 }
 
 import { rgba } from 'polished';
-import { spacing }  from './spacing';
-import { color } from './color';
+import spacing   from './spacing';
+import color  from './color';
 
-export const box_shadow = {
+const box_shadow = {
   base: (): string => {
     const h_offset = 0;
     const v_offset = spacing.base;
@@ -37,3 +37,4 @@ export const box_shadow = {
   }
 }
 
+export default box_shadow;

@@ -267,12 +267,8 @@ class Rooms extends React.Component<IAppProps, IAppState> {
         isDisabled={!isEnabled}
         // TODO: rethink on how to incorporate without Lambda
         // Lambdas are forbidden in JSX attributes due to their rendering performance impact
-        handleChange={(event: React.FormEvent<HTMLSelectElement>) =>
-          this.handleChatRoomName(event)
-        }
-        handleSubmit={(event: React.FormEvent<HTMLSelectElement>) =>
-          this.sendChatRoomDataToFirebase(event)
-        }
+        handleChange={(event) => this.handleChatRoomName(event)}
+        handleSubmit={(event) => this.sendChatRoomDataToFirebase(event)}
         value={createNewRoomTitle}
       />
     );

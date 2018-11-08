@@ -1,7 +1,8 @@
 module.exports = {
   title: 'Slack Chat',
-  wrapper: './src/setup/docz_wrapper/wrapper',
+  wrapper: '../../src/setup/docz_wrapper/wrapper',
   typescript: true,
+  codeSandbox: false,
   themeConfig: {
     mode: 'dark',
     radii: '4px',

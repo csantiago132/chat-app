@@ -14,9 +14,9 @@ import baseStyled, { ThemedStyledInterface } from 'styled-components';
  * To have autocomplete and checks around the theme prop,
  * define the theme interface for the app:
  */
-import ThemeInterface from "./ThemeInterface";
+import ThemeInterface from "./theme_Interface";
 
-import { theme } from './appTheme'
+import theme from './theme'
 
 /**
  * instead of importing the styled functions from the 

@@ -5,7 +5,7 @@
 
 import { rem } from 'polished';
 
-export default interface ISpacing {
+export interface ISpacing {
   base: MethodDecorator
   xs: MethodDecorator
   s: MethodDecorator
@@ -19,7 +19,7 @@ export default interface ISpacing {
 
 const spacingDefault = 4;
 
-export const spacing = {
+const spacing = {
   base: (): string => {
     const value: number = spacingDefault;
     return rem(`${value}px`)
@@ -65,3 +65,5 @@ export const spacing = {
     return rem(`${value}px`)
   },
 };
+
+export default spacing;

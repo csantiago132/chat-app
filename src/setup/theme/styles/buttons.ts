@@ -12,19 +12,20 @@ import { css } from '../index'
 import theme from '../theme';
 
 export interface IButtons {
-  default: any;
-  disabled: MethodDecorator;
+  primary_default: any;
+  primary_disabled: MethodDecorator;
+  secondary_default: MethodDecorator;
+  secondary_disabled: MethodDecorator;
 }
 
 const buttons = {
-  default: (): any => {
-    console.log(theme.spacing.base)
+  primary_default: (): any => {
     return (css`
       background: ${theme.color.color_interactive};
-      border-radius: ${theme.spacing.base};
-      transition: all 0.2s ease-in-out;
-      cursor: pointer;
       border: none;
+      border-radius: ${theme.spacing.base};
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
       outline: none;
       
       &:hover {
@@ -37,15 +38,51 @@ const buttons = {
     `)
   },
 
-  disabled: (): any => {
+  primary_disabled: (): any => {
     return (css`
       background: ${theme.color.color_darkgray};
+      border: none;
       border-radius: ${theme.spacing.base};
       cursor: not-allowed;
-      border: none;
       outline: none;
     `)
-  }
+  },
+
+  secondary_default: (): any => {
+    return (css`
+      background: ${theme.color.color_white};
+      border: none;
+      border: 1px solid ${theme.color.color_interactive};
+      border-radius: ${theme.spacing.base};
+      color: ${theme.color.color_interactive};
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      outline: none;
+      
+      &:hover {
+        background: ${theme.color.color_background_color};
+        border: 1px solid ${theme.color.color_hover};
+        color: ${theme.color.color_hover};
+      }
+
+      &:active {
+        background: ${theme.color.color_active};
+      }
+    `)
+  },
+  
+  secondary_disabled: (): any => {
+    return (css`
+      background: ${theme.color.color_white};
+      border: none;
+      border: 1px solid ${theme.color.color_interactive};
+      border-radius: ${theme.spacing.base};
+      color: ${theme.color.color_interactive};
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      outline: none;
+    `)
+  },
 };
 
 export default buttons;

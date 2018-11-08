@@ -18,12 +18,11 @@ const Button =
   `
   ${(props) =>
     props.buttonState
-      ? base_styles.buttons.disabled
-      : base_styles.buttons.default};
+      ? base_styles.buttons.primary_disabled
+      : base_styles.buttons.secondary_default};
   ${base_styles.typography.type_m};
   margin-top: ${(props) => props.theme.spacing.s};
   padding: ${(props) => props.theme.spacing.xs};
-  color: ${(props) => props.theme.color.color_offwhite};
   
 `;
 

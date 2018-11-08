@@ -12,7 +12,7 @@ module.exports = {
         padding: ['20px', '0 40px 40px'],
       }, 
     table: { 
-        overflowY: 'hidden',
+        overflowY: "hidden",
         overflowX: ['initial', 'initial', 'initial', 'hidden'],
         display: ['block', 'block', 'block', 'table'],
         width: '100%',

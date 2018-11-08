@@ -7,10 +7,10 @@
  */
 
 import { IButtons } from './buttons';
-import { ITypography } from './typography';
+import { ITypography } from './type';
 
 
-export default interface ThemeInterface extends 
+export default interface BaseStylesInterface extends 
 IButtons,
 ITypography
 {}

@@ -1,3 +1,4 @@
+import { em } from 'polished';
 import { css } from '../index';
 import theme from '../theme';
 
@@ -24,16 +25,21 @@ const typography = {
     
     return (css`
       font-size: ${sizes.mobile};
+      font-size: ${em(`${sizes.mobile}`)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
+        font-size: ${em(`${sizes.tablet}`)};
+    
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
+        font-size: ${em(`${sizes.tablet_landscape}`)};
       }
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.desktop};
+        font-size: ${em(`${sizes.desktop}`)};
       }
     `)
   },
@@ -48,16 +54,20 @@ const typography = {
     
     return (css`
       font-size: ${sizes.mobile};
+      font-size: ${em(`${sizes.mobile}`)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
+        font-size: ${em(`${sizes.tablet}`)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
+        font-size: ${em(`${sizes.tablet_landscape}`)};
       }
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.desktop};
+        font-size: ${em(`${sizes.desktop}`)};
       }
     `)
   },
@@ -72,16 +82,20 @@ const typography = {
 
     return (css`
       font-size: ${sizes.mobile};
+      font-size: ${em(`${sizes.mobile}`)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
+        font-size: ${em(`${sizes.tablet}`)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
+        font-size: ${em(`${sizes.tablet_landscape}`)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
+        font-size: ${em(`${sizes.desktop}`)};
       }
     `)
   },
@@ -96,16 +110,20 @@ const typography = {
 
     return (css`
       font-size: ${sizes.mobile};
+      font-size: ${em(`${sizes.mobile}`)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
+        font-size: ${em(`${sizes.tablet}`)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
+        font-size: ${em(`${sizes.tablet_landscape}`)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
+        font-size: ${em(`${sizes.desktop}`)};
       }
     `)
   },
@@ -120,16 +138,20 @@ const typography = {
 
     return (css`
       font-size: ${sizes.mobile};
+      font-size: ${em(`${sizes.mobile}`)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
+        font-size: ${em(`${sizes.tablet}`)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
+        font-size: ${em(`${sizes.tablet_landscape}`)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
+        font-size: ${em(`${sizes.desktop}`)};
       }
     `)
   },
@@ -144,16 +166,20 @@ const typography = {
 
     return (css`
       font-size: ${sizes.mobile};
+      font-size: ${em(`${sizes.mobile}`)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
+        font-size: ${em(`${sizes.tablet}`)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
+        font-size: ${em(`${sizes.tablet_landscape}`)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
+        font-size: ${em(`${sizes.desktop}`)};
       }
     `)
   },
@@ -168,16 +194,20 @@ const typography = {
 
     return (css`
       font-size: ${sizes.mobile};
+      font-size: ${em(`${sizes.mobile}`)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
+        font-size: ${em(`${sizes.tablet}`)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
+        font-size: ${em(`${sizes.tablet_landscape}`)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
+        font-size: ${em(`${sizes.desktop}`)};
       }
     `)
   },
@@ -192,16 +222,20 @@ const typography = {
 
     return (css`
       font-size: ${sizes.mobile};
+      font-size: ${em(`${sizes.mobile}`)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
+        font-size: ${em(`${sizes.tablet}`)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
+        font-size: ${em(`${sizes.tablet_landscape}`)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
+        font-size: ${em(`${sizes.desktop}`)};
       }
     `)
   },
@@ -216,16 +250,20 @@ const typography = {
     
     return (css`
       font-size: ${sizes.mobile};
+      font-size: ${em(`${sizes.mobile}`)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
+        font-size: ${em(`${sizes.tablet}`)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
+        font-size: ${em(`${sizes.tablet_landscape}`)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
+        font-size: ${em(`${sizes.desktop}`)};
       }
     `)
   },

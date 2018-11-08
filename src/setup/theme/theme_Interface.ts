@@ -12,6 +12,7 @@ import { IColor } from './src/color';
 import { IGrid } from './src/grid';
 import { ISpacing } from './src/spacing';
 import { ITheme } from './theme';
+import BaseStylesInterface from './styles/interface';
 
 export default interface ThemeInterface extends 
 IBox_Shadow,
@@ -19,5 +20,6 @@ IBreakpoint,
 IColor,
 IGrid,
 ISpacing,
-ITheme
+ITheme,
+BaseStylesInterface
 {}

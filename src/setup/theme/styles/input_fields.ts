@@ -17,7 +17,7 @@ export interface IInputFields {
 }
 
 const input_fields ={
-  default: () => {
+  default: (): any => {
     return(css`
       appearance: none;
       border-left: ${theme.color.color_white};
@@ -39,8 +39,7 @@ const input_fields ={
     
       &:focus {
         border-width: 0 0 0 1px;
-        border-left: 1px solid
-          ${theme.color.color_interactive};
+        border-left: 1px solid ${theme.color.color_interactive};
         color: ${theme.color.color_active};
       }
     

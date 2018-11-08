@@ -42,7 +42,7 @@ const CreateChatRoom: React.SFC<ICreateChatRoomProps> = (props) => {
         placeholder="Create a new chat"
         onChange={handleChange}
       />
-      <Styled.Button type="submit" state={isDisabled}>
+      <Styled.Button type="submit" buttonState={isDisabled}>
         Create
       </Styled.Button>
     </Styled.Form>

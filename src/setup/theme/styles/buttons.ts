@@ -8,18 +8,21 @@
  * interface is being used to provide auto-complete
  * 
  */
-import { css } from '../index';
+import { css } from '../index'
 import theme from '../theme';
 
 export interface IButtons {
-  default: MethodDecorator;
+  default: any;
   disabled: MethodDecorator;
 }
 
 const buttons = {
-  default: () => {
+  default: (): any => {
+    console.log(theme.spacing.base)
     return (css`
       background: ${theme.color.color_interactive};
+      border-radius: ${theme.spacing.base};
+      transition: all 0.2s ease-in-out;
       cursor: pointer;
       border: none;
       outline: none;
@@ -34,9 +37,10 @@ const buttons = {
     `)
   },
 
-  disabled: () => {
+  disabled: (): any => {
     return (css`
       background: ${theme.color.color_darkgray};
+      border-radius: ${theme.spacing.base};
       cursor: not-allowed;
       border: none;
       outline: none;

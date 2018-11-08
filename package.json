@@ -14,6 +14,7 @@
     "eject": "react-scripts eject",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
+    "prettier:js": "prettier --config .prettierrc --write *.{js, jsx}",
     "prettier:tsx": "prettier --config .prettierrc --write *.{tsx, ts}",
     "prettier:json": "prettier --config  .prettierrc  --write *.json",
     "prettier:md": "prettier --config .prettierrc --print-width 80 --write **/*.{md, mdx}",
@@ -27,7 +28,8 @@
   "lint-staged": {
     "*.{tsx, ts}": ["yarn run prettier:tsx", "yarn run tslint", "git add"],
     "*.json": ["yarn run prettier:json", "git add"],
-    "*.{md, mdx}": ["yarn run prettier:md", "git add"]
+    "*.{md, mdx}": ["yarn run prettier:md", "git add"],
+    "*.{jsx, js}": ["yarn run prettier:js", "git add"]
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -17,6 +17,13 @@
             }
         },
         {
+            "files": "*.js",
+            "options": {
+                "semi": true,
+                "singleQuote": false,
+            }
+        },
+        {
             "files": "src/**/*.test.tsx",
             "options": {
                 "semi": true

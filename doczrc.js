@@ -11,7 +11,7 @@ module.exports = {
         width: [1200, '100%'],
         padding: ['20px', '0 40px 40px'],
       }, 
-    table: {
+    table: { 
         overflowY: 'hidden',
         overflowX: ['initial', 'initial', 'initial', 'hidden'],
         display: ['block', 'block', 'block', 'table'],

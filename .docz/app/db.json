@@ -26,9 +26,7 @@
     "version": "1.0.0",
     "repository": "https://github.com/csantiago132/chat-app",
     "native": false,
-    "codeSandbox": false,
-    "wrapper": "../../src/setup/docz_wrapper/wrapper",
-    "typescript": true
+    "codeSandbox": false
   },
   "entries": {
     "src/components/CreateChatRoom/index.mdx": {

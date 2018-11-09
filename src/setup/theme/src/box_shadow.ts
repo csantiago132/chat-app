@@ -7,8 +7,8 @@
  */
 
 import { Interpolation } from 'styled-components';
-import { css } from '../index';
 import { rgba } from 'polished';
+import { css } from '../index';
 import spacing   from './spacing';
 import color  from './color';
 

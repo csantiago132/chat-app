@@ -73,13 +73,12 @@ const buttons = {
   
   secondary_disabled: (): any => {
     return (css`
-      background: ${theme.color.color_white};
+      background: ${theme.color.color_lightgray};
       border: none;
-      border: 1px solid ${theme.color.color_interactive};
+      border: 1px solid ${theme.color.color_darkgray};
       border-radius: ${theme.spacing.base};
-      color: ${theme.color.color_interactive};
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
+      color: ${theme.color.color_darkgray};
+      cursor: not-allowed;
       outline: none;
     `)
   },

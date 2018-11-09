@@ -18,7 +18,7 @@ const Button =
   `
   ${(props) =>
     props.buttonState
-      ? base_styles.buttons.primary_disabled
+      ? base_styles.buttons.secondary_disabled
       : base_styles.buttons.secondary_default};
   ${base_styles.typography.type_m};
   margin-top: ${(props) => props.theme.spacing.s};

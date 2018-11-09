@@ -14,7 +14,7 @@ import { css } from '../index';
 import theme from '../theme';
 
 export interface IButtons {
-  primary_default: any;
+  primary_default: MethodDecorator;
   primary_disabled: MethodDecorator;
   secondary_default: MethodDecorator;
   secondary_disabled: MethodDecorator;

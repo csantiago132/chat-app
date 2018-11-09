@@ -3,7 +3,7 @@
   "dependencies": [
     {
       "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/.docz/app/imports.js",
-      "mtime": 1541453117962
+      "mtime": 1541785013678
     },
     {
       "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/cache-loader/dist/cjs.js",
@@ -16,16 +16,16 @@
   ],
   "contextDependencies": [],
   "result": [
-    "(function () {\n  var enterModule = require('react-hot-loader').enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nexport var imports = {\n  'src/components/CreateChatRoom/index.mdx': function srcComponentsCreateChatRoomIndexMdx() {\n    return import(\n    /* webpackPrefetch: true, webpackChunkName: \"src-components-create-chat-room-index\" */\n    'src/components/CreateChatRoom/index.mdx');\n  }\n};\n;\n\n(function () {\n  var reactHotLoader = require('react-hot-loader').default;\n\n  var leaveModule = require('react-hot-loader').leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(imports, \"imports\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/.docz/app/imports.js\");\n  leaveModule(module);\n})();\n\n;",
+    "(function () {\n  var enterModule = require('react-hot-loader').enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nexport var imports = {\n  'src/components/CreateChatRoom/docz.mdx': function srcComponentsCreateChatRoomDoczMdx() {\n    return import(\n    /* webpackPrefetch: true, webpackChunkName: \"src-components-create-chat-room-docz\" */\n    'src/components/CreateChatRoom/docz.mdx');\n  }\n};\n;\n\n(function () {\n  var reactHotLoader = require('react-hot-loader').default;\n\n  var leaveModule = require('react-hot-loader').leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(imports, \"imports\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/.docz/app/imports.js\");\n  leaveModule(module);\n})();\n\n;",
     {
       "version": 3,
       "sources": [
         "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/.docz/app/imports.js"
       ],
       "names": ["imports"],
-      "mappings": ";;;;;;AAAA,OAAO,IAAMA,OAAO,GAAG;AACrB,6CAA2C;AAAA,WACzC;AAAO;AAAuF,6CAA9F,CADyC;AAAA;AADtB,CAAhB;;;;;;;;;;;;0BAAMA,O",
+      "mappings": ";;;;;;AAAA,OAAO,IAAMA,OAAO,GAAG;AACrB,4CAA0C;AAAA,WACxC;AAAO;AAAsF,4CAA7F,CADwC;AAAA;AADrB,CAAhB;;;;;;;;;;;;0BAAMA,O",
       "sourcesContent": [
-        "export const imports = {\n  'src/components/CreateChatRoom/index.mdx': () =>\n    import(/* webpackPrefetch: true, webpackChunkName: \"src-components-create-chat-room-index\" */ 'src/components/CreateChatRoom/index.mdx'),\n}\n"
+        "export const imports = {\n  'src/components/CreateChatRoom/docz.mdx': () =>\n    import(/* webpackPrefetch: true, webpackChunkName: \"src-components-create-chat-room-docz\" */ 'src/components/CreateChatRoom/docz.mdx'),\n}\n"
       ]
     }
   ]

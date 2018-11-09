@@ -24,9 +24,11 @@ const Form = styled.form`
 `;
 
 // combine styled-component to a single default export
-export const Styled = {
+const Styled = {
   Button,
   Form,
   InputField,
   Label
 };
+
+export default Styled;

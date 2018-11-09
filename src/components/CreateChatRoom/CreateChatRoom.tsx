@@ -6,7 +6,7 @@
  */
 
 import * as React from "react";
-import { Styled } from "./styles";
+import Styled from "./styles/Styled";
 
 interface ICreateChatRoomProps {
   /**

@@ -17,7 +17,7 @@ module.exports = {
         display: ["block", "block", "block", "table"],
         width: "100%",
         marginBottom: [20, 40],
-        fontFamily: ""Source Code Pro", monospace",
+        fontFamily: "Source Code Pro, monospace",
         fontSize: 14,
       },
     }

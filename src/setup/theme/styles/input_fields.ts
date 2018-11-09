@@ -9,6 +9,7 @@
  * 
  */
 
+import { Interpolation } from 'styled-components';
 import { css } from '../index';
 import theme from '../theme';
 
@@ -17,7 +18,7 @@ export interface IInputFields {
 }
 
 const input_fields ={
-  default: (): any => {
+  default: (): Interpolation<any> => {
     return(css`
       appearance: none;
       border-left: ${theme.color.color_white};

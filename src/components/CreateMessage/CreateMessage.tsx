@@ -6,11 +6,11 @@
  */
 
 import * as React from "react";
-import "./CreateMessage.scss";
+import { Styled } from "./styles";
 
 interface ICreateMessage {
-  handleChange?: (...args: any[]) => any;
-  handleSubmit?: (...args: any[]) => any;
+  handleChange?: (args: React.FormEvent<HTMLInputElement>) => void;
+  handleSubmit?: (args: React.FormEvent<HTMLElement>) => void;
   placeholder?: string;
   value?: string;
 }
@@ -18,18 +18,17 @@ interface ICreateMessage {
 const CreateMessage: React.SFC<ICreateMessage> = (props) => {
   const { value, handleChange, handleSubmit, placeholder } = props;
   return (
-    <span className="create-message__container">
-      <form className="create-message__form" onSubmit={handleSubmit}>
-        <input
-          className="create-message__input-field"
+    <Styled.Span>
+      <Styled.Form onSubmit={handleSubmit}>
+        <Styled.InputField
           type="text"
           name="message"
           value={value}
           placeholder={placeholder}
           onChange={handleChange}
         />
-      </form>
-    </span>
+      </Styled.Form>
+    </Styled.Span>
   );
 };
 

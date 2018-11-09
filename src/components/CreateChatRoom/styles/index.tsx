@@ -30,5 +30,3 @@ export const Styled = {
   InputField,
   Label
 };
-
-export default Styled;

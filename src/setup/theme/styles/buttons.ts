@@ -8,7 +8,9 @@
  * interface is being used to provide auto-complete
  * 
  */
-import { css } from '../index'
+
+import { Interpolation } from 'styled-components';
+import { css } from '../index';
 import theme from '../theme';
 
 export interface IButtons {
@@ -19,7 +21,7 @@ export interface IButtons {
 }
 
 const buttons = {
-  primary_default: (): any => {
+  primary_default: (): Interpolation<any> => {
     return (css`
       background: ${theme.color.color_interactive};
       border: none;
@@ -38,7 +40,7 @@ const buttons = {
     `)
   },
 
-  primary_disabled: (): any => {
+  primary_disabled: (): Interpolation<any> => {
     return (css`
       background: ${theme.color.color_darkgray};
       border: none;
@@ -48,7 +50,7 @@ const buttons = {
     `)
   },
 
-  secondary_default: (): any => {
+  secondary_default: (): Interpolation<any> => {
     return (css`
       background: ${theme.color.color_white};
       border: none;
@@ -71,7 +73,7 @@ const buttons = {
     `)
   },
   
-  secondary_disabled: (): any => {
+  secondary_disabled: (): Interpolation<any> => {
     return (css`
       background: ${theme.color.color_lightgray};
       border: none;

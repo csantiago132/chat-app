@@ -1,3 +1,4 @@
+import { Interpolation } from 'styled-components';
 import { em } from 'polished';
 import { css } from '../index';
 import theme from '../theme';
@@ -15,7 +16,7 @@ export interface ITypography {
 }
 
 const typography = {
-  type_xxl: () => {
+  type_xxl: (): Interpolation<any> => {
     const sizes = {
       mobile: '40px',
       tablet: '45px',
@@ -25,26 +26,26 @@ const typography = {
     
     return (css`
       font-size: ${sizes.mobile};
-      font-size: ${em(`${sizes.mobile}`)};
+      font-size: ${em(sizes.mobile)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
-        font-size: ${em(`${sizes.tablet}`)};
+        font-size: ${em(sizes.tablet)};
     
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
-        font-size: ${em(`${sizes.tablet_landscape}`)};
+        font-size: ${em(sizes.tablet_landscape)};
       }
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.desktop};
-        font-size: ${em(`${sizes.desktop}`)};
+        font-size: ${em(sizes.desktop)};
       }
-    `)
+    `);
   },
 
-  type_xl: () => {
+  type_xl: (): Interpolation<any> => {
     const sizes ={
       mobile: '30px',
       tablet: '31.104px',
@@ -54,25 +55,25 @@ const typography = {
     
     return (css`
       font-size: ${sizes.mobile};
-      font-size: ${em(`${sizes.mobile}`)};
+      font-size: ${em(sizes.mobile)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
-        font-size: ${em(`${sizes.tablet}`)};
+        font-size: ${em(sizes.tablet)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
-        font-size: ${em(`${sizes.tablet_landscape}`)};
+        font-size: ${em(sizes.tablet_landscape)};
       }
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.desktop};
-        font-size: ${em(`${sizes.desktop}`)};
+        font-size: ${em(sizes.desktop)};
       }
     `)
   },
 
-  type_l: () => {
+  type_l: (): Interpolation<any> => {
     const sizes ={
       mobile: '25.92px',
       tablet: '30px',
@@ -82,25 +83,25 @@ const typography = {
 
     return (css`
       font-size: ${sizes.mobile};
-      font-size: ${em(`${sizes.mobile}`)};
+      font-size: ${em(sizes.mobile)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
-        font-size: ${em(`${sizes.tablet}`)};
+        font-size: ${em(sizes.tablet)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
-        font-size: ${em(`${sizes.tablet_landscape}`)};
+        font-size: ${em(sizes.tablet_landscape)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
-        font-size: ${em(`${sizes.desktop}`)};
+        font-size: ${em(sizes.desktop)};
       }
     `)
   },
 
-  type_m: () => {
+  type_m: (): Interpolation<any> => {
     const sizes ={
       mobile: '22.92px',
       tablet: '26px',
@@ -110,25 +111,25 @@ const typography = {
 
     return (css`
       font-size: ${sizes.mobile};
-      font-size: ${em(`${sizes.mobile}`)};
+      font-size: ${em(sizes.mobile)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
-        font-size: ${em(`${sizes.tablet}`)};
+        font-size: ${em(sizes.tablet)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
-        font-size: ${em(`${sizes.tablet_landscape}`)};
+        font-size: ${em(sizes.tablet_landscape)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
-        font-size: ${em(`${sizes.desktop}`)};
+        font-size: ${em(sizes.desktop)};
       }
     `)
   },
 
-  type_reg: () => {
+  type_reg: (): Interpolation<any> => {
     const sizes ={
       mobile: '20px',
       tablet: '20px',
@@ -138,25 +139,25 @@ const typography = {
 
     return (css`
       font-size: ${sizes.mobile};
-      font-size: ${em(`${sizes.mobile}`)};
+      font-size: ${em(sizes.mobile)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
-        font-size: ${em(`${sizes.tablet}`)};
+        font-size: ${em(sizes.tablet)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
-        font-size: ${em(`${sizes.tablet_landscape}`)};
+        font-size: ${em(sizes.tablet_landscape)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
-        font-size: ${em(`${sizes.desktop}`)};
+        font-size: ${em(sizes.desktop)};
       }
     `)
   },
 
-  type_base: () => {
+  type_base: (): Interpolation<any> => {
     const sizes ={
       mobile: '18px',
       tablet: '18px',
@@ -166,25 +167,25 @@ const typography = {
 
     return (css`
       font-size: ${sizes.mobile};
-      font-size: ${em(`${sizes.mobile}`)};
+      font-size: ${em(sizes.mobile)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
-        font-size: ${em(`${sizes.tablet}`)};
+        font-size: ${em(sizes.tablet)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
-        font-size: ${em(`${sizes.tablet_landscape}`)};
+        font-size: ${em(sizes.tablet_landscape)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
-        font-size: ${em(`${sizes.desktop}`)};
+        font-size: ${em(sizes.desktop)};
       }
     `)
   },
 
-  type_s: () => {
+  type_s: (): Interpolation<any> => {
     const sizes ={
       mobile: '16px',
       tablet: '16px',
@@ -194,25 +195,25 @@ const typography = {
 
     return (css`
       font-size: ${sizes.mobile};
-      font-size: ${em(`${sizes.mobile}`)};
+      font-size: ${em(sizes.mobile)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
-        font-size: ${em(`${sizes.tablet}`)};
+        font-size: ${em(sizes.tablet)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
-        font-size: ${em(`${sizes.tablet_landscape}`)};
+        font-size: ${em(sizes.tablet_landscape)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
-        font-size: ${em(`${sizes.desktop}`)};
+        font-size: ${em(sizes.desktop)};
       }
     `)
   },
 
-  type_xs: () => {
+  type_xs: (): Interpolation<any> => {
     const sizes ={
       mobile: '14px',
       tablet: '14px',
@@ -222,25 +223,25 @@ const typography = {
 
     return (css`
       font-size: ${sizes.mobile};
-      font-size: ${em(`${sizes.mobile}`)};
+      font-size: ${em(sizes.mobile)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
-        font-size: ${em(`${sizes.tablet}`)};
+        font-size: ${em(sizes.tablet)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
-        font-size: ${em(`${sizes.tablet_landscape}`)};
+        font-size: ${em(sizes.tablet_landscape)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
-        font-size: ${em(`${sizes.desktop}`)};
+        font-size: ${em(sizes.desktop)};
       }
     `)
   },
 
-  type_xxs: () => {
+  type_xxs: (): Interpolation<any> => {
     const sizes ={
       mobile: '12px',
       tablet: '12px',
@@ -250,20 +251,20 @@ const typography = {
     
     return (css`
       font-size: ${sizes.mobile};
-      font-size: ${em(`${sizes.mobile}`)};
+      font-size: ${em(sizes.mobile)};
       line-height: 1.2;
       
       @media (min-width: ${theme.grid.container.sm}em) {
         font-size: ${sizes.tablet};
-        font-size: ${em(`${sizes.tablet}`)};
+        font-size: ${em(sizes.tablet)};
       }
       @media (min-width: ${theme.grid.container.md}em) {
         font-size: ${sizes.tablet_landscape};
-        font-size: ${em(`${sizes.tablet_landscape}`)};
+        font-size: ${em(sizes.tablet_landscape)};
       }
       @media (min-width: ${theme.grid.container.lg}em) {
         font-size: ${sizes.desktop};
-        font-size: ${em(`${sizes.desktop}`)};
+        font-size: ${em(sizes.desktop)};
       }
     `)
   },

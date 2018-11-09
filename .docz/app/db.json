@@ -29,14 +29,14 @@
     "codeSandbox": false
   },
   "entries": {
-    "src/components/CreateChatRoom/index.mdx": {
+    "src/components/CreateChatRoom/docz.mdx": {
       "name": "CreateChatRoom",
       "menu": "Components",
-      "id": "cf512f8f4635825b6cdb415e2def9f23",
-      "filepath": "src/components/CreateChatRoom/index.mdx",
-      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/CreateChatRoom/index.mdx",
-      "slug": "src-components-create-chat-room-index",
-      "route": "/src-components-create-chat-room-index",
+      "id": "782b588b7a23a8d6a50403e351d0580a",
+      "filepath": "src/components/CreateChatRoom/docz.mdx",
+      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/CreateChatRoom/docz.mdx",
+      "slug": "src-components-create-chat-room-docz",
+      "route": "/src-components-create-chat-room-docz",
       "order": 0,
       "headings": [
         {

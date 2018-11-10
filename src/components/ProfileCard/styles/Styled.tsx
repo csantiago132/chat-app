@@ -1,4 +1,4 @@
-import { styled, theme } from "../../../setup/theme";
+import { styled } from "../../../setup/theme";
 import Img from "./blocks/Img";
 import Button from "./blocks/Button";
 import P from "./elements/P";

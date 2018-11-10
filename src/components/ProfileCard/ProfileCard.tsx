@@ -11,7 +11,7 @@ import "./ProfileCard.scss";
 interface IProfileCard {
   displayImage?: string;
   displayName?: string;
-  logout?: (...arg: any[]) => any;
+  logout?: (args: React.ButtonHTMLAttributes<any>) => void;
 }
 
 const ProfileCard: React.SFC<IProfileCard> = (props) => {

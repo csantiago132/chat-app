@@ -110,6 +110,28 @@ const buttons = {
       }
     `)
   },
+  
+  nav_link_default: (): Interpolation<any> => {
+    return (css`
+      align-items: center;
+      background: transparent;
+      border: none;
+      color: ${theme.color.color_interactive}
+      cursor: pointer;
+      display: flex;
+      padding-left: ${theme.spacing.s};
+      transition: all 0.2s ease-in-out;
+      outline: none;
+      
+      &:hover {
+        color: ${theme.color.color_hover};
+      }
+
+      &:active {
+        color: ${theme.color.color_interactive}
+      }
+    `)
+  },
 };
 
 export default buttons;

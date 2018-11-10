@@ -18,6 +18,7 @@ export interface IButtons {
   primary_disabled: MethodDecorator;
   secondary_default: MethodDecorator;
   secondary_disabled: MethodDecorator;
+  side_nav_default: MethodDecorator;
 }
 
 const buttons = {
@@ -82,6 +83,31 @@ const buttons = {
       color: ${theme.color.color_darkgray};
       cursor: not-allowed;
       outline: none;
+    `)
+  },
+
+  side_nav_default: (): Interpolation<any> => {
+    return (css`
+      background: transparent;
+      border: none;
+      border-left: 2px solid transparent;
+      color: ${theme.color.color_darkblue};
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: ${theme.spacing.s};
+      transition: all 0.2s ease-in-out;
+      outline: none;
+      
+      &:hover {
+        border-left: 2px solid ${theme.color.color_hover};
+        color: ${theme.color.color_hover};
+      }
+
+      &:active {
+        border-left: 2px solid ${theme.color.color_interactive};
+        color: ${theme.color.color_interactive}
+      }
     `)
   },
 };

@@ -15,7 +15,7 @@ interface INavigationContent {
   url: string;
 }
 
-interface INavigation extends INavigationContent {
+interface INavigation {
   items: INavigationContent[];
 }
 

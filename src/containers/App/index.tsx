@@ -104,6 +104,7 @@ class App extends React.Component<{}, IAppState> {
             component={() => (
               // passing down state to chatrooms as props
               <ChatRooms
+                avatar={data.get("profilePicture")}
                 firebase={firebaseConfig}
                 displayName={data.get("authUser")}
                 displayImage={data.get("profilePicture")}

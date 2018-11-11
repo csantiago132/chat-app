@@ -1,0 +1,15 @@
+{
+  "vendors.js": "/static/js/vendors.d107877a.js",
+  "app.js": "/static/js/app.8bc53092.js",
+  "runtime~app.js": "/static/js/runtime~app.193f76234fcd145ecb22.js",
+  "src-components-create-chat-room-docz.js": "/static/js/src-components-create-chat-room-docz.627991d9.js",
+  "src-components-create-message-docz.js": "/static/js/src-components-create-message-docz.cb6b3e3f.js",
+  "src-components-login-component-docz.js": "/static/js/src-components-login-component-docz.7d8d70be.js",
+  "src-components-message-list-docz.js": "/static/js/src-components-message-list-docz.9581bfa5.js",
+  "src-components-navigation-docz.js": "/static/js/src-components-navigation-docz.1d57aad4.js",
+  "src-components-preview-loader-docz.js": "/static/js/src-components-preview-loader-docz.46f42ec8.js",
+  "src-components-profile-card-docs.js": "/static/js/src-components-profile-card-docs.fff599de.js",
+  "src-components-rooms-list-docz.js": "/static/js/src-components-rooms-list-docz.ad25795e.js",
+  "index.html": "/index.html",
+  "static/img/slack-chat-logo.png": "/static/img/slack-chat-logo.0257a6e9.png"
+}

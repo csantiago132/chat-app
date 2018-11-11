@@ -33,7 +33,6 @@ tmp
 stats.json
 .vscode/
 build/
-docs/
 ngrok
 
 # temp ignore these files

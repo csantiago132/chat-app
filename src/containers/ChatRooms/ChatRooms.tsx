@@ -129,7 +129,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
 
     this.setState({
       data: data.update("messages", (list) =>
-        list.filter((message: any) => message.key !== snapshot.key)
+        list.filter((message: { key: string }) => message.key !== snapshot.key)
       )
     });
   };
@@ -141,7 +141,7 @@ class Rooms extends React.Component<IAppProps, IAppState> {
     // after we delete it
     this.setState({
       data: data.update("rooms", (list) =>
-        list.filter((room: any) => room.key !== snapshot.key)
+        list.filter((room: { key: string }) => room.key !== snapshot.key)
       )
     });
   };
@@ -250,23 +250,32 @@ class Rooms extends React.Component<IAppProps, IAppState> {
 
     return (
       <React.Fragment>
-        {data.get("rooms").map((room: any) => (
-          <RoomsList
-            key={room.key}
-            // props
-            createdBy={room.displayName}
-            currentUserId={userUniqueID}
-            deleteRoom={(event: any) => {
-              this.handleRemoveRoomFromFirebase(event, room.key);
-            }}
-            name={room.name}
-            setActiveRoom={() => {
-              this.setActiveRoom(room);
-              this.handleMessageContainer(this.scrollToEndOfMessages);
-            }}
-            userId={room.userId}
-          />
-        ))}
+        {data
+          .get("rooms")
+          .map(
+            (room: {
+              keys: any,
+              displayName: string,
+              name: string,
+              userId: string
+            }) => (
+              <RoomsList
+                key={room.keys}
+                // props
+                createdBy={room.displayName}
+                currentUserId={userUniqueID}
+                deleteRoom={(event: any) => {
+                  this.handleRemoveRoomFromFirebase(event, room.keys);
+                }}
+                name={room.name}
+                setActiveRoom={() => {
+                  this.setActiveRoom(room);
+                  this.handleMessageContainer(this.scrollToEndOfMessages);
+                }}
+                userId={room.userId}
+              />
+            )
+          )}
       </React.Fragment>
     );
   }

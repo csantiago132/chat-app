@@ -1,0 +1,53 @@
+{
+  "remainingRequest": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js?{\"presets\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/babel-preset-docz/dist/index.js\",{\"flow\":false,\"typescript\":true,\"parseProps\":false}]],\"plugins\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-utils/lib/named-asset-import.js\",{\"loaderMap\":{\"svg\":{\"ReactComponent\":\"@svgr/webpack?-prettier,-svgo![path]\"}}}],\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-hot-loader/babel.js\"],\"cacheDirectory\":true,\"babelrc\":false}!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/setup/theme/src/box_shadow.ts",
+  "dependencies": [
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/setup/theme/src/box_shadow.ts",
+      "mtime": 1541818308248
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/cache-loader/dist/cjs.js",
+      "mtime": 1541429074980
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js",
+      "mtime": 1538779637905
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js",
+      "mtime": 1541429075984
+    }
+  ],
+  "contextDependencies": [],
+  "result": [
+    "(function () {\n  var enterModule = require('react-hot-loader').enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nfunction _templateObject3() {\n  var data = _taggedTemplateLiteral([\"\", \" \", \" \", \" \", \" \", \"\"]);\n\n  _templateObject3 = function _templateObject3() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _templateObject2() {\n  var data = _taggedTemplateLiteral([\"\", \" \", \" \", \" \", \" \", \"\"]);\n\n  _templateObject2 = function _templateObject2() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _templateObject() {\n  var data = _taggedTemplateLiteral([\"\", \" \", \" \", \" \", \" \", \"\"]);\n\n  _templateObject = function _templateObject() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }\n\n/**\n * Box Shadows\n * \n * Each method contains it's own settings for readability and \n * easier maintainability.  \n * \n */\nimport { rgba } from 'polished';\nimport { css } from '../index';\nimport spacing from './spacing';\nimport color from './color';\nvar box_shadow = {\n  base: function base() {\n    var h_offset = 0;\n    var v_offset = spacing.base;\n    var blur = spacing.l;\n    var spread = 0;\n    var shadowColor = rgba(color.color_black, 0.2);\n    return css(_templateObject(), h_offset, v_offset, blur, spread, shadowColor);\n  },\n  interactive: function interactive() {\n    var h_offset = 0;\n    var v_offset = spacing.base;\n    var blur = spacing.base;\n    var spread = 0;\n    var shadowColor = rgba(color.color_interactive, 0.24);\n    return css(_templateObject2(), h_offset, v_offset, blur, spread, shadowColor);\n  },\n  small: function small() {\n    var h_offset = 0;\n    var v_offset = spacing.base;\n    var blur = spacing.base;\n    var spread = 0;\n    var shadowColor = rgba(color.color_black, 0.1);\n    return css(_templateObject3(), h_offset, v_offset, blur, spread, shadowColor);\n  }\n};\nvar _default = box_shadow;\nexport default _default;\n;\n\n(function () {\n  var reactHotLoader = require('react-hot-loader').default;\n\n  var leaveModule = require('react-hot-loader').leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(box_shadow, \"box_shadow\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/setup/theme/src/box_shadow.ts\");\n  reactHotLoader.register(_default, \"default\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/setup/theme/src/box_shadow.ts\");\n  leaveModule(module);\n})();\n\n;",
+    {
+      "version": 3,
+      "sources": [
+        "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/setup/theme/src/box_shadow.ts"
+      ],
+      "names": [
+        "rgba",
+        "css",
+        "spacing",
+        "color",
+        "box_shadow",
+        "base",
+        "h_offset",
+        "v_offset",
+        "blur",
+        "l",
+        "spread",
+        "shadowColor",
+        "color_black",
+        "interactive",
+        "color_interactive",
+        "small"
+      ],
+      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;;;;;;AASA,SAASA,IAAT,QAAqB,UAArB;AACA,SAASC,GAAT,QAAoB,UAApB;AACA,OAAOC,OAAP,MAAsB,WAAtB;AACA,OAAOC,KAAP,MAAmB,SAAnB;AAQA,IAAMC,UAAU,GAAG;AACjBC,EAAAA,IAAI,EAAE,gBAA0B;AAC9B,QAAMC,QAAQ,GAAG,CAAjB;AACA,QAAMC,QAAQ,GAAGL,OAAO,CAACG,IAAzB;AACA,QAAMG,IAAI,GAAGN,OAAO,CAACO,CAArB;AACA,QAAMC,MAAM,GAAG,CAAf;AACA,QAAMC,WAAW,GAAGX,IAAI,CAACG,KAAK,CAACS,WAAP,EAAoB,GAApB,CAAxB;AAEA,WAAOX,GAAP,oBAAaK,QAAb,EAAyBC,QAAzB,EAAqCC,IAArC,EAA6CE,MAA7C,EAAuDC,WAAvD;AACD,GATgB;AAWjBE,EAAAA,WAAW,EAAE,uBAA0B;AACrC,QAAMP,QAAQ,GAAG,CAAjB;AACA,QAAMC,QAAQ,GAAGL,OAAO,CAACG,IAAzB;AACA,QAAMG,IAAI,GAAGN,OAAO,CAACG,IAArB;AACA,QAAMK,MAAM,GAAG,CAAf;AACA,QAAMC,WAAW,GAAGX,IAAI,CAACG,KAAK,CAACW,iBAAP,EAA0B,IAA1B,CAAxB;AAEA,WAAOb,GAAP,qBAAaK,QAAb,EAAyBC,QAAzB,EAAqCC,IAArC,EAA6CE,MAA7C,EAAuDC,WAAvD;AACD,GAnBgB;AAqBjBI,EAAAA,KAAK,EAAE,iBAA0B;AAC/B,QAAMT,QAAQ,GAAG,CAAjB;AACA,QAAMC,QAAQ,GAAGL,OAAO,CAACG,IAAzB;AACA,QAAMG,IAAI,GAAGN,OAAO,CAACG,IAArB;AACA,QAAMK,MAAM,GAAG,CAAf;AACA,QAAMC,WAAW,GAAGX,IAAI,CAACG,KAAK,CAACS,WAAP,EAAoB,GAApB,CAAxB;AAEA,WAAOX,GAAP,qBAAaK,QAAb,EAAyBC,QAAzB,EAAqCC,IAArC,EAA6CE,MAA7C,EAAuDC,WAAvD;AACD;AA7BgB,CAAnB;eAgCeP,U;AAAf;;;;;;;;;;;;0BAhCMA,U",
+      "sourcesContent": [
+        "/**\n * Box Shadows\n * \n * Each method contains it's own settings for readability and \n * easier maintainability.  \n * \n */\n\nimport { Interpolation } from 'styled-components';\nimport { rgba } from 'polished';\nimport { css } from '../index';\nimport spacing   from './spacing';\nimport color  from './color';\n\nexport interface IBox_Shadow{\n  base: MethodDecorator;\n  interactive: MethodDecorator;\n  small: MethodDecorator;\n}\n\nconst box_shadow = {\n  base: (): Interpolation<any> => {\n    const h_offset = 0;\n    const v_offset = spacing.base;\n    const blur = spacing.l;\n    const spread = 0;\n    const shadowColor = rgba(color.color_black, 0.2);\n\n    return css`${h_offset} ${v_offset} ${blur} ${spread} ${shadowColor}`;\n  },\n\n  interactive: (): Interpolation<any> => {\n    const h_offset = 0;\n    const v_offset = spacing.base;\n    const blur = spacing.base;\n    const spread = 0;\n    const shadowColor = rgba(color.color_interactive, 0.24);\n\n    return css`${h_offset} ${v_offset} ${blur} ${spread} ${shadowColor}`;\n  },\n\n  small: (): Interpolation<any> => {\n    const h_offset = 0;\n    const v_offset = spacing.base;\n    const blur = spacing.base;\n    const spread = 0;\n    const shadowColor = rgba(color.color_black, 0.1);\n\n    return css`${h_offset} ${v_offset} ${blur} ${spread} ${shadowColor}`;\n  },\n}\n\nexport default box_shadow;"
+      ]
+    }
+  ]
+}

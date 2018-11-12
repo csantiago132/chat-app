@@ -1,0 +1,54 @@
+{
+  "remainingRequest": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js?{\"presets\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/babel-preset-docz/dist/index.js\",{\"flow\":false,\"typescript\":true,\"parseProps\":false}]],\"plugins\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-utils/lib/named-asset-import.js\",{\"loaderMap\":{\"svg\":{\"ReactComponent\":\"@svgr/webpack?-prettier,-svgo![path]\"}}}],\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-hot-loader/babel.js\"],\"cacheDirectory\":true,\"babelrc\":false}!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/LoginComponent/styles/Styled.tsx",
+  "dependencies": [
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/LoginComponent/styles/Styled.tsx",
+      "mtime": 1542034711958
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/cache-loader/dist/cjs.js",
+      "mtime": 1541429074980
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js",
+      "mtime": 1538779637905
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js",
+      "mtime": 1541429075984
+    }
+  ],
+  "contextDependencies": [],
+  "result": [
+    "(function () {\n  var enterModule = require('react-hot-loader').enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nfunction _templateObject() {\n  var data = _taggedTemplateLiteral([\"\\n  align-content: center;\\n  background-color: \", \";\\n  border-radius: \", \";\\n  box-shadow: \", \";\\n  display: flex;\\n  flex-direction: column;\\n  padding: \", \";\\n  text-align: center;\\n\"]);\n\n  _templateObject = function _templateObject() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }\n\n/**\n * LoginComponent styled\n *\n * Main file for all styles used on this component\n * Also holds main-outer container styles\n *\n */\nimport { Col } from \"react-styled-flexboxgrid\";\nimport { styled } from \"../../../setup/theme\";\nimport Button from \"./blocks/Button\";\nimport Img from \"./blocks/Img\";\nimport P from \"./elements/P\";\nimport H3 from \"./elements/H3\";\nvar Article = styled(Col)(_templateObject(), function (props) {\n  return props.theme.color.color_white;\n}, function (props) {\n  return props.theme.spacing.s;\n}, function (props) {\n  return props.theme.boxshadow.base;\n}, function (props) {\n  return props.theme.spacing.m;\n});\nvar Styled = {\n  Article: Article,\n  Button: Button,\n  H3: H3,\n  Img: Img,\n  P: P\n};\nvar _default = Styled;\nexport default _default;\n;\n\n(function () {\n  var reactHotLoader = require('react-hot-loader').default;\n\n  var leaveModule = require('react-hot-loader').leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(Article, \"Article\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/LoginComponent/styles/Styled.tsx\");\n  reactHotLoader.register(Styled, \"Styled\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/LoginComponent/styles/Styled.tsx\");\n  reactHotLoader.register(_default, \"default\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/LoginComponent/styles/Styled.tsx\");\n  leaveModule(module);\n})();\n\n;",
+    {
+      "version": 3,
+      "sources": [
+        "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/LoginComponent/styles/Styled.tsx"
+      ],
+      "names": [
+        "Col",
+        "styled",
+        "Button",
+        "Img",
+        "P",
+        "H3",
+        "Article",
+        "props",
+        "theme",
+        "color",
+        "color_white",
+        "spacing",
+        "s",
+        "boxshadow",
+        "base",
+        "m",
+        "Styled"
+      ],
+      "mappings": ";;;;;;;;;;;;;;;;;;AAAA;;;;;;;AAQA,SAASA,GAAT,QAAoB,0BAApB;AACA,SAASC,MAAT,QAAuB,sBAAvB;AACA,OAAOC,MAAP,MAAmB,iBAAnB;AACA,OAAOC,GAAP,MAAgB,cAAhB;AACA,OAAOC,CAAP,MAAc,cAAd;AACA,OAAOC,EAAP,MAAe,eAAf;AAEA,IAAMC,OAAO,GAAGL,MAAM,CAACD,GAAD,CAAT,oBAES,UAACO,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYC,KAAZ,CAAkBC,WAA7B;AAAA,CAFT,EAGM,UAACH,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYG,OAAZ,CAAoBC,CAA/B;AAAA,CAHN,EAIG,UAACL,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYK,SAAZ,CAAsBC,IAAjC;AAAA,CAJH,EAOA,UAACP,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYG,OAAZ,CAAoBI,CAA/B;AAAA,CAPA,CAAb;AAWA,IAAMC,MAAM,GAAG;AACbV,EAAAA,OAAO,EAAPA,OADa;AAEbJ,EAAAA,MAAM,EAANA,MAFa;AAGbG,EAAAA,EAAE,EAAFA,EAHa;AAIbF,EAAAA,GAAG,EAAHA,GAJa;AAKbC,EAAAA,CAAC,EAADA;AALa,CAAf;eAQeY,M;AAAf;;;;;;;;;;;;0BAnBMV,O;0BAWAU,M",
+      "sourcesContent": [
+        "/**\n * LoginComponent styled\n *\n * Main file for all styles used on this component\n * Also holds main-outer container styles\n *\n */\n\nimport { Col } from \"react-styled-flexboxgrid\";\nimport { styled } from \"../../../setup/theme\";\nimport Button from \"./blocks/Button\";\nimport Img from \"./blocks/Img\";\nimport P from \"./elements/P\";\nimport H3 from \"./elements/H3\";\n\nconst Article = styled(Col)`\n  align-content: center;\n  background-color: ${(props) => props.theme.color.color_white};\n  border-radius: ${(props) => props.theme.spacing.s};\n  box-shadow: ${(props) => props.theme.boxshadow.base};\n  display: flex;\n  flex-direction: column;\n  padding: ${(props) => props.theme.spacing.m};\n  text-align: center;\n`;\n\nconst Styled = {\n  Article,\n  Button,\n  H3,\n  Img,\n  P\n};\n\nexport default Styled;\n"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "remainingRequest": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js?{\"presets\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/babel-preset-docz/dist/index.js\",{\"flow\":false,\"typescript\":true,\"parseProps\":false}]],\"plugins\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-utils/lib/named-asset-import.js\",{\"loaderMap\":{\"svg\":{\"ReactComponent\":\"@svgr/webpack?-prettier,-svgo![path]\"}}}],\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-hot-loader/babel.js\"],\"cacheDirectory\":true,\"babelrc\":false}!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/setup/theme/components/theme_buttons.tsx",
+  "dependencies": [
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/setup/theme/components/theme_buttons.tsx",
+      "mtime": 1541625275705
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/cache-loader/dist/cjs.js",
+      "mtime": 1541429074980
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js",
+      "mtime": 1538779637905
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js",
+      "mtime": 1541429075984
+    }
+  ],
+  "contextDependencies": [],
+  "result": [
+    "(function () {\n  var enterModule = require('react-hot-loader').enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nfunction _templateObject2() {\n  var data = _taggedTemplateLiteral([\"\\n      background: \", \";\\n      @media (min-width: \", \"em) {\\n        background: red;\\n      }\\n      cursor: not-allowed;\\n      border: none;\\n      outline: none;\\n    \"]);\n\n  _templateObject2 = function _templateObject2() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _templateObject() {\n  var data = _taggedTemplateLiteral([\"\\n      background: \", \";\\n      cursor: pointer;\\n      border: none;\\n      outline: none;\\n\\n      @media (min-width: \", \") {\\n        background: red;\\n      }\\n      \\n      &:hover {\\n        background: \", \";\\n      }\\n\\n      &:active {\\n        background: \", \";\\n      }\\n    \"]);\n\n  _templateObject = function _templateObject() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }\n\n/**\n * Button template to reuse across the project\n * \n * Has only basic styling, no width and height since those can be set \n * on each individual component where these base styles\n * are going to be used\n * \n * interface is being used to provide auto-complete\n * \n * Example:\n * \n * interface IExampleButton {\n *  isDisabled: boolean;\n * }\n *  \n * const ExampleButton = styled.button<IExampleButton>`\n *  ${props => props.theme.base_styles.theme_button.default}\n *  \n *  width: 40px;\n *  height: 200px;\n * \n *  ${({isDisable}) => isDisable && `\n *    ${props => props.theme.base_styles.theme_button.disabled};\n *    width: 80px;\n *    height: 300px;\n *  `}\n * `;\n */\nimport { css } from '../index';\nimport { theme } from '../theme';\nexport var theme_buttons = {\n  default: function _default() {\n    return css(_templateObject(), theme.color.color_interactive, theme.grid.container.sm, theme.color.color_hover, theme.color.color_active);\n  },\n  disabled: function disabled() {\n    return css(_templateObject2(), theme.color.color_darkgray, theme.grid.container.sm);\n  }\n};\n;\n\n(function () {\n  var reactHotLoader = require('react-hot-loader').default;\n\n  var leaveModule = require('react-hot-loader').leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(theme_buttons, \"theme_buttons\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/setup/theme/components/theme_buttons.tsx\");\n  leaveModule(module);\n})();\n\n;",
+    {
+      "version": 3,
+      "sources": [
+        "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/setup/theme/components/theme_buttons.tsx"
+      ],
+      "names": [
+        "css",
+        "theme",
+        "theme_buttons",
+        "default",
+        "color",
+        "color_interactive",
+        "grid",
+        "container",
+        "sm",
+        "color_hover",
+        "color_active",
+        "disabled",
+        "color_darkgray"
+      ],
+      "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA4BA,SAASA,GAAT,QAAoB,UAApB;AACA,SAASC,KAAT,QAAsB,UAAtB;AAOA,OAAO,IAAMC,aAAa,GAAG;AAC3BC,EAAAA,OAAO,EAAE,oBAAM;AACb,WAAQH,GAAR,oBACgBC,KAAK,CAACG,KAAN,CAAYC,iBAD5B,EAMuBJ,KAAK,CAACK,IAAN,CAAWC,SAAX,CAAqBC,EAN5C,EAWkBP,KAAK,CAACG,KAAN,CAAYK,WAX9B,EAekBR,KAAK,CAACG,KAAN,CAAYM,YAf9B;AAkBD,GApB0B;AAsB3BC,EAAAA,QAAQ,EAAE,oBAAM;AACd,WAAQX,GAAR,qBACgBC,KAAK,CAACG,KAAN,CAAYQ,cAD5B,EAEuBX,KAAK,CAACK,IAAN,CAAWC,SAAX,CAAqBC,EAF5C;AASD;AAhC0B,CAAtB;;;;;;;;;;;;0BAAMN,a",
+      "sourcesContent": [
+        "/**\n * Button template to reuse across the project\n * \n * Has only basic styling, no width and height since those can be set \n * on each individual component where these base styles\n * are going to be used\n * \n * interface is being used to provide auto-complete\n * \n * Example:\n * \n * interface IExampleButton {\n *  isDisabled: boolean;\n * }\n *  \n * const ExampleButton = styled.button<IExampleButton>`\n *  ${props => props.theme.base_styles.theme_button.default}\n *  \n *  width: 40px;\n *  height: 200px;\n * \n *  ${({isDisable}) => isDisable && `\n *    ${props => props.theme.base_styles.theme_button.disabled};\n *    width: 80px;\n *    height: 300px;\n *  `}\n * `;\n */\nimport { css } from '../index';\nimport { theme } from '../theme';\n\nexport default interface IButtons {\n  default: MethodDecorator;\n  disabled: MethodDecorator;\n}\n\nexport const theme_buttons = {\n  default: () => {\n    return (css`\n      background: ${theme.color.color_interactive};\n      cursor: pointer;\n      border: none;\n      outline: none;\n\n      @media (min-width: ${theme.grid.container.sm}) {\n        background: red;\n      }\n      \n      &:hover {\n        background: ${theme.color.color_hover};\n      }\n\n      &:active {\n        background: ${theme.color.color_active};\n      }\n    `)\n  },\n\n  disabled: () => {\n    return (css`\n      background: ${theme.color.color_darkgray};\n      @media (min-width: ${theme.grid.container.sm}em) {\n        background: red;\n      }\n      cursor: not-allowed;\n      border: none;\n      outline: none;\n    `)\n  }\n};"
+      ]
+    }
+  ]
+}

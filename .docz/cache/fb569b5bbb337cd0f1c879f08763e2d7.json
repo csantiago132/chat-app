@@ -1,0 +1,58 @@
+{
+  "remainingRequest": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js?{\"presets\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/babel-preset-docz/dist/index.js\",{\"flow\":false,\"typescript\":true,\"parseProps\":false}]],\"plugins\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-utils/lib/named-asset-import.js\",{\"loaderMap\":{\"svg\":{\"ReactComponent\":\"@svgr/webpack?-prettier,-svgo![path]\"}}}],\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-hot-loader/babel.js\"],\"cacheDirectory\":true,\"babelrc\":false}!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/MessageList/styles/Styled.tsx",
+  "dependencies": [
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/MessageList/styles/Styled.tsx",
+      "mtime": 1541815404260
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/cache-loader/dist/cjs.js",
+      "mtime": 1541429074980
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js",
+      "mtime": 1538779637905
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js",
+      "mtime": 1541429075984
+    }
+  ],
+  "contextDependencies": [],
+  "result": [
+    "(function () {\n  var enterModule = require('react-hot-loader').enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nfunction _templateObject() {\n  var data = _taggedTemplateLiteral([\"\\n  background: \", \";\\n  border-bottom: 1px solid \", \";\\n  border-radius: \", \";\\n  display: flex;\\n  flex: 1;\\n  flex-direction: row;\\n  flex-shrink: 0;\\n  flex-wrap: nowrap;\\n  margin-bottom: \", \";\\n  padding: \", \";\\n  position: relative;\\n  transition: all 0.2s ease-in-out;\\n\\n  &:hover {\\n    background: \", \";\\n    border-radius: \", \";\\n\\n    \", \" {\\n      display: block;\\n    }\\n  }\\n\"]);\n\n  _templateObject = function _templateObject() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }\n\n/**\n * MessageList styled\n *\n * Main file for all styles used on this component\n * Also holds main-outer container styles\n *\n */\nimport { styled } from \"../../../setup/theme\";\nimport Img from \"./blocks/Img\";\nimport Header from \"./blocks/Header\";\nimport Button from \"./blocks/Button\";\nimport Aside from \"./blocks/Aside\";\nimport H1 from \"./elements/H1\";\nimport Time from \"./elements/Time\";\nimport P from \"./elements/P\"; // main component holder\n\nvar Article = styled.article(_templateObject(), function (props) {\n  return props.theme.color.color_white;\n}, function (props) {\n  return props.theme.color.color_lightgray;\n}, function (props) {\n  return props.theme.spacing.base;\n}, function (props) {\n  return props.theme.spacing.s;\n}, function (props) {\n  return props.theme.spacing.xs;\n}, function (props) {\n  return props.theme.color.color_offwhite;\n}, function (props) {\n  return props.theme.spacing.xs;\n}, Button); // combine styled-component to a single default export\n\nvar Styled = {\n  Article: Article,\n  Aside: Aside,\n  Button: Button,\n  H1: H1,\n  Header: Header,\n  Img: Img,\n  P: P,\n  Time: Time\n};\nvar _default = Styled;\nexport default _default;\n;\n\n(function () {\n  var reactHotLoader = require('react-hot-loader').default;\n\n  var leaveModule = require('react-hot-loader').leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(Article, \"Article\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/MessageList/styles/Styled.tsx\");\n  reactHotLoader.register(Styled, \"Styled\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/MessageList/styles/Styled.tsx\");\n  reactHotLoader.register(_default, \"default\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/MessageList/styles/Styled.tsx\");\n  leaveModule(module);\n})();\n\n;",
+    {
+      "version": 3,
+      "sources": [
+        "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/MessageList/styles/Styled.tsx"
+      ],
+      "names": [
+        "styled",
+        "Img",
+        "Header",
+        "Button",
+        "Aside",
+        "H1",
+        "Time",
+        "P",
+        "Article",
+        "article",
+        "props",
+        "theme",
+        "color",
+        "color_white",
+        "color_lightgray",
+        "spacing",
+        "base",
+        "s",
+        "xs",
+        "color_offwhite",
+        "Styled"
+      ],
+      "mappings": ";;;;;;;;;;;;;;;;;;AAAA;;;;;;;AAQA,SAASA,MAAT,QAAuB,sBAAvB;AACA,OAAOC,GAAP,MAAgB,cAAhB;AACA,OAAOC,MAAP,MAAmB,iBAAnB;AACA,OAAOC,MAAP,MAAmB,iBAAnB;AACA,OAAOC,KAAP,MAAkB,gBAAlB;AACA,OAAOC,EAAP,MAAe,eAAf;AACA,OAAOC,IAAP,MAAiB,iBAAjB;AACA,OAAOC,CAAP,MAAc,cAAd,C,CAEA;;AACA,IAAMC,OAAO,GAAGR,MAAM,CAACS,OAAV,oBACG,UAACC,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYC,KAAZ,CAAkBC,WAA7B;AAAA,CADH,EAEgB,UAACH,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYC,KAAZ,CAAkBE,eAA7B;AAAA,CAFhB,EAGM,UAACJ,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYI,OAAZ,CAAoBC,IAA/B;AAAA,CAHN,EASM,UAACN,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYI,OAAZ,CAAoBE,CAA/B;AAAA,CATN,EAUA,UAACP,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYI,OAAZ,CAAoBG,EAA/B;AAAA,CAVA,EAeK,UAACR,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYC,KAAZ,CAAkBO,cAA7B;AAAA,CAfL,EAgBQ,UAACT,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYI,OAAZ,CAAoBG,EAA/B;AAAA,CAhBR,EAkBPf,MAlBO,CAAb,C,CAwBA;;AACA,IAAMiB,MAAM,GAAG;AACbZ,EAAAA,OAAO,EAAPA,OADa;AAEbJ,EAAAA,KAAK,EAALA,KAFa;AAGbD,EAAAA,MAAM,EAANA,MAHa;AAIbE,EAAAA,EAAE,EAAFA,EAJa;AAKbH,EAAAA,MAAM,EAANA,MALa;AAMbD,EAAAA,GAAG,EAAHA,GANa;AAObM,EAAAA,CAAC,EAADA,CAPa;AAQbD,EAAAA,IAAI,EAAJA;AARa,CAAf;eAWec,M;AAAf;;;;;;;;;;;;0BApCMZ,O;0BAyBAY,M",
+      "sourcesContent": [
+        "/**\n * MessageList styled\n *\n * Main file for all styles used on this component\n * Also holds main-outer container styles\n *\n */\n\nimport { styled } from \"../../../setup/theme\";\nimport Img from \"./blocks/Img\";\nimport Header from \"./blocks/Header\";\nimport Button from \"./blocks/Button\";\nimport Aside from \"./blocks/Aside\";\nimport H1 from \"./elements/H1\";\nimport Time from \"./elements/Time\";\nimport P from \"./elements/P\";\n\n// main component holder\nconst Article = styled.article`\n  background: ${(props) => props.theme.color.color_white};\n  border-bottom: 1px solid ${(props) => props.theme.color.color_lightgray};\n  border-radius: ${(props) => props.theme.spacing.base};\n  display: flex;\n  flex: 1;\n  flex-direction: row;\n  flex-shrink: 0;\n  flex-wrap: nowrap;\n  margin-bottom: ${(props) => props.theme.spacing.s};\n  padding: ${(props) => props.theme.spacing.xs};\n  position: relative;\n  transition: all 0.2s ease-in-out;\n\n  &:hover {\n    background: ${(props) => props.theme.color.color_offwhite};\n    border-radius: ${(props) => props.theme.spacing.xs};\n\n    ${Button} {\n      display: block;\n    }\n  }\n`;\n\n// combine styled-component to a single default export\nconst Styled = {\n  Article,\n  Aside,\n  Button,\n  H1,\n  Header,\n  Img,\n  P,\n  Time\n};\n\nexport default Styled;\n"
+      ]
+    }
+  ]
+}

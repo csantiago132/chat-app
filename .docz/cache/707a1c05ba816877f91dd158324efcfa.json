@@ -1,0 +1,49 @@
+{
+  "remainingRequest": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js?{\"presets\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/babel-preset-docz/dist/index.js\",{\"flow\":false,\"typescript\":true,\"parseProps\":false}]],\"plugins\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-utils/lib/named-asset-import.js\",{\"loaderMap\":{\"svg\":{\"ReactComponent\":\"@svgr/webpack?-prettier,-svgo![path]\"}}}]],\"cacheDirectory\":true,\"babelrc\":false}!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/LoginComponent/LoginComponent.tsx",
+  "dependencies": [
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/LoginComponent/LoginComponent.tsx",
+      "mtime": 1541799006695
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/cache-loader/dist/cjs.js",
+      "mtime": 1541429074980
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js",
+      "mtime": 1538779637905
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js",
+      "mtime": 1541429075984
+    }
+  ],
+  "contextDependencies": [],
+  "result": [
+    "/**\n * LoginComponent\n *\n * Holds the login button that triggers Firebase authentication\n *\n */\nimport * as React from \"react\";\nimport btn_google_signinPng from \"./assets/btn_google_signin.png\";\nimport Styled from \"./styles/Styled\";\n\nvar LoginComponent = function LoginComponent(_ref) {\n  var authenticateWithGoogle = _ref.authenticateWithGoogle;\n  return React.createElement(Styled.Article, {\n    as: \"article\",\n    sm: 4,\n    md: 6,\n    lg: 4\n  }, React.createElement(Styled.H3, null, \"Login\"), React.createElement(Styled.Button, {\n    onClick: authenticateWithGoogle\n  }, React.createElement(Styled.Img, {\n    src: btn_google_signinPng,\n    alt: btn_google_signinPng\n  })), React.createElement(Styled.P, null, \"Authentication is handled by Firebase, it does not share your sensitive data with this app.\"));\n};\n\nexport default LoginComponent;\n\ntry {\n  // @ts-ignore\n  LoginComponent.displayName = \"LoginComponent\"; // @ts-ignore\n\n  LoginComponent.__docgenInfo = {\n    \"description\": \"\",\n    \"displayName\": \"LoginComponent\",\n    \"props\": {\n      \"authenticateWithGoogle\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"authenticateWithGoogle\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"(args: ButtonHTMLAttributes<any>) => void\"\n        }\n      }\n    }\n  }; // @ts-ignore\n\n  if (typeof STORYBOOK_REACT_CLASSES !== \"undefined\") // @ts-ignore\n    STORYBOOK_REACT_CLASSES[\"src/components/LoginComponent/LoginComponent.tsx#LoginComponent\"] = {\n      docgenInfo: LoginComponent.__docgenInfo,\n      name: \"LoginComponent\",\n      path: \"src/components/LoginComponent/LoginComponent.tsx#LoginComponent\"\n    };\n} catch (__react_docgen_typescript_loader_error) {}",
+    {
+      "version": 3,
+      "sources": [
+        "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/LoginComponent/LoginComponent.tsx"
+      ],
+      "names": [
+        "React",
+        "btn_google_signinPng",
+        "Styled",
+        "LoginComponent",
+        "authenticateWithGoogle",
+        "displayName",
+        "__docgenInfo",
+        "STORYBOOK_REACT_CLASSES",
+        "docgenInfo",
+        "name",
+        "path",
+        "__react_docgen_typescript_loader_error"
+      ],
+      "mappings": "AAAA;;;;;;AAOA,OAAO,KAAKA,KAAZ,MAAuB,OAAvB;AACA,OAAOC,oBAAP,MAAiC,gCAAjC;AACA,OAAOC,MAAP,MAAmB,iBAAnB;;AAMA,IAAMC,cAA0C,GAAG,SAA7CA,cAA6C;AAAA,MACjDC,sBADiD,QACjDA,sBADiD;AAAA,SAGjD,oBAAC,MAAD,CAAQ,OAAR;AAAgB,IAAA,EAAE,EAAC,SAAnB;AAA6B,IAAA,EAAE,EAAE,CAAjC;AAAoC,IAAA,EAAE,EAAE,CAAxC;AAA2C,IAAA,EAAE,EAAE;AAA/C,KACE,oBAAC,MAAD,CAAQ,EAAR,gBADF,EAEE,oBAAC,MAAD,CAAQ,MAAR;AAAe,IAAA,OAAO,EAAEA;AAAxB,KACE,oBAAC,MAAD,CAAQ,GAAR;AAAY,IAAA,GAAG,EAAEH,oBAAjB;AAAuC,IAAA,GAAG,EAAEA;AAA5C,IADF,CAFF,EAKE,oBAAC,MAAD,CAAQ,CAAR,sGALF,CAHiD;AAAA,CAAnD;;AAeA,eAAeE,cAAf;;AACA,IAAI;AACA;AACAA,EAAAA,cAAc,CAACE,WAAf,GAA6B,gBAA7B,CAFA,CAGA;;AACAF,EAAAA,cAAc,CAACG,YAAf,GAA8B;AAAE,mBAAe,EAAjB;AAAqB,mBAAe,gBAApC;AAAsD,aAAS;AAAE,gCAA0B;AAAE,wBAAgB,IAAlB;AAAwB,uBAAe,EAAvC;AAA2C,gBAAQ,wBAAnD;AAA6E,oBAAY,IAAzF;AAA+F,gBAAQ;AAAE,kBAAQ;AAAV;AAAvG;AAA5B;AAA/D,GAA9B,CAJA,CAKA;;AACA,MAAI,OAAOC,uBAAP,KAAmC,WAAvC,EACI;AACAA,IAAAA,uBAAuB,CAAC,iEAAD,CAAvB,GAA6F;AAAEC,MAAAA,UAAU,EAAEL,cAAc,CAACG,YAA7B;AAA2CG,MAAAA,IAAI,EAAE,gBAAjD;AAAmEC,MAAAA,IAAI,EAAE;AAAzE,KAA7F;AACP,CATD,CAUA,OAAOC,sCAAP,EAA+C,CAAG",
+      "sourcesContent": [
+        "/**\n * LoginComponent\n *\n * Holds the login button that triggers Firebase authentication\n *\n */\n\nimport * as React from \"react\";\nimport btn_google_signinPng from \"./assets/btn_google_signin.png\";\nimport Styled from \"./styles/Styled\";\n\ninterface ILoginComponent {\n  authenticateWithGoogle: (args: React.ButtonHTMLAttributes<any>) => void;\n}\n\nconst LoginComponent: React.SFC<ILoginComponent> = ({\n  authenticateWithGoogle\n}) => (\n  <Styled.Article as=\"article\" sm={4} md={6} lg={4}>\n    <Styled.H3>Login</Styled.H3>\n    <Styled.Button onClick={authenticateWithGoogle}>\n      <Styled.Img src={btn_google_signinPng} alt={btn_google_signinPng} />\n    </Styled.Button>\n    <Styled.P>\n      Authentication is handled by Firebase, it does not share your sensitive\n      data with this app.\n    </Styled.P>\n  </Styled.Article>\n);\n\nexport default LoginComponent;\ntry {\n    // @ts-ignore\n    LoginComponent.displayName = \"LoginComponent\";\n    // @ts-ignore\n    LoginComponent.__docgenInfo = { \"description\": \"\", \"displayName\": \"LoginComponent\", \"props\": { \"authenticateWithGoogle\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"authenticateWithGoogle\", \"required\": true, \"type\": { \"name\": \"(args: ButtonHTMLAttributes<any>) => void\" } } } };\n    // @ts-ignore\n    if (typeof STORYBOOK_REACT_CLASSES !== \"undefined\")\n        // @ts-ignore\n        STORYBOOK_REACT_CLASSES[\"src/components/LoginComponent/LoginComponent.tsx#LoginComponent\"] = { docgenInfo: LoginComponent.__docgenInfo, name: \"LoginComponent\", path: \"src/components/LoginComponent/LoginComponent.tsx#LoginComponent\" };\n}\ncatch (__react_docgen_typescript_loader_error) { }"
+      ]
+    }
+  ]
+}

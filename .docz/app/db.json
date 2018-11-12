@@ -1,0 +1,32 @@
+{
+  "config": {
+    "title": "Slack Chat",
+    "description": "A CRUD (Create, Read, Update, Delete) chat application built with Typescript, React, Firebase and Immutable.JS",
+    "themeConfig": {
+      "mode": "dark",
+      "radii": "4px",
+      "styles": {
+        "container": {
+          "width": [1200, "100%"],
+          "padding": ["20px", "0 40px 40px"]
+        },
+        "table": {
+          "overflowY": "hidden",
+          "overflowX": ["initial", "initial", "initial", "hidden"],
+          "display": ["block", "block", "block", "table"],
+          "width": "100%",
+          "marginBottom": [20, 40],
+          "fontFamily": "Source Code Pro, monospace",
+          "fontSize": 14
+        }
+      }
+    },
+    "menu": [],
+    "ordering": "descending",
+    "version": "1.0.0",
+    "repository": "https://github.com/csantiago132/chat-app",
+    "native": false,
+    "codeSandbox": false
+  },
+  "entries": {}
+}

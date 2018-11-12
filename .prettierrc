@@ -10,29 +10,22 @@
     "arrowParens": "always",
     "overrides": [
         {
-            "files": "src/**/*.tsx",
+            "files": "*.tsx",
             "options": {
                 "semi": true,
                 "singleQuote": false,
             }
         },
         {
-            "files": "src/**/*.js",
+            "files": "*.js",
             "options": {
                 "semi": true,
                 "singleQuote": false,
             }
         },
         {
-            "files": "src/**/*.test.tsx",
+            "files": "*.test.tsx",
             "options": {
-                "semi": true
-            }
-        },
-        {
-            "files": "src/**/*.scss",
-            "options": {
-                "parser": "scss",
                 "semi": true
             }
         },

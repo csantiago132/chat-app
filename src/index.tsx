@@ -13,7 +13,6 @@ import * as serviceWorker from "./serviceWorker";
 import "sanitize.css/sanitize.css";
 
 import App from "./containers/App";
-import "./setup/scss/base.scss";
 
 const MOUNT_NODE = document.getElementById("root");
 

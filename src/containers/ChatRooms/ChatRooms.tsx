@@ -12,7 +12,7 @@ import MessageList from "../../components/MessageList/MessageList";
 import CreateChatRoom from "../../components/CreateChatRoom/CreateChatRoom";
 import CreateMessage from "../../components/CreateMessage/CreateMessage";
 import ProfileCard from "../../components/ProfileCard/ProfileCard";
-import "./ChatRooms.scss";
+import Styled from "./styles/Styled";
 
 interface IAppState {
   createNewRoomTitle: string;
@@ -254,18 +254,18 @@ class Rooms extends React.Component<IAppProps, IAppState> {
           .get("rooms")
           .map(
             (room: {
-              keys: any,
+              key: any,
               displayName: string,
               name: string,
               userId: string
             }) => (
               <RoomsList
-                key={room.keys}
+                key={room.key}
                 // props
                 createdBy={room.displayName}
                 currentUserId={userUniqueID}
                 deleteRoom={(event: any) => {
-                  this.handleRemoveRoomFromFirebase(event, room.keys);
+                  this.handleRemoveRoomFromFirebase(event, room.key);
                 }}
                 name={room.name}
                 setActiveRoom={() => {
@@ -353,25 +353,24 @@ class Rooms extends React.Component<IAppProps, IAppState> {
     const { data, newMessage } = this.state;
 
     return (
-      <main className="chatrooms-container" role="main">
-        <aside className="chatrooms-container__side-container">
-          <ProfileCard {...this.props} />
+      <Styled.Main as="main">
+        <Styled.Aside as="aside" xs={3} md={2}>
           <article>{this.renderCreateChatRooms()}</article>
-          <span>Chat Rooms</span>
+          <h1>Chat Rooms</h1>
           <article>{this.renderChatRooms()}</article>
-        </aside>
-        <section className="chatrooms-container__main-container">
-          <header className="chatrooms-container__chatroom-header">
+        </Styled.Aside>
+        <Styled.MainSection as="section" xs={8} md={8}>
+          <Styled.Header>
             <h2>{data.getIn(["activeRoom", "name"])}</h2>
-          </header>
-          <section className="message-container">
+          </Styled.Header>
+          <Styled.Section as="section">
             {this.renderActiveRoomsAndMessages()}
             <span
               ref={(span: any) => {
                 this.scrollToEndOfMessages = span;
               }}
             />
-          </section>
+          </Styled.Section>
           {data.getIn(["activeRoom", "key"]).length > 0 && (
             <CreateMessage
               // TODO: rethink on how to incorporate without Lambda
@@ -386,8 +385,11 @@ class Rooms extends React.Component<IAppProps, IAppState> {
               value={newMessage}
             />
           )}
-        </section>
-      </main>
+        </Styled.MainSection>
+        <Styled.AsideInfo as="aside" xs={3} md={2}>
+          <ProfileCard {...this.props} />
+        </Styled.AsideInfo>
+      </Styled.Main>
     );
   }
 }

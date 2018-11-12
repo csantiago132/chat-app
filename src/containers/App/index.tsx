@@ -25,7 +25,7 @@ interface IAppState {
 }
 
 class App extends React.Component<{}, IAppState> {
-  constructor(props: any) {
+  constructor(props: object) {
     super(props);
     this.state = {
       data: Immutable.Map({
@@ -39,7 +39,7 @@ class App extends React.Component<{}, IAppState> {
   }
 
   // google provider method
-  googleAuthentication(event: any) {
+  googleAuthentication(event: React.FormEvent<HTMLElement>) {
     const { data } = this.state;
     event.preventDefault();
     const googleProvider = new auth.GoogleAuthProvider();
@@ -49,22 +49,24 @@ class App extends React.Component<{}, IAppState> {
       // sends user to a new tab to authenticate with Google
       .signInWithPopup(googleProvider)
       // when done, sets state based on user information credentials
-      .then((result: any) => {
-        this.setState({
-          data: data
-            .set("isAuthenticaded", true)
-            .set("authUser", result.additionalUserInfo.profile.name)
-            .set("profilePicture", result.additionalUserInfo.profile.picture)
-            .set("userUniqueID", result.additionalUserInfo.profile.id)
-        });
-      })
+      .then(
+        (result: any): void => {
+          this.setState({
+            data: data
+              .set("isAuthenticaded", true)
+              .set("authUser", result.additionalUserInfo.profile.name)
+              .set("profilePicture", result.additionalUserInfo.profile.picture)
+              .set("userUniqueID", result.additionalUserInfo.profile.id)
+          });
+        }
+      )
       // catch any errors on the auth method
       // TODO: maybe redirect to a login error page?
-      .catch((error: any) => console.error(error.message));
+      .catch((error: { message: string }) => console.error(error.message));
   }
 
   // logs out user from the app
-  handleLogout(event: any) {
+  handleLogout(event: React.FormEvent<HTMLElement>) {
     const { data } = this.state;
     event.preventDefault();
     const googleAuth = firebase.auth();
@@ -82,7 +84,7 @@ class App extends React.Component<{}, IAppState> {
         });
       })
       // catch any errors on the auth method
-      .catch((error: any) => console.error(error.message));
+      .catch((error: { message: string }) => console.error(error.message));
   }
 
   render() {
@@ -109,7 +111,9 @@ class App extends React.Component<{}, IAppState> {
                 displayName={data.get("authUser")}
                 displayImage={data.get("profilePicture")}
                 userUniqueID={data.get("userUniqueID")}
-                logout={(event: any) => this.handleLogout(event)}
+                logout={(event: React.FormEvent<HTMLElement>) =>
+                  this.handleLogout(event)
+                }
               />
             )}
           />
@@ -119,7 +123,7 @@ class App extends React.Component<{}, IAppState> {
               <LoginPage
                 // if user is not logged in, redirect route to login page
                 isAuthenticated={data.get("isAuthenticaded")}
-                authenticateWithGoogle={(event: any) =>
+                authenticateWithGoogle={(event: React.FormEvent<HTMLElement>) =>
                   this.googleAuthentication(event)
                 }
               />

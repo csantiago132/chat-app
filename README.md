@@ -27,23 +27,20 @@ how to deploy the project on a live system.
 2. Move to the appropriate directory: `cd chat-app`
 3. Register a database with
    [Firebase](https://firebase.google.com/docs/database/)
-4. Get a configuration and save it on the `app/secretApiInfo` directory
+4. Write a `.env` file in the root of the project and put your configuration
 
-```js
-import firebase from "firebase";
+```bash
+  REACT_APP_FIREBASE_API_KEY=your_api_key
 
-let config = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  databaseURL: "YOUR_FIREBASE_URL",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_ID"
-};
+  REACT_APP_FIREBASE_DOMAIN=your_auth_domain
 
-firebase.initializeApp(config);
+  REACT_APP_FIREBASE_DB_URL=your_firebase_url
 
-export default firebase;
+  REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_project_id
+
+  REACT_APP_FIREBASE_PROJECT_ID=your_storage_bucket
+
+  REACT_APP_FIREBASE_STORAGE_BUCKET=your_messaging_id
 ```
 
 (This is used on the main state of the `App/index` container)

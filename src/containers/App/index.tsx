@@ -15,7 +15,7 @@ import ChatRooms from "../ChatRooms/ChatRooms";
 import NotFound from "../NotFoundPage/NotFound";
 import LoginPage from "../LoginPage/LoginPage";
 import ProtectedRoute from "../ProtectedRoute";
-import firebase from "../../secretApiInfo/firebase";
+import firebase from "../../setup/firebase-config/firebase";
 import placeholderAvatarJpg from "../../assets/placeholderImages/placeholderAvatar.jpg";
 
 interface IAppState {
@@ -29,7 +29,7 @@ class App extends React.Component<{}, IAppState> {
     this.state = {
       data: Immutable.Map({
         authUser: "Guest User",
-        isAuthenticaded: true,
+        isAuthenticaded: false,
         profilePicture: placeholderAvatarJpg,
         userUniqueID: String("")
       }),

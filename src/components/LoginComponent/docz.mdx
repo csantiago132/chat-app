@@ -1,0 +1,21 @@
+---
+name: LoginComponent
+menu: Components
+---
+
+import { PropsTable, Playground } from 'docz';
+import LoginComponent from './LoginComponent.tsx'
+
+# LoginComponent
+
+## Basic Usage
+<Playground >
+  <LoginComponent
+    authenticateWithGoogle={(event) => event.preventDefault()}
+  />
+</Playground>
+
+---
+## Properties
+
+<PropsTable of={LoginComponent} />

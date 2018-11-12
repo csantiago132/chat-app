@@ -12,9 +12,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier:tsx": "prettier --config ./.prettierrc --write *.tsx",
-    "prettier:json": "prettier --config  ./.prettierrc  --write *.json",
-    "prettier:md": "prettier --config .prettierrc --use-tabs --print-width 80 --write *.md",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
+    "prettier:js": "prettier --config .prettierrc --write *.{js, jsx}",
+    "prettier:tsx": "prettier --config .prettierrc --write *.{tsx, ts}",
+    "prettier:json": "prettier --config  .prettierrc  --write *.json",
+    "prettier:md": "prettier --config .prettierrc --print-width 80 --write **/*.{md, mdx}",
+    "stylelint:css": "./node_modules/.bin/stylelint '**/*.{tsx, ts}'",
     "tslint": "./node_modules/.bin/tslint -c ./tslint.js --project ./tsconfig.json"
   },
   "husky": {
@@ -23,9 +27,15 @@
     }
   },
   "lint-staged": {
-    "*.tsx": ["yarn run prettier:tsx", "yarn run tslint", "git add"],
+    "*.{tsx, ts}": [
+      "yarn run prettier:tsx",
+      "yarn run tslint",
+      "yarn run stylelint:css",
+      "git add"
+    ],
     "*.json": ["yarn run prettier:json", "git add"],
-    "*.md": ["yarn run prettier:md", "git add"]
+    "*.{md, mdx}": ["yarn run prettier:md", "git add"],
+    "*.{jsx, js}": ["yarn run prettier:js", "git add"]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,6 +48,7 @@
     "history": "^4.7.2",
     "immutable": "^3.8.2",
     "node-sass": "^4.9.4",
+    "polished": "^2.3.0",
     "react": "^16.6.0",
     "react-content-loader": "^3.2.0",
     "react-dom": "^16.6.0",
@@ -47,7 +58,9 @@
     "react-router-dom": "^4.3.1",
     "react-router-scroll": "^0.4.4",
     "react-scripts": "2.1.0",
+    "react-styled-flexboxgrid": "^2.6.0",
     "sanitize.css": "^8.0.0",
+    "styled-components": "^4.0.3",
     "warning": "^4.0.2"
   },
   "devDependencies": {
@@ -62,11 +75,20 @@
     "@types/react-helmet": "^5.0.7",
     "@types/react-loadable": "^5.4.1",
     "@types/react-router-dom": "^4.3.1",
+    "@types/styled-components": "^4.0.3",
+    "docz": "^0.12.9",
+    "docz-core": "^0.12.9",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "husky": "^1.1.2",
     "lint-staged": "^8.0.4",
     "prettier": "^1.14.3",
+    "prettier-stylelint": "^0.4.2",
+    "stylelint": "^9.8.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-order": "^1.0.0",
+    "stylelint-processor-styled-components": "^1.5.0",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",

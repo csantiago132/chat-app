@@ -1,0 +1,26 @@
+---
+name: RoomsList
+menu: Components
+---
+
+import { PropsTable, Playground } from 'docz';
+import RoomsList from './RoomsList.tsx'
+
+# ProfileCard
+
+## Basic Usage
+<Playground >
+  <RoomsList
+    name={'Name of Chat Room'}
+    userId={'userId'}
+    createdBy={'currentUserId'}
+    currentUserId={'currentUserId'}
+    setActiveRoom={event => event.preventDefault()}
+    deleteRoom={event => event.preventDefault()}
+  />
+</Playground>
+
+---
+## Properties
+
+<PropsTable of={RoomsList} />

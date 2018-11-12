@@ -26,7 +26,200 @@
     "version": "1.0.0",
     "repository": "https://github.com/csantiago132/chat-app",
     "native": false,
-    "codeSandbox": false
+    "codeSandbox": false,
+    "wrapper": "../../src/setup/docz_wrapper/wrapper",
+    "dest": "/docs",
+    "typescript": true
   },
-  "entries": {}
+  "entries": {
+    "src/components/CreateChatRoom/docz.mdx": {
+      "name": "CreateChatRoom",
+      "menu": "Components",
+      "id": "782b588b7a23a8d6a50403e351d0580a",
+      "filepath": "src/components/CreateChatRoom/docz.mdx",
+      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/CreateChatRoom/docz.mdx",
+      "slug": "src-components-create-chat-room-docz",
+      "route": "/src-components-create-chat-room-docz",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "createchatroom",
+          "value": "CreateChatRoom"
+        },
+        {
+          "depth": 2,
+          "slug": "basic-usage",
+          "value": "Basic Usage"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "src/components/CreateMessage/docz.mdx": {
+      "name": "CreateMessage",
+      "menu": "Components",
+      "id": "1fe9df91ac579d606fb571166be29518",
+      "filepath": "src/components/CreateMessage/docz.mdx",
+      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/CreateMessage/docz.mdx",
+      "slug": "src-components-create-message-docz",
+      "route": "/src-components-create-message-docz",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "createchatroom",
+          "value": "CreateChatRoom"
+        },
+        {
+          "depth": 2,
+          "slug": "basic-usage",
+          "value": "Basic Usage"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "src/components/LoginComponent/docz.mdx": {
+      "name": "LoginComponent",
+      "menu": "Components",
+      "id": "81a264c3d35df06a3ee1c09a7182f8b0",
+      "filepath": "src/components/LoginComponent/docz.mdx",
+      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/LoginComponent/docz.mdx",
+      "slug": "src-components-login-component-docz",
+      "route": "/src-components-login-component-docz",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "logincomponent",
+          "value": "LoginComponent"
+        },
+        {
+          "depth": 2,
+          "slug": "basic-usage",
+          "value": "Basic Usage"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "src/components/MessageList/docz.mdx": {
+      "name": "MessageList",
+      "menu": "Components",
+      "id": "fa4fc7e8000044abdaea0cc399ade290",
+      "filepath": "src/components/MessageList/docz.mdx",
+      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/MessageList/docz.mdx",
+      "slug": "src-components-message-list-docz",
+      "route": "/src-components-message-list-docz",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "messagelist",
+          "value": "MessageList"
+        },
+        {
+          "depth": 2,
+          "slug": "basic-usage",
+          "value": "Basic Usage"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "src/components/PreviewLoader/docz.mdx": {
+      "name": "PreviewLoader",
+      "menu": "Components",
+      "id": "6b27ee01a1687597e3d3bd3b0e1de765",
+      "filepath": "src/components/PreviewLoader/docz.mdx",
+      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/PreviewLoader/docz.mdx",
+      "slug": "src-components-preview-loader-docz",
+      "route": "/src-components-preview-loader-docz",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "navigation",
+          "value": "Navigation"
+        },
+        {
+          "depth": 2,
+          "slug": "basic-usage",
+          "value": "Basic Usage"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "src/components/ProfileCard/docs.mdx": {
+      "name": "ProfileCard",
+      "menu": "Components",
+      "id": "d73a36cb7f91f5918c68dcac62180ff0",
+      "filepath": "src/components/ProfileCard/docs.mdx",
+      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/ProfileCard/docs.mdx",
+      "slug": "src-components-profile-card-docs",
+      "route": "/src-components-profile-card-docs",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "profilecard",
+          "value": "ProfileCard"
+        },
+        {
+          "depth": 2,
+          "slug": "basic-usage",
+          "value": "Basic Usage"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    },
+    "src/components/RoomsList/docz.mdx": {
+      "name": "RoomsList",
+      "menu": "Components",
+      "id": "db58329dbc0a53617eb7b44820baee91",
+      "filepath": "src/components/RoomsList/docz.mdx",
+      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/RoomsList/docz.mdx",
+      "slug": "src-components-rooms-list-docz",
+      "route": "/src-components-rooms-list-docz",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "profilecard",
+          "value": "ProfileCard"
+        },
+        {
+          "depth": 2,
+          "slug": "basic-usage",
+          "value": "Basic Usage"
+        },
+        {
+          "depth": 2,
+          "slug": "properties",
+          "value": "Properties"
+        }
+      ]
+    }
+  }
 }

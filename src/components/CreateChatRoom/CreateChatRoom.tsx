@@ -6,41 +6,51 @@
  */
 
 import * as React from "react";
+import Styled from "./styles/Styled";
 
 interface ICreateChatRoomProps {
-  disabled: boolean;
-  handleChange: (...args: any[]) => void;
-  handleSubmit: (...args: any[]) => void;
-  value?: string;
+  /**
+   * Enables or disables the submit button
+   */
+  isDisabled: boolean;
+  /**
+   * Sets state for the name of the chatroom name*
+   */
+  handleChange: (args: React.FormEvent<HTMLInputElement>) => void;
+  /**
+   * Event handler that sends information to firebase
+   */
+  handleSubmit: (args: React.FormEvent<HTMLElement>) => void;
+  /**
+   * The name of the chatroom provided by the state
+   */
+  value: string;
 }
 
 /* Input filed that pushes the name of a newly create chat room to firebase */
-const CreateChatRoom: React.SFC<ICreateChatRoomProps> = (
-  props: ICreateChatRoomProps
-) => {
-  const { value, handleChange, handleSubmit, disabled } = props;
+const CreateChatRoom: React.SFC<ICreateChatRoomProps> = (props) => {
+  const { value, handleChange, handleSubmit, isDisabled } = props;
   return (
-    <form className="create-chat-room" onSubmit={handleSubmit}>
-      <label className="create-chat-room__label" htmlFor="chatRoom">
-        Create Chat Room
-      </label>
-      <input
-        className="create-chat-room__input-field"
+    <Styled.Form className="create-chat-room" onSubmit={handleSubmit}>
+      <Styled.Label htmlFor="chatRoom">
+        Enter the name for the new chat room
+      </Styled.Label>
+      <Styled.InputField
         type="text"
         name="chatRoom"
         value={value}
         placeholder="Create a new chat"
         onChange={handleChange}
       />
-      <button
-        className="create-chat-room__submit-button"
-        type="submit"
-        disabled={disabled}
-      >
+      <Styled.Button type="submit" buttonState={isDisabled}>
         Create
-      </button>
-    </form>
+      </Styled.Button>
+    </Styled.Form>
   );
+};
+
+CreateChatRoom.defaultProps = {
+  isDisabled: true
 };
 
 export default CreateChatRoom;

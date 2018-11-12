@@ -1,0 +1,30 @@
+---
+name: MessageList
+menu: Components
+---
+
+import { PropsTable, Playground } from 'docz';
+import MessageList from './MessageList.tsx'
+import placeholderAvatarJpg from "../../assets/placeholderImages/placeholderAvatar.jpg";
+const date = new Date();
+
+# MessageList
+
+## Basic Usage
+<Playground >
+  <MessageList
+    avatar={placeholderAvatarJpg}
+    currentUser={'userUniqueID'}
+    content={'Message from the server'}
+    deleteMessage={event => event.preventDefault()}
+    id={'message.roomId'}
+    sentAt={`${date}`}
+    userId={'message.userId'}
+    username={'Guest User'}
+  />
+</Playground>
+
+---
+## Properties
+
+<PropsTable of={MessageList} />

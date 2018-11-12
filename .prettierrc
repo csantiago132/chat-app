@@ -4,13 +4,20 @@
     "parser": "babylon",
     "semi": true,
     "trailingComma": "none",
-    "singleQuote": true,
+    "singleQuote": false,
     "jsxBracketSameLine": false,
     "bracketSpacing": true,
     "arrowParens": "always",
     "overrides": [
         {
             "files": "src/**/*.tsx",
+            "options": {
+                "semi": true,
+                "singleQuote": false,
+            }
+        },
+        {
+            "files": "src/**/*.js",
             "options": {
                 "semi": true,
                 "singleQuote": false,
@@ -27,6 +34,14 @@
             "options": {
                 "parser": "scss",
                 "semi": true
+            }
+        },
+        {
+            "files": "*.md",
+            "options": {
+                "parser": "markdown",
+                "printWidth": 80,
+                "proseWrap": "always",
             }
         },
         {

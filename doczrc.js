@@ -5,11 +5,11 @@ module.exports = {
   typescript: true,
   codeSandbox: false,
   themeConfig: {
-    mode: "dark",
+    mode: "light",
     radii: "4px",
     styles: {
       container: {
-        width: [1200, "100%"],
+        width: [1100, "100%"],
         padding: ["20px", "0 40px 40px"],
       }, 
     table: { 

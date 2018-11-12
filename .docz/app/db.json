@@ -3,11 +3,11 @@
     "title": "Slack Chat",
     "description": "A CRUD (Create, Read, Update, Delete) chat application built with Typescript, React, Firebase and Immutable.JS",
     "themeConfig": {
-      "mode": "dark",
+      "mode": "light",
       "radii": "4px",
       "styles": {
         "container": {
-          "width": [1200, "100%"],
+          "width": [1100, "100%"],
           "padding": ["20px", "0 40px 40px"]
         },
         "table": {
@@ -32,14 +32,81 @@
     "typescript": true
   },
   "entries": {
-    "src/components/CreateChatRoom/docz.mdx": {
-      "name": "CreateChatRoom",
+    "src/index.mdx": {
+      "name": "Welcome",
+      "route": "/",
+      "id": "6576455a124f9aaefd860597f03a8fe4",
+      "filepath": "src/index.mdx",
+      "link": "https://github.com/csantiago132/chat-app/edit/master/src/index.mdx",
+      "slug": "src-index",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "chat-app",
+          "value": "Chat App"
+        },
+        {
+          "depth": 2,
+          "slug": "prerequisites",
+          "value": "Prerequisites"
+        },
+        {
+          "depth": 2,
+          "slug": "getting-started",
+          "value": "Getting Started"
+        },
+        {
+          "depth": 2,
+          "slug": "features",
+          "value": "Features"
+        },
+        {
+          "depth": 3,
+          "slug": "sidenote",
+          "value": "Sidenote:"
+        },
+        {
+          "depth": 2,
+          "slug": "todo-list",
+          "value": "TODO List"
+        },
+        {
+          "depth": 2,
+          "slug": "built-with",
+          "value": "Built With"
+        },
+        {
+          "depth": 2,
+          "slug": "versioning",
+          "value": "Versioning"
+        },
+        {
+          "depth": 2,
+          "slug": "authors",
+          "value": "Authors"
+        },
+        {
+          "depth": 2,
+          "slug": "license",
+          "value": "License"
+        },
+        {
+          "depth": 2,
+          "slug": "acknowledgments",
+          "value": "Acknowledgments"
+        }
+      ]
+    },
+    "src/components/CreateMessage/docz.mdx": {
+      "name": "CreateMessage",
       "menu": "Components",
-      "id": "782b588b7a23a8d6a50403e351d0580a",
-      "filepath": "src/components/CreateChatRoom/docz.mdx",
-      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/CreateChatRoom/docz.mdx",
-      "slug": "src-components-create-chat-room-docz",
-      "route": "/src-components-create-chat-room-docz",
+      "id": "1fe9df91ac579d606fb571166be29518",
+      "filepath": "src/components/CreateMessage/docz.mdx",
+      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/CreateMessage/docz.mdx",
+      "slug": "src-components-create-message-docz",
+      "route": "/src-components-create-message-docz",
       "order": 0,
       "headings": [
         {
@@ -59,14 +126,14 @@
         }
       ]
     },
-    "src/components/CreateMessage/docz.mdx": {
-      "name": "CreateMessage",
+    "src/components/CreateChatRoom/docz.mdx": {
+      "name": "CreateChatRoom",
       "menu": "Components",
-      "id": "1fe9df91ac579d606fb571166be29518",
-      "filepath": "src/components/CreateMessage/docz.mdx",
-      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/CreateMessage/docz.mdx",
-      "slug": "src-components-create-message-docz",
-      "route": "/src-components-create-message-docz",
+      "id": "782b588b7a23a8d6a50403e351d0580a",
+      "filepath": "src/components/CreateChatRoom/docz.mdx",
+      "link": "https://github.com/csantiago132/chat-app/edit/master/src/components/CreateChatRoom/docz.mdx",
+      "slug": "src-components-create-chat-room-docz",
+      "route": "/src-components-create-chat-room-docz",
       "order": 0,
       "headings": [
         {

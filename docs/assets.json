@@ -1,0 +1,13 @@
+{
+  "vendors.js": "/static/js/vendors.8e15aaa8.js",
+  "app.js": "/static/js/app.09967e21.js",
+  "runtime~app.js": "/static/js/runtime~app.a54d74342480dd7df239.js",
+  "src-components-create-chat-room-docz.js": "/static/js/src-components-create-chat-room-docz.1404607a.js",
+  "src-components-create-message-docz.js": "/static/js/src-components-create-message-docz.fa36ed15.js",
+  "src-components-login-component-docz.js": "/static/js/src-components-login-component-docz.be5b59a8.js",
+  "src-components-message-list-docz.js": "/static/js/src-components-message-list-docz.9581bfa5.js",
+  "src-components-preview-loader-docz.js": "/static/js/src-components-preview-loader-docz.a1f9c5db.js",
+  "src-components-profile-card-docs.js": "/static/js/src-components-profile-card-docs.ed939bb6.js",
+  "src-components-rooms-list-docz.js": "/static/js/src-components-rooms-list-docz.9282b19c.js",
+  "index.html": "/index.html"
+}

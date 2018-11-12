@@ -1,0 +1,100 @@
+{
+  "processors": ["stylelint-processor-styled-components"],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-styled-components",
+    "./node_modules/prettier-stylelint/config.js"
+  ],
+  "plugins": [
+        "stylelint-order",
+    ],
+  "rules": {
+      "block-closing-brace-newline-after": [
+        "always", {
+          "ignoreAtRules": [ 
+              "if", 
+              "else" 
+          ]
+        }
+      ],
+      "unit-whitelist": [
+          "em", 
+          "rem", 
+          "s",
+          "px",
+          "%",
+          "vh",
+          "vw",
+          "deg",
+          "ms"
+      ],
+
+      "at-rule-empty-line-before": [
+        "always", {
+          "ignoreAtRules": [
+              "import", 
+              "first-nested",
+              "else",
+              "if"
+          ]
+        }
+      ],
+
+      "at-rule-name-case": "lower",
+      "at-rule-blacklist": [
+          "extend"
+      ],
+      "at-rule-no-unknown": [ 
+          true, {
+              "ignoreAtRules": [
+                  "extend", 
+                  "at-root", 
+                  "debug", 
+                  "warn", 
+                  "error", 
+                  "if", 
+                  "else", 
+                  "for", 
+                  "each", 
+                  "while", 
+                  "mixin", 
+                  "include", 
+                  "content", 
+                  "return", 
+                  "function"
+              ]
+          }
+      ],
+      "at-rule-name-space-after": "always",
+
+      "max-nesting-depth": 3,
+      "block-opening-brace-space-before": "always",
+      "rule-empty-line-before": "always",
+
+      "comment-whitespace-inside": "always",
+
+      "declaration-no-important": true,
+      "selector-max-compound-selectors": 3,
+      "selector-no-qualifying-type": true,
+      "no-duplicate-selectors": true,
+      "block-no-empty": true,
+
+      "function-comma-space-after": "always-single-line",
+      "function-comma-space-before": "never",
+
+      "color-hex-case": "lower",
+      "color-hex-length": "long",
+      "color-no-invalid-hex": true,
+
+      "length-zero-no-unit": true,
+      "number-no-trailing-zeros": true,
+
+      "value-no-vendor-prefix": true,
+      "value-list-comma-space-after": "always-single-line",
+      
+
+      "shorthand-property-no-redundant-values": true,
+
+      "no-descending-specificity": true,
+  }
+}

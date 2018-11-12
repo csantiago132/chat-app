@@ -1,0 +1,10 @@
+venv
+node_modules
+node_modules/**
+build/
+npm-debug.log/
+coverage/
+tmp
+.sass-cache/
+stats.json
+.vscode/

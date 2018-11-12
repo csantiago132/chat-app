@@ -1,0 +1,24 @@
+---
+name: CreateMessage
+menu: Components
+---
+
+import { PropsTable, Playground } from 'docz';
+import CreateMessage from './CreateMessage.tsx'
+
+# CreateChatRoom
+
+## Basic Usage
+<Playground >
+  <CreateMessage
+    handleChange={(event) => event.target.value}
+    handleSubmit={(event) => event.preventDefault()}
+    placeholder={'Send a message to Active ChatRoom'}
+    value={'Hey this is a message!'}
+  />
+</Playground>
+
+---
+## Properties
+
+<PropsTable of={CreateMessage} />

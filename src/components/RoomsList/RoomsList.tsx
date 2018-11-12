@@ -7,35 +7,30 @@
  */
 
 import * as React from "react";
-import "./RoomsList.scss";
+import Styled from "./styles/Styled";
 
 interface IRoomsList {
   name: string;
   userId: string;
   createdBy: string;
   currentUserId?: string;
-  setActiveRoom: (...arg: any[]) => any;
-  deleteRoom: (...arg: any[]) => any;
+  setActiveRoom: (args: React.ButtonHTMLAttributes<any>) => void;
+  deleteRoom: (args: React.ButtonHTMLAttributes<any>) => void;
 }
 
 const RoomsList: React.SFC<IRoomsList> = (props) => {
   const { name, setActiveRoom, deleteRoom, userId, currentUserId } = props;
   return (
-    <article className="chatroom-control">
-      <button className="chatroom-control__button" onClick={setActiveRoom}>
-        {name}
-      </button>
+    <Styled.Article>
+      <Styled.Button onClick={setActiveRoom}>{name}</Styled.Button>
       {/*
        * if current user is the same as the userID
        * that created the chatroom, the user can delete it
        */}
       {userId === currentUserId && (
-        <button
-          className="chatroom-control__controls ion-trash-a"
-          onClick={deleteRoom}
-        />
+        <Styled.DeleteButton className="ion-trash-a" onClick={deleteRoom} />
       )}
-    </article>
+    </Styled.Article>
   );
 };
 

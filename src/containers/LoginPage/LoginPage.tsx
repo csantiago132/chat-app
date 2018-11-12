@@ -6,16 +6,13 @@
  */
 
 import * as React from "react";
-import { withRouter } from "react-router";
+import { withRouter, RouteComponentProps } from "react-router";
 import LoginComponent from "../../components/LoginComponent/LoginComponent";
-import "./LoginPage.scss";
+import Styled from "./styles/Styled";
 
-interface ILoginPage {
+interface ILoginPage extends RouteComponentProps {
   authenticateWithGoogle: any;
-  isAuthenticated?: string;
-  history: any;
-  location: any;
-  match: any;
+  isAuthenticated: string;
 }
 
 const LoginPage: React.SFC<ILoginPage> = (props) => {
@@ -25,9 +22,9 @@ const LoginPage: React.SFC<ILoginPage> = (props) => {
   }
 
   return (
-    <main className="login-page-container">
+    <Styled.Main as="main" fluid={true}>
       <LoginComponent {...rest} />
-    </main>
+    </Styled.Main>
   );
 };
 

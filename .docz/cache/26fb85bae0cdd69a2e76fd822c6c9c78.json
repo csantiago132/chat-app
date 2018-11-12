@@ -1,0 +1,48 @@
+{
+  "remainingRequest": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js?{\"presets\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/babel-preset-docz/dist/index.js\",{\"flow\":false,\"typescript\":true,\"parseProps\":false}]],\"plugins\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-utils/lib/named-asset-import.js\",{\"loaderMap\":{\"svg\":{\"ReactComponent\":\"@svgr/webpack?-prettier,-svgo![path]\"}}}],\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-hot-loader/babel.js\"],\"cacheDirectory\":true,\"babelrc\":false}!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/RoomsList/styles/Styled.tsx",
+  "dependencies": [
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/RoomsList/styles/Styled.tsx",
+      "mtime": 1542041816974
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/cache-loader/dist/cjs.js",
+      "mtime": 1541429074980
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js",
+      "mtime": 1538779637905
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js",
+      "mtime": 1541429075984
+    }
+  ],
+  "contextDependencies": [],
+  "result": [
+    "(function () {\n  var enterModule = require('react-hot-loader').enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nfunction _templateObject() {\n  var data = _taggedTemplateLiteral([\"\\n  background: \", \";\\n  display: flex;\\n  flex-direction: row;\\n  justify-content: space-between;\\n\\n  &:hover {\\n    background: \", \";\\n\\n    \", \" {\\n      display: block;\\n    }\\n  }\\n\"]);\n\n  _templateObject = function _templateObject() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }\n\nimport { styled } from \"../../../setup/theme\";\nimport Button from \"./blocks/Button\";\nimport DeleteButton from \"./blocks/DeleteButton\";\nvar Article = styled.article(_templateObject(), function (props) {\n  return props.theme.color.color_offwhite;\n}, function (props) {\n  return props.theme.color.color_white;\n}, DeleteButton); // combine styled-component to a single default export\n\nvar Styled = {\n  Article: Article,\n  Button: Button,\n  DeleteButton: DeleteButton\n};\nvar _default = Styled;\nexport default _default;\n;\n\n(function () {\n  var reactHotLoader = require('react-hot-loader').default;\n\n  var leaveModule = require('react-hot-loader').leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(Article, \"Article\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/RoomsList/styles/Styled.tsx\");\n  reactHotLoader.register(Styled, \"Styled\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/RoomsList/styles/Styled.tsx\");\n  reactHotLoader.register(_default, \"default\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/RoomsList/styles/Styled.tsx\");\n  leaveModule(module);\n})();\n\n;",
+    {
+      "version": 3,
+      "sources": [
+        "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/RoomsList/styles/Styled.tsx"
+      ],
+      "names": [
+        "styled",
+        "Button",
+        "DeleteButton",
+        "Article",
+        "article",
+        "props",
+        "theme",
+        "color",
+        "color_offwhite",
+        "color_white",
+        "Styled"
+      ],
+      "mappings": ";;;;;;;;;;;;;;;;;;AAAA,SAASA,MAAT,QAAuB,sBAAvB;AACA,OAAOC,MAAP,MAAmB,iBAAnB;AACA,OAAOC,YAAP,MAAyB,uBAAzB;AAEA,IAAMC,OAAO,GAAGH,MAAM,CAACI,OAAV,oBACG,UAACC,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYC,KAAZ,CAAkBC,cAA7B;AAAA,CADH,EAOK,UAACH,KAAD;AAAA,SAAWA,KAAK,CAACC,KAAN,CAAYC,KAAZ,CAAkBE,WAA7B;AAAA,CAPL,EASPP,YATO,CAAb,C,CAeA;;AACA,IAAMQ,MAAM,GAAG;AACbP,EAAAA,OAAO,EAAPA,OADa;AAEbF,EAAAA,MAAM,EAANA,MAFa;AAGbC,EAAAA,YAAY,EAAZA;AAHa,CAAf;eAMeQ,M;AAAf;;;;;;;;;;;;0BAtBMP,O;0BAgBAO,M",
+      "sourcesContent": [
+        "import { styled } from \"../../../setup/theme\";\nimport Button from \"./blocks/Button\";\nimport DeleteButton from \"./blocks/DeleteButton\";\n\nconst Article = styled.article`\n  background: ${(props) => props.theme.color.color_offwhite};\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n\n  &:hover {\n    background: ${(props) => props.theme.color.color_white};\n\n    ${DeleteButton} {\n      display: block;\n    }\n  }\n`;\n\n// combine styled-component to a single default export\nconst Styled = {\n  Article,\n  Button,\n  DeleteButton\n};\n\nexport default Styled;\n"
+      ]
+    }
+  ]
+}

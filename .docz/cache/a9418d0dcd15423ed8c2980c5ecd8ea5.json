@@ -1,0 +1,64 @@
+{
+  "remainingRequest": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js?{\"presets\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/babel-preset-docz/dist/index.js\",{\"flow\":false,\"typescript\":true,\"parseProps\":false}]],\"plugins\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-utils/lib/named-asset-import.js\",{\"loaderMap\":{\"svg\":{\"ReactComponent\":\"@svgr/webpack?-prettier,-svgo![path]\"}}}]],\"cacheDirectory\":true,\"babelrc\":false}!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/MessageList/MessageList.tsx",
+  "dependencies": [
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/MessageList/MessageList.tsx",
+      "mtime": 1541815380457
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/cache-loader/dist/cjs.js",
+      "mtime": 1541429074980
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js",
+      "mtime": 1538779637905
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js",
+      "mtime": 1541429075984
+    }
+  ],
+  "contextDependencies": [],
+  "result": [
+    "/**\n * MessageList\n *\n * Individual chat message component from any user\n *\n */\nimport * as React from \"react\";\nimport Styled from \"./styles/Styled\";\n\nvar MessageList = function MessageList(props) {\n  var avatar = props.avatar,\n      content = props.content,\n      currentUser = props.currentUser,\n      deleteMessage = props.deleteMessage,\n      id = props.id,\n      sentAt = props.sentAt,\n      userId = props.userId,\n      username = props.username; // sendAt based on firebase timestamp\n\n  var date = new Date(sentAt); // renders sendAt formatted for time\n\n  var convertTimestampToLocalTime = date.toLocaleTimeString([], {\n    hour: \"2-digit\",\n    minute: \"2-digit\"\n  }); // renders renders sendAt formatted for date\n\n  var convertTimestampToLocalDate = date.toLocaleDateString();\n  return React.createElement(Styled.Article, {\n    key: id\n  }, React.createElement(Styled.Img, {\n    src: avatar,\n    alt: username\n  }), React.createElement(Styled.Header, null, React.createElement(Styled.H1, null, username), React.createElement(Styled.Time, null, convertTimestampToLocalDate, \" at: \", convertTimestampToLocalTime), React.createElement(Styled.P, null, content)), currentUser === userId && React.createElement(Styled.Aside, null, React.createElement(Styled.Button, {\n    className: \"ion-ios-compose-outline\"\n  }), React.createElement(Styled.Button, {\n    className: \"ion-trash-a\",\n    onClick: deleteMessage\n  })));\n};\n\nexport default MessageList;\n\ntry {\n  // @ts-ignore\n  MessageList.displayName = \"MessageList\"; // @ts-ignore\n\n  MessageList.__docgenInfo = {\n    \"description\": \"\",\n    \"displayName\": \"MessageList\",\n    \"props\": {\n      \"avatar\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"avatar\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"string\"\n        }\n      },\n      \"content\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"content\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"string\"\n        }\n      },\n      \"currentUser\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"currentUser\",\n        \"required\": false,\n        \"type\": {\n          \"name\": \"string\"\n        }\n      },\n      \"deleteMessage\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"deleteMessage\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"(args: ButtonHTMLAttributes<any>) => void\"\n        }\n      },\n      \"id\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"id\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"string\"\n        }\n      },\n      \"sentAt\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"sentAt\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"number\"\n        }\n      },\n      \"userId\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"userId\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"any\"\n        }\n      },\n      \"username\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"username\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"string\"\n        }\n      }\n    }\n  }; // @ts-ignore\n\n  if (typeof STORYBOOK_REACT_CLASSES !== \"undefined\") // @ts-ignore\n    STORYBOOK_REACT_CLASSES[\"src/components/MessageList/MessageList.tsx#MessageList\"] = {\n      docgenInfo: MessageList.__docgenInfo,\n      name: \"MessageList\",\n      path: \"src/components/MessageList/MessageList.tsx#MessageList\"\n    };\n} catch (__react_docgen_typescript_loader_error) {}",
+    {
+      "version": 3,
+      "sources": [
+        "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/MessageList/MessageList.tsx"
+      ],
+      "names": [
+        "React",
+        "Styled",
+        "MessageList",
+        "props",
+        "avatar",
+        "content",
+        "currentUser",
+        "deleteMessage",
+        "id",
+        "sentAt",
+        "userId",
+        "username",
+        "date",
+        "Date",
+        "convertTimestampToLocalTime",
+        "toLocaleTimeString",
+        "hour",
+        "minute",
+        "convertTimestampToLocalDate",
+        "toLocaleDateString",
+        "displayName",
+        "__docgenInfo",
+        "STORYBOOK_REACT_CLASSES",
+        "docgenInfo",
+        "name",
+        "path",
+        "__react_docgen_typescript_loader_error"
+      ],
+      "mappings": "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",
+      "sourcesContent": [
+        "/**\n * MessageList\n *\n * Individual chat message component from any user\n *\n */\n\nimport * as React from \"react\";\nimport Styled from \"./styles/Styled\";\n\ninterface IMessageList {\n  avatar: string;\n  content: string;\n  currentUser?: string;\n  deleteMessage: (args: React.ButtonHTMLAttributes<any>) => void;\n  id: string;\n  sentAt: number;\n  userId: any;\n  username: string;\n}\n\nconst MessageList: React.SFC<IMessageList> = (props) => {\n  const {\n    avatar,\n    content,\n    currentUser,\n    deleteMessage,\n    id,\n    sentAt,\n    userId,\n    username\n  } = props;\n\n  // sendAt based on firebase timestamp\n  const date = new Date(sentAt);\n  // renders sendAt formatted for time\n  const convertTimestampToLocalTime = date.toLocaleTimeString([], {\n    hour: \"2-digit\",\n    minute: \"2-digit\"\n  });\n  // renders renders sendAt formatted for date\n  const convertTimestampToLocalDate = date.toLocaleDateString();\n  return (\n    <Styled.Article key={id}>\n      <Styled.Img src={avatar} alt={username} />\n      <Styled.Header>\n        <Styled.H1>{username}</Styled.H1>\n        <Styled.Time>\n          {convertTimestampToLocalDate} at: {convertTimestampToLocalTime}\n        </Styled.Time>\n        <Styled.P>{content}</Styled.P>\n      </Styled.Header>\n      {/*\n       * if current user is the same as the userID from the message\n       * user can delete its own message\n       */}\n      {currentUser === userId && (\n        <Styled.Aside>\n          <Styled.Button className=\"ion-ios-compose-outline\" />\n          <Styled.Button className=\"ion-trash-a\" onClick={deleteMessage} />\n        </Styled.Aside>\n      )}\n    </Styled.Article>\n  );\n};\n\nexport default MessageList;\ntry {\n    // @ts-ignore\n    MessageList.displayName = \"MessageList\";\n    // @ts-ignore\n    MessageList.__docgenInfo = { \"description\": \"\", \"displayName\": \"MessageList\", \"props\": { \"avatar\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"avatar\", \"required\": true, \"type\": { \"name\": \"string\" } }, \"content\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"content\", \"required\": true, \"type\": { \"name\": \"string\" } }, \"currentUser\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"currentUser\", \"required\": false, \"type\": { \"name\": \"string\" } }, \"deleteMessage\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"deleteMessage\", \"required\": true, \"type\": { \"name\": \"(args: ButtonHTMLAttributes<any>) => void\" } }, \"id\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"id\", \"required\": true, \"type\": { \"name\": \"string\" } }, \"sentAt\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"sentAt\", \"required\": true, \"type\": { \"name\": \"number\" } }, \"userId\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"userId\", \"required\": true, \"type\": { \"name\": \"any\" } }, \"username\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"username\", \"required\": true, \"type\": { \"name\": \"string\" } } } };\n    // @ts-ignore\n    if (typeof STORYBOOK_REACT_CLASSES !== \"undefined\")\n        // @ts-ignore\n        STORYBOOK_REACT_CLASSES[\"src/components/MessageList/MessageList.tsx#MessageList\"] = { docgenInfo: MessageList.__docgenInfo, name: \"MessageList\", path: \"src/components/MessageList/MessageList.tsx#MessageList\" };\n}\ncatch (__react_docgen_typescript_loader_error) { }"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "remainingRequest": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js?{\"presets\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/babel-preset-docz/dist/index.js\",{\"flow\":false,\"typescript\":true,\"parseProps\":false}]],\"plugins\":[[\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-utils/lib/named-asset-import.js\",{\"loaderMap\":{\"svg\":{\"ReactComponent\":\"@svgr/webpack?-prettier,-svgo![path]\"}}}],\"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-hot-loader/babel.js\"],\"cacheDirectory\":true,\"babelrc\":false}!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js!/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/RoomsList/RoomsList.tsx",
+  "dependencies": [
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/RoomsList/RoomsList.tsx",
+      "mtime": 1542041816973
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/cache-loader/dist/cjs.js",
+      "mtime": 1541429074980
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/docz-core/node_modules/babel-loader/lib/index.js",
+      "mtime": 1538779637905
+    },
+    {
+      "path": "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/node_modules/react-docgen-typescript-loader/dist/index.js",
+      "mtime": 1541429075984
+    }
+  ],
+  "contextDependencies": [],
+  "result": [
+    "var _jsxFileName = \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/RoomsList/RoomsList.tsx\";\n\n(function () {\n  var enterModule = require('react-hot-loader').enterModule;\n\n  enterModule && enterModule(module);\n})();\n\n/**\n * RoomsList\n *\n * renders room information coming from firebase\n * and provides a link to them\n *\n */\nimport * as React from \"react\";\nimport Styled from \"./styles/Styled\";\n\nvar RoomsList = function RoomsList(props) {\n  var name = props.name,\n      setActiveRoom = props.setActiveRoom,\n      deleteRoom = props.deleteRoom,\n      userId = props.userId,\n      currentUserId = props.currentUserId;\n  return React.createElement(Styled.Article, {\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 24\n    },\n    __self: this\n  }, React.createElement(Styled.Button, {\n    onClick: setActiveRoom,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 25\n    },\n    __self: this\n  }, name), userId === currentUserId && React.createElement(Styled.DeleteButton, {\n    className: \"ion-trash-a\",\n    onClick: deleteRoom,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 31\n    },\n    __self: this\n  }));\n};\n\nvar _default = RoomsList;\nexport default _default;\n\ntry {\n  // @ts-ignore\n  RoomsList.displayName = \"RoomsList\"; // @ts-ignore\n\n  RoomsList.__docgenInfo = {\n    \"description\": \"\",\n    \"displayName\": \"RoomsList\",\n    \"props\": {\n      \"name\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"name\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"string\"\n        }\n      },\n      \"userId\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"userId\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"string\"\n        }\n      },\n      \"createdBy\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"createdBy\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"string\"\n        }\n      },\n      \"currentUserId\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"currentUserId\",\n        \"required\": false,\n        \"type\": {\n          \"name\": \"string\"\n        }\n      },\n      \"setActiveRoom\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"setActiveRoom\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"(args: ButtonHTMLAttributes<any>) => void\"\n        }\n      },\n      \"deleteRoom\": {\n        \"defaultValue\": null,\n        \"description\": \"\",\n        \"name\": \"deleteRoom\",\n        \"required\": true,\n        \"type\": {\n          \"name\": \"(args: ButtonHTMLAttributes<any>) => void\"\n        }\n      }\n    }\n  }; // @ts-ignore\n\n  if (typeof STORYBOOK_REACT_CLASSES !== \"undefined\") // @ts-ignore\n    STORYBOOK_REACT_CLASSES[\"src/components/RoomsList/RoomsList.tsx#RoomsList\"] = {\n      docgenInfo: RoomsList.__docgenInfo,\n      name: \"RoomsList\",\n      path: \"src/components/RoomsList/RoomsList.tsx#RoomsList\"\n    };\n} catch (__react_docgen_typescript_loader_error) {}\n\n;\n\n(function () {\n  var reactHotLoader = require('react-hot-loader').default;\n\n  var leaveModule = require('react-hot-loader').leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(RoomsList, \"RoomsList\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/RoomsList/RoomsList.tsx\");\n  reactHotLoader.register(_default, \"default\", \"/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/RoomsList/RoomsList.tsx\");\n  leaveModule(module);\n})();\n\n;",
+    {
+      "version": 3,
+      "sources": [
+        "/Users/carlossantiago/Dropbox/_Local/Github/slack-chat/src/components/RoomsList/RoomsList.tsx"
+      ],
+      "names": [
+        "React",
+        "Styled",
+        "RoomsList",
+        "props",
+        "name",
+        "setActiveRoom",
+        "deleteRoom",
+        "userId",
+        "currentUserId",
+        "displayName",
+        "__docgenInfo",
+        "STORYBOOK_REACT_CLASSES",
+        "docgenInfo",
+        "path",
+        "__react_docgen_typescript_loader_error"
+      ],
+      "mappings": ";;;;;;;;AAAA;;;;;;;AAQA,OAAO,KAAKA,KAAZ,MAAuB,OAAvB;AACA,OAAOC,MAAP,MAAmB,iBAAnB;;AAWA,IAAMC,SAAgC,GAAG,SAAnCA,SAAmC,CAACC,KAAD,EAAW;AAAA,MAC1CC,IAD0C,GACiBD,KADjB,CAC1CC,IAD0C;AAAA,MACpCC,aADoC,GACiBF,KADjB,CACpCE,aADoC;AAAA,MACrBC,UADqB,GACiBH,KADjB,CACrBG,UADqB;AAAA,MACTC,MADS,GACiBJ,KADjB,CACTI,MADS;AAAA,MACDC,aADC,GACiBL,KADjB,CACDK,aADC;AAElD,SACE,oBAAC,MAAD,CAAQ,OAAR;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACE,oBAAC,MAAD,CAAQ,MAAR;AAAe,IAAA,OAAO,EAAEH,aAAxB;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAAwCD,IAAxC,CADF,EAMGG,MAAM,KAAKC,aAAX,IACC,oBAAC,MAAD,CAAQ,YAAR;AAAqB,IAAA,SAAS,EAAC,aAA/B;AAA6C,IAAA,OAAO,EAAEF,UAAtD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IAPJ,CADF;AAYD,CAdD;;eAgBeJ,S;AAAf;;AACA,IAAI;AACA;AACAA,EAAAA,SAAS,CAACO,WAAV,GAAwB,WAAxB,CAFA,CAGA;;AACAP,EAAAA,SAAS,CAACQ,YAAV,GAAyB;AAAE,mBAAe,EAAjB;AAAqB,mBAAe,WAApC;AAAiD,aAAS;AAAE,cAAQ;AAAE,wBAAgB,IAAlB;AAAwB,uBAAe,EAAvC;AAA2C,gBAAQ,MAAnD;AAA2D,oBAAY,IAAvE;AAA6E,gBAAQ;AAAE,kBAAQ;AAAV;AAArF,OAAV;AAAuH,gBAAU;AAAE,wBAAgB,IAAlB;AAAwB,uBAAe,EAAvC;AAA2C,gBAAQ,QAAnD;AAA6D,oBAAY,IAAzE;AAA+E,gBAAQ;AAAE,kBAAQ;AAAV;AAAvF,OAAjI;AAAgP,mBAAa;AAAE,wBAAgB,IAAlB;AAAwB,uBAAe,EAAvC;AAA2C,gBAAQ,WAAnD;AAAgE,oBAAY,IAA5E;AAAkF,gBAAQ;AAAE,kBAAQ;AAAV;AAA1F,OAA7P;AAA+W,uBAAiB;AAAE,wBAAgB,IAAlB;AAAwB,uBAAe,EAAvC;AAA2C,gBAAQ,eAAnD;AAAoE,oBAAY,KAAhF;AAAuF,gBAAQ;AAAE,kBAAQ;AAAV;AAA/F,OAAhY;AAAuf,uBAAiB;AAAE,wBAAgB,IAAlB;AAAwB,uBAAe,EAAvC;AAA2C,gBAAQ,eAAnD;AAAoE,oBAAY,IAAhF;AAAsF,gBAAQ;AAAE,kBAAQ;AAAV;AAA9F,OAAxgB;AAAiqB,oBAAc;AAAE,wBAAgB,IAAlB;AAAwB,uBAAe,EAAvC;AAA2C,gBAAQ,YAAnD;AAAiE,oBAAY,IAA7E;AAAmF,gBAAQ;AAAE,kBAAQ;AAAV;AAA3F;AAA/qB;AAA1D,GAAzB,CAJA,CAKA;;AACA,MAAI,OAAOC,uBAAP,KAAmC,WAAvC,EACI;AACAA,IAAAA,uBAAuB,CAAC,kDAAD,CAAvB,GAA8E;AAAEC,MAAAA,UAAU,EAAEV,SAAS,CAACQ,YAAxB;AAAsCN,MAAAA,IAAI,EAAE,WAA5C;AAAyDS,MAAAA,IAAI,EAAE;AAA/D,KAA9E;AACP,CATD,CAUA,OAAOC,sCAAP,EAA+C,CAAG;;;;;;;;;;;;;0BA3B5CZ,S",
+      "sourcesContent": [
+        "/**\n * RoomsList\n *\n * renders room information coming from firebase\n * and provides a link to them\n *\n */\n\nimport * as React from \"react\";\nimport Styled from \"./styles/Styled\";\n\ninterface IRoomsList {\n  name: string;\n  userId: string;\n  createdBy: string;\n  currentUserId?: string;\n  setActiveRoom: (args: React.ButtonHTMLAttributes<any>) => void;\n  deleteRoom: (args: React.ButtonHTMLAttributes<any>) => void;\n}\n\nconst RoomsList: React.SFC<IRoomsList> = (props) => {\n  const { name, setActiveRoom, deleteRoom, userId, currentUserId } = props;\n  return (\n    <Styled.Article>\n      <Styled.Button onClick={setActiveRoom}>{name}</Styled.Button>\n      {/*\n       * if current user is the same as the userID\n       * that created the chatroom, the user can delete it\n       */}\n      {userId === currentUserId && (\n        <Styled.DeleteButton className=\"ion-trash-a\" onClick={deleteRoom} />\n      )}\n    </Styled.Article>\n  );\n};\n\nexport default RoomsList;\ntry {\n    // @ts-ignore\n    RoomsList.displayName = \"RoomsList\";\n    // @ts-ignore\n    RoomsList.__docgenInfo = { \"description\": \"\", \"displayName\": \"RoomsList\", \"props\": { \"name\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"name\", \"required\": true, \"type\": { \"name\": \"string\" } }, \"userId\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"userId\", \"required\": true, \"type\": { \"name\": \"string\" } }, \"createdBy\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"createdBy\", \"required\": true, \"type\": { \"name\": \"string\" } }, \"currentUserId\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"currentUserId\", \"required\": false, \"type\": { \"name\": \"string\" } }, \"setActiveRoom\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"setActiveRoom\", \"required\": true, \"type\": { \"name\": \"(args: ButtonHTMLAttributes<any>) => void\" } }, \"deleteRoom\": { \"defaultValue\": null, \"description\": \"\", \"name\": \"deleteRoom\", \"required\": true, \"type\": { \"name\": \"(args: ButtonHTMLAttributes<any>) => void\" } } } };\n    // @ts-ignore\n    if (typeof STORYBOOK_REACT_CLASSES !== \"undefined\")\n        // @ts-ignore\n        STORYBOOK_REACT_CLASSES[\"src/components/RoomsList/RoomsList.tsx#RoomsList\"] = { docgenInfo: RoomsList.__docgenInfo, name: \"RoomsList\", path: \"src/components/RoomsList/RoomsList.tsx#RoomsList\" };\n}\ncatch (__react_docgen_typescript_loader_error) { }"
+      ]
+    }
+  ]
+}

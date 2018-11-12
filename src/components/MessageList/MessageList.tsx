@@ -6,16 +6,16 @@
  */
 
 import * as React from "react";
-import "./MessageList.scss";
+import Styled from "./styles/Styled";
 
 interface IMessageList {
   avatar: string;
   content: string;
   currentUser?: string;
-  deleteMessage: (...arg: any[]) => any;
+  deleteMessage: (args: React.ButtonHTMLAttributes<any>) => void;
   id: string;
   sentAt: number;
-  userId?: any;
+  userId: any;
   username: string;
 }
 
@@ -41,33 +41,26 @@ const MessageList: React.SFC<IMessageList> = (props) => {
   // renders renders sendAt formatted for date
   const convertTimestampToLocalDate = date.toLocaleDateString();
   return (
-    <article className="chat-message" key={id}>
-      <img
-        className="chat-message__profile-picture"
-        src={avatar}
-        alt={username}
-      />
-      <header className="chat-message__header">
-        <h1 className="chat-message__username">{username}</h1>
-        <time className="chat-message__time-stamp">
+    <Styled.Article key={id}>
+      <Styled.Img src={avatar} alt={username} />
+      <Styled.Header>
+        <Styled.H1>{username}</Styled.H1>
+        <Styled.Time>
           {convertTimestampToLocalDate} at: {convertTimestampToLocalTime}
-        </time>
-        <p className="chat-message__message">{content}</p>
-      </header>
+        </Styled.Time>
+        <Styled.P>{content}</Styled.P>
+      </Styled.Header>
       {/*
        * if current user is the same as the userID from the message
        * user can delete its own message
        */}
       {currentUser === userId && (
-        <aside className="chat-message__controls">
-          <button className="chat-message__controls__action-button ion-ios-compose-outline" />
-          <button
-            className="chat-message__controls__action-button ion-trash-a"
-            onClick={deleteMessage}
-          />
-        </aside>
+        <Styled.Aside>
+          <Styled.Button className="ion-ios-compose-outline" />
+          <Styled.Button className="ion-trash-a" onClick={deleteMessage} />
+        </Styled.Aside>
       )}
-    </article>
+    </Styled.Article>
   );
 };
 

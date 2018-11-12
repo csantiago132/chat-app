@@ -11,9 +11,8 @@ import * as React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 interface IProtectedRoute {
-  component: (...arg: any[]) => any;
+  component: (arg: any) => any;
   isAuthenticated: boolean;
-  location?: any;
   path: string;
 }
 // Find the component property defined on props
@@ -36,9 +35,7 @@ const ProtectedRoute: React.SFC<IProtectedRoute> = ({
         React.createElement(component, props)
       ) : (
         // otherwise, redirect to login
-        <Redirect
-          to={{ pathname: "/login", state: { from: props.location } }}
-        />
+        <Redirect to={{ pathname: "/", state: { from: props.location } }} />
       )
     }
   />

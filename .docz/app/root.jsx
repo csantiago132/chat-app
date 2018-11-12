@@ -8,13 +8,7 @@ import db from "./db.json";
 import Wrapper from "../../src/setup/docz_wrapper/wrapper";
 
 const Root = () => (
-  <Theme
-    db={db}
-    imports={imports}
-    hashRouter={false}
-    websocketUrl="ws://127.0.0.1:60505"
-    wrapper={Wrapper}
-  />
+  <Theme db={db} imports={imports} hashRouter={false} wrapper={Wrapper} />
 );
 
 // TODO: this is temporary until react-hot-loader fix hooks issues

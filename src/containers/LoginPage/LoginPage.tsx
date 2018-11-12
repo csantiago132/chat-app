@@ -8,6 +8,7 @@
 import * as React from "react";
 import { withRouter, RouteComponentProps } from "react-router";
 import LoginComponent from "../../components/LoginComponent/LoginComponent";
+import Styled from "./styles/Styled";
 
 interface ILoginPage extends RouteComponentProps {
   authenticateWithGoogle: any;
@@ -21,9 +22,9 @@ const LoginPage: React.SFC<ILoginPage> = (props) => {
   }
 
   return (
-    <main className="login-page-container">
+    <Styled.Main as="main" fluid={true}>
       <LoginComponent {...rest} />
-    </main>
+    </Styled.Main>
   );
 };
 

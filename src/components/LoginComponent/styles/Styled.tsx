@@ -20,7 +20,7 @@ const Article = styled(Col)`
   box-shadow: ${(props) => props.theme.boxshadow.base};
   display: flex;
   flex-direction: column;
-  margin-top: ${(props) => props.theme.spacing.reg};
+  margin-bottom: ${(props) => props.theme.spacing.reg};
   padding: ${(props) => props.theme.spacing.m};
   text-align: center;
 `;

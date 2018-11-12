@@ -35,9 +35,7 @@ const ProtectedRoute: React.SFC<IProtectedRoute> = ({
         React.createElement(component, props)
       ) : (
         // otherwise, redirect to login
-        <Redirect
-          to={{ pathname: "/login", state: { from: props.location } }}
-        />
+        <Redirect to={{ pathname: "/", state: { from: props.location } }} />
       )
     }
   />

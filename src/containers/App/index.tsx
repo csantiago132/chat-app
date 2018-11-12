@@ -15,7 +15,6 @@ import ChatRooms from "../ChatRooms/ChatRooms";
 import NotFound from "../NotFoundPage/NotFound";
 import LoginPage from "../LoginPage/LoginPage";
 import ProtectedRoute from "../ProtectedRoute";
-import LandingPage from "../LandingPage/LandingPage";
 import firebase from "../../secretApiInfo/firebase";
 import placeholderAvatarJpg from "../../assets/placeholderImages/placeholderAvatar.jpg";
 
@@ -98,7 +97,19 @@ class App extends React.Component<{}, IAppState> {
           />
         </Helmet>
         <Switch>
-          <Route exact={true} path="/" component={LandingPage} />
+          <Route
+            exact={true}
+            path="/"
+            component={() => (
+              <LoginPage
+                // if user is not logged in, redirect route to login page
+                isAuthenticated={data.get("isAuthenticaded")}
+                authenticateWithGoogle={(event: React.FormEvent<HTMLElement>) =>
+                  this.googleAuthentication(event)
+                }
+              />
+            )}
+          />
           <ProtectedRoute
             isAuthenticated={data.get("isAuthenticaded")}
             path="/application"
@@ -113,18 +124,6 @@ class App extends React.Component<{}, IAppState> {
                 userUniqueID={data.get("userUniqueID")}
                 logout={(event: React.FormEvent<HTMLElement>) =>
                   this.handleLogout(event)
-                }
-              />
-            )}
-          />
-          <Route
-            path="/login"
-            component={() => (
-              <LoginPage
-                // if user is not logged in, redirect route to login page
-                isAuthenticated={data.get("isAuthenticaded")}
-                authenticateWithGoogle={(event: React.FormEvent<HTMLElement>) =>
-                  this.googleAuthentication(event)
                 }
               />
             )}

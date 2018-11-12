@@ -7,8 +7,6 @@ export const imports = {
     import(/* webpackPrefetch: true, webpackChunkName: "src-components-login-component-docz" */ 'src/components/LoginComponent/docz.mdx'),
   'src/components/MessageList/docz.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "src-components-message-list-docz" */ 'src/components/MessageList/docz.mdx'),
-  'src/components/Navigation/docz.mdx': () =>
-    import(/* webpackPrefetch: true, webpackChunkName: "src-components-navigation-docz" */ 'src/components/Navigation/docz.mdx'),
   'src/components/PreviewLoader/docz.mdx': () =>
     import(/* webpackPrefetch: true, webpackChunkName: "src-components-preview-loader-docz" */ 'src/components/PreviewLoader/docz.mdx'),
   'src/components/ProfileCard/docs.mdx': () =>

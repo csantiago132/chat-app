@@ -18,6 +18,7 @@
     "prettier:tsx": "prettier --config .prettierrc --write *.{tsx, ts}",
     "prettier:json": "prettier --config  .prettierrc  --write *.json",
     "prettier:md": "prettier --config .prettierrc --print-width 80 --write **/*.{md, mdx}",
+    "stylelint:css": "./node_modules/.bin/stylelint '**/*.{tsx, ts}'",
     "tslint": "./node_modules/.bin/tslint -c ./tslint.js --project ./tsconfig.json"
   },
   "husky": {
@@ -26,7 +27,12 @@
     }
   },
   "lint-staged": {
-    "*.{tsx, ts}": ["yarn run prettier:tsx", "yarn run tslint", "git add"],
+    "*.{tsx, ts}": [
+      "yarn run prettier:tsx",
+      "yarn run tslint",
+      "yarn run stylelint:css",
+      "git add"
+    ],
     "*.json": ["yarn run prettier:json", "git add"],
     "*.{md, mdx}": ["yarn run prettier:md", "git add"],
     "*.{jsx, js}": ["yarn run prettier:js", "git add"]
@@ -77,6 +83,12 @@
     "husky": "^1.1.2",
     "lint-staged": "^8.0.4",
     "prettier": "^1.14.3",
+    "prettier-stylelint": "^0.4.2",
+    "stylelint": "^9.8.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-order": "^1.0.0",
+    "stylelint-processor-styled-components": "^1.5.0",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",

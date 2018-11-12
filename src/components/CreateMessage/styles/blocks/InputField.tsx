@@ -15,8 +15,8 @@ const InputField = styled.input`
   border-radius: ${(props) => props.theme.spacing.s};
   box-shadow: ${(props) => props.theme.boxshadow.base};
   height: ${(props) => props.theme.spacing.l};
-  padding: ${(props) => props.theme.spacing.base} ${(props) =>
-  props.theme.spacing.reg};
+  padding: ${(props) => props.theme.spacing.base}
+    ${(props) => props.theme.spacing.reg};
   transition: all 0.2s ease-in-out;
   width: 100%;
 
@@ -24,7 +24,7 @@ const InputField = styled.input`
     background-color: ${(props) => props.theme.color.color_white};
     border: 1px solid ${(props) => props.theme.color.color_hover};
   }
-  
+
   &:focus {
     box-shadow: ${(props) => props.theme.boxshadow.base};
     color: ${(props) => props.theme.color.color_interactive};
@@ -32,7 +32,7 @@ const InputField = styled.input`
   }
 
   &:placeholder {
-    color: color: ${(props) => props.theme.color.color_interactive};
+    color: ${(props) => props.theme.color.color_interactive};
   }
 `;
 

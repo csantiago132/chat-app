@@ -20,7 +20,7 @@ const Form = styled.form`
   margin: 5px 5px 10px;
   padding: 5px;
   position: relative;
-  box-shadow: 2px 2px 4px 0px #cfd8dc;
+  box-shadow: 2px 2px 4px 0 #cfd8dc;
 `;
 
 // combine styled-component to a single default export

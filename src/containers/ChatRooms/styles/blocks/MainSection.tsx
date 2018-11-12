@@ -5,6 +5,7 @@ const MainSection = styled(Col)`
   display: flex;
   padding: 0;
   position: relative;
+
   @media (min-width: ${(props) => props.theme.grid.container.lg}em) {
     display: flex;
   }

@@ -11,9 +11,8 @@ import * as React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 interface IProtectedRoute {
-  component: (...arg: any[]) => any;
+  component: (arg: any) => any;
   isAuthenticated: boolean;
-  location?: any;
   path: string;
 }
 // Find the component property defined on props

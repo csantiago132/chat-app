@@ -8,7 +8,6 @@
 import * as React from "react";
 import { withRouter, RouteComponentProps } from "react-router";
 import LoginComponent from "../../components/LoginComponent/LoginComponent";
-import "./LoginPage.scss";
 
 interface ILoginPage extends RouteComponentProps {
   authenticateWithGoogle: any;

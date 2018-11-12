@@ -6,16 +6,13 @@
  */
 
 import * as React from "react";
-import { withRouter } from "react-router";
+import { withRouter, RouteComponentProps } from "react-router";
 import LoginComponent from "../../components/LoginComponent/LoginComponent";
 import "./LoginPage.scss";
 
-interface ILoginPage {
+interface ILoginPage extends RouteComponentProps {
   authenticateWithGoogle: any;
-  isAuthenticated?: string;
-  history: any;
-  location: any;
-  match: any;
+  isAuthenticated: string;
 }
 
 const LoginPage: React.SFC<ILoginPage> = (props) => {

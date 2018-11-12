@@ -21,7 +21,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # docz 
-.docz/cache/*json
+.docz/cache/*.json
 # Application specific files
 venv
 node_modules/

@@ -4,9 +4,8 @@ const Img = styled.img`
   border: 1px solid ${(props) => props.theme.color.color_accent_color};
   border-radius: 100%;
   height: auto;
-  margin-bottom: ${(props) => props.theme.spacing.xs};
-  max-height: ${(props) => props.theme.spacing.m};
-  max-width: ${(props) => props.theme.spacing.m};
+  max-height: 50px;
+  max-width: 50px;
   width: 100%;
 `;
 

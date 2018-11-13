@@ -19,6 +19,7 @@ export interface IButtons {
   secondary_default: MethodDecorator;
   secondary_disabled: MethodDecorator;
   side_nav_default: MethodDecorator;
+  circular_default_button: MethodDecorator;
 }
 
 const buttons = {
@@ -129,6 +130,34 @@ const buttons = {
 
       &:active {
         color: ${theme.color.color_interactive}
+      }
+    `)
+  },
+
+  circular_default_button: (): Interpolation<any> => {
+    return (css`
+      align-items: center;
+      background: ${theme.color.color_white};
+      border: none;
+      border: 1px solid ${theme.color.color_interactive};
+      border-radius: 100%;
+      color: ${theme.color.color_interactive};
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      height: 25px;
+      transition: all 0.2s ease-in-out;
+      outline: none;
+      width: 25px;
+      
+      &:hover {
+        background: ${theme.color.color_background_color};
+        border: 1px solid ${theme.color.color_hover};
+        color: ${theme.color.color_hover};
+      }
+
+      &:active {
+        background: ${theme.color.color_active};
       }
     `)
   },

@@ -2,9 +2,12 @@ import { Row } from "react-styled-flexboxgrid";
 import { styled } from "../../../setup/theme";
 import Aside from "./blocks/Aside";
 import AsideInfo from "./blocks/AsideInfo";
+import BrandImage from "./blocks/BrandImage";
+import ButtonInformation from "./blocks/ButtonInformation";
 import Header from "./blocks/Header";
 import MainSection from "./blocks/MainSection";
 import Section from "./blocks/Section";
+import SpanChatRoomHeader from "./blocks/SpanChatRoomHeader";
 
 const Main = styled(Row)`
   height: 100%;
@@ -17,10 +20,13 @@ const Main = styled(Row)`
 const Styled = {
   Aside,
   AsideInfo,
+  BrandImage,
+  ButtonInformation,
   Header,
   Main,
   MainSection,
-  Section
+  Section,
+  SpanChatRoomHeader
 };
 
 export default Styled;

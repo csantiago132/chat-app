@@ -9,10 +9,11 @@ import * as React from "react";
 import * as Immutable from "immutable";
 import RoomsList from "../../components/RoomsList/RoomsList";
 import MessageList from "../../components/MessageList/MessageList";
-import CreateChatRoom from "../../components/CreateChatRoom/CreateChatRoom";
 import CreateMessage from "../../components/CreateMessage/CreateMessage";
 import ProfileCard from "../../components/ProfileCard/ProfileCard";
+import ModalContainer from "../ModalContainer/ModalContainer";
 import Styled from "./styles/Styled";
+import slackChatLogoPng from "../../assets/branding/slack-chat-logo.png";
 
 interface IAppState {
   createNewRoomTitle: string;
@@ -53,6 +54,8 @@ class Rooms extends React.Component<IAppProps, IAppState> {
           name: String("")
         }),
         messages: Immutable.List(),
+        modalIsOpen: false,
+        modalType: String(""),
         rooms: Immutable.List()
       }),
       firebaseMessages: this.props.firebase.database().ref("messages"),
@@ -208,33 +211,65 @@ class Rooms extends React.Component<IAppProps, IAppState> {
     }
   };
 
+  newChatRoom = () => {
+    const { data } = this.state;
+
+    this.setState({
+      data: data.set("modalIsOpen", true).set("modalType", "newChatRoom")
+    });
+  };
+
+  seeChatRoomDetails = () => {
+    const { data } = this.state;
+
+    this.setState({
+      data: data.set("modalIsOpen", true).set("modalType", "chatRoomDetails")
+    });
+  };
+
+  showModal = () => {
+    const { data } = this.state;
+
+    this.setState({
+      data: data.set("modalIsOpen", true)
+    });
+  };
+
+  hideModal = () => {
+    const { data } = this.state;
+
+    this.setState({
+      data: data.set("modalIsOpen", false).set("modalType", String(""))
+    });
+  };
+
   // sets state to the new message that is about to be sent to firebase
   handleMessageContent = (event: React.FormEvent<HTMLInputElement>) => {
     this.setState({ newMessage: String(`${event.currentTarget.value}`) });
   };
 
-  sendChatRoomDataToFirebase = (event: React.FormEvent<HTMLElement>) => {
-    // sends chat room information to firebase
-    const { firebaseRooms, createNewRoomTitle } = this.state;
+  // sends chat room information to firebase
+  sendChatRoomDataToFirebase = (event: React.KeyboardEvent<HTMLElement>) => {
+    const { data, firebaseRooms, createNewRoomTitle } = this.state;
     const { displayName, userUniqueID } = this.props;
     event.preventDefault();
 
-    // chatroom information sent to firebase
     const chatRoomDetails = {
-      // TODO: add more useful information to improve UX
       createdBy: displayName,
       name: createNewRoomTitle,
       userId: userUniqueID
     };
-
-    this.setState(
-      {
-        /* clears state and sends chat room data to Firebase */
-        createNewRoomTitle: String("")
-        // call back used to push the chatroom to firebase after state changes
-      },
-      (): void => firebaseRooms.push(chatRoomDetails)
-    );
+    // send info to firebase if we have all data
+    if (createNewRoomTitle.length > 0) {
+      // chatroom information sent to firebase
+      this.setState(
+        {
+          createNewRoomTitle: String(""),
+          data: data.set("modalIsOpen", false).set("modalType", String(""))
+        },
+        (): void => firebaseRooms.push(chatRoomDetails)
+      );
+    }
   };
 
   /**
@@ -281,22 +316,6 @@ class Rooms extends React.Component<IAppProps, IAppState> {
   }
 
   // only renders the renderCreateChatRooms based on logic coming from state
-  renderCreateChatRooms() {
-    /* input field to create a chat room */
-    const { createNewRoomTitle } = this.state;
-    // if text field is empty, disable the button
-    const isEnabled = createNewRoomTitle.length > 0;
-    return (
-      <CreateChatRoom
-        isDisabled={!isEnabled}
-        // TODO: rethink on how to incorporate without Lambda
-        // Lambdas are forbidden in JSX attributes due to their rendering performance impact
-        handleChange={(event) => this.handleChatRoomName(event)}
-        handleSubmit={(event) => this.sendChatRoomDataToFirebase(event)}
-        value={createNewRoomTitle}
-      />
-    );
-  }
 
   // only renders the active room and the messages associated with it based on what
   // active room is set on the state
@@ -350,18 +369,52 @@ class Rooms extends React.Component<IAppProps, IAppState> {
 
   // main render function of the app
   render() {
-    const { data, newMessage } = this.state;
+    const { data, newMessage, createNewRoomTitle } = this.state;
 
     return (
       <Styled.Main as="main">
         <Styled.Aside as="aside" xs={3} md={2}>
-          <article>{this.renderCreateChatRooms()}</article>
-          <h1>Chat Rooms</h1>
+          {/*
+          * Left-side of the application
+          *
+          * Renders all chatrooms and sets the state to see
+          * which one should the user see
+          */}
+          <Styled.BrandImage
+            src={slackChatLogoPng}
+            alt={`branding of the application`}
+          />
+          <Styled.SpanChatRoomHeader>
+            <h1>Chat Rooms</h1>
+            <Styled.ButtonInformation
+              className="ion-plus-round"
+              onClick={this.newChatRoom}
+            />
+          </Styled.SpanChatRoomHeader>
           <article>{this.renderChatRooms()}</article>
         </Styled.Aside>
+
         <Styled.MainSection as="section" xs={8} md={8}>
+          {/*
+            * Main container
+            *
+            * displays all messages that match the selected chatroom
+            * 
+          */}
           <Styled.Header>
-            <h2>{data.getIn(["activeRoom", "name"])}</h2>
+            <Styled.SpanChatRoomHeader>
+              {data.getIn(["activeRoom", "name"]).length > 0 ? (
+                <React.Fragment>
+                  <h1>{data.getIn(["activeRoom", "name"])}</h1>,
+                  <Styled.ButtonInformation
+                    className="ion-information"
+                    onClick={this.seeChatRoomDetails}
+                  />
+                </React.Fragment>
+              ) : (
+                <h1>No Room Selected</h1>
+              )}
+            </Styled.SpanChatRoomHeader>
           </Styled.Header>
           <Styled.Section as="section">
             {this.renderActiveRoomsAndMessages()}
@@ -371,6 +424,8 @@ class Rooms extends React.Component<IAppProps, IAppState> {
               }}
             />
           </Styled.Section>
+
+          {/* input field: sends messages to firebase*/}
           {data.getIn(["activeRoom", "key"]).length > 0 && (
             <CreateMessage
               // TODO: rethink on how to incorporate without Lambda
@@ -386,9 +441,29 @@ class Rooms extends React.Component<IAppProps, IAppState> {
             />
           )}
         </Styled.MainSection>
+
+        {/*
+          *
+          * Right-side of the application
+          *
+          * holds the current user logged in
+          */}
         <Styled.AsideInfo as="aside" xs={3} md={2}>
           <ProfileCard {...this.props} />
         </Styled.AsideInfo>
+
+        {/* modals used on this page */}
+        <ModalContainer
+          modalState={data.get("modalIsOpen")}
+          modalType={data.get("modalType")}
+          handleCloseModal={this.hideModal}
+          handleChatRoomName={(event: any) => this.handleChatRoomName(event)}
+          handleChatRoomSubmit={(event: any) =>
+            this.sendChatRoomDataToFirebase(event)
+          }
+          chatRoomNameValue={createNewRoomTitle}
+          chatRoomDetails={data.getIn(["activeRoom", "name"])}
+        />
       </Styled.Main>
     );
   }

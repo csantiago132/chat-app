@@ -29,7 +29,7 @@ class App extends React.Component<{}, IAppState> {
     this.state = {
       data: Immutable.Map({
         authUser: "Guest User",
-        isAuthenticaded: false,
+        isAuthenticaded: true,
         profilePicture: placeholderAvatarJpg,
         userUniqueID: String("")
       }),

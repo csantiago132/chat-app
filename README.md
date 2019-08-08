@@ -11,7 +11,7 @@
 A CRUD (Create, Read, Update, Delete) chat application built with Typescript,
 React, Firebase and Immutable.JS.
 
-### <a href="https://csantiago-slack-chat-docs.netlify.com/" target="_blank">Read the documentation here</a>
+<a href="https://csantiago-slack-chat-docs.netlify.com/" target="_blank">Read the documentation here</a>
 
 ## Prerequisites
 

@@ -4,7 +4,9 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 
-<p align="center"><img src="preview.png" alt="slack-chat preview"/></p>
+---
+
+<p align="center"><img src="https://raw.githubusercontent.com/csantiago132/chat-app/develop/preview.png" alt="slack-chat preview"/></p>
 
 A CRUD (Create, Read, Update, Delete) chat application built with Typescript,
 React, Firebase and Immutable.JS.
